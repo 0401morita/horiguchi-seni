@@ -1,0 +1,444 @@
+@import './variable';
+@import './mixin/index.scss';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities/display';
+@import '~bootstrap/scss/utilities/flex';
+
+//
+// XS Size 0px <
+//
+@include media-breakpoint-up(xs) {
+  //
+  // Service Story
+  //
+  .service-stories {
+    .section-story {
+      display: flex;
+      flex-direction: column;
+
+      .story-image {
+        position: relative;
+        width: 100%;
+      }
+
+      .story-content {
+        position: relative;
+        width: 100%;
+        .en-title {
+          font-size: 1rem;
+          font-weight: 300;
+          margin: 0;
+        }
+
+        .content-summary {
+          display: block;
+          position: relative;
+          padding: 24px;
+          color: #333;
+
+          .title {
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 24px 0;
+          }
+
+          .description {
+            font-weight: 400;
+            font-size: 1rem;
+          }
+
+          .read-more {
+            position: relative;
+            display: block;
+            width: 80%;
+            text-align: left;
+            font-weight: 700;
+            margin-top: 24px;
+            padding: 12px 0 4px 0;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            .arrow {
+              &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                background-color: #333;
+              }
+
+              &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 1px;
+                background-color: #333;
+                transform: rotateZ(-45deg);
+                transform-origin: 100% 100%;
+              }
+            }
+          }
+
+          &:hover {
+            .read-more {
+              width: 100%;
+            }
+          }
+
+          &.white {
+            color: #fff;
+
+            .arrow {
+              &:before {
+                background-color: #fff;
+              }
+
+              &:after {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        .story-content {
+          background-color: $primary;
+        }
+      }
+
+      &:nth-child(2) {
+        .story-content {
+          background-color: $dark;
+          .content-summary {
+            color: #fff;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .story-content {
+          background-color: $gray;
+          .content-summary {
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        .story-content {
+          background-color: $secondary;
+          .content-summary {
+          }
+        }
+      }
+    }
+  }
+
+  //
+  // Service Tile
+  //
+  .service-tile {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      @include position(absolute, 0, 0, 0, 0);
+      background-color: #fff;
+      z-index: -1;
+    }
+
+    .tile-link {
+      display: block;
+      padding-bottom: 100%;
+      z-index: 2;
+
+      &:hover {
+        .tile-cover-image {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .tile-cover-image {
+      transition: all 0.3s;
+      z-index: -1;
+    }
+
+    .tile-overlay {
+      @include position(absolute, 0, 0, 0, 0);
+    }
+
+    .tile-summery {
+      @include position(absolute, null, null, 0, 0);
+      padding: 24px;
+
+      .title {
+        position: relative;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 24px;
+
+        &:after {
+          content: '';
+          @include position(absolute, null, null, -11px, 0);
+          width: 80px;
+          height: 2px;
+          background-color: $primary;
+        }
+      }
+
+      .description {
+        color: #fff;
+        font-weight: 400;
+      }
+    }
+  }
+  //
+  // Recent Entries
+  //
+  .recent-entries {
+    width: 100%;
+  }
+
+  .recent-entry-list {
+    .entry-item {
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      border-top: 1px dashed $primary;
+      &:first-child {
+        border-top: 0;
+      }
+
+      .eyecatch {
+        padding-right: 12px;
+
+        .image {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .entry-meta {
+        width: 100%;
+
+        .name {
+          font-weight: 700;
+          color: #333;
+        }
+
+        .cat {
+          display: block;
+          color: $secondary;
+          font-weight: 500;
+          font-size: 0.8rem;
+          margin: 4px 0 0 0;
+        }
+      }
+    }
+  }
+  //
+  // Info Summary
+  //
+  .info-summary {
+    width: 100%;
+    height: 100%;
+
+    .info-summary-link {
+      color: #fff;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 24px;
+
+      .title {
+        margin: 0 0 12px 0;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        color: $secondary;
+      }
+
+      .message {
+        span {
+          display: block;
+          font-size: 1.3rem;
+          line-height: 2em;
+        }
+      }
+
+      .btn-read-more {
+        width: 100%;
+        text-align: left;
+      }
+
+      &:hover {
+        .btn-read-more {
+          .txt {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+//
+// SM Size 576px <
+//
+@include media-breakpoint-up(sm) {
+  //
+  // Info Summary
+  //
+  .info-summary {
+    .info-summary-link {
+      width: auto;
+      padding: 40px;
+
+      .message {
+        white-space: nowrap;
+        span {
+          font-size: 1.8rem;
+        }
+      }
+
+      .btn-read-more {
+        width: auto;
+        text-align: center;
+      }
+    }
+  }
+
+  //
+  // MD Size 768px <
+  //
+  @include media-breakpoint-up(md) {
+    //
+    // Service Story
+    //
+    .service-stories {
+      .section-story {
+        flex-direction: row;
+
+        .story-image {
+          width: 50%;
+        }
+
+        .story-content {
+          width: 50%;
+
+          .content-summary {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            padding: 24px 0;
+
+            .title {
+              font-size: 2rem;
+            }
+
+            .description {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+    //
+    // Service Tile
+    .service-tile {
+      width: 50%;
+    }
+    //
+    // Info Summary
+    //
+    .info-summary {
+      .info-summary-link {
+        .message {
+          span {
+            font-size: 2rem;
+            line-height: 2em;
+          }
+        }
+      }
+    }
+    //
+    // Recent Entries
+    //
+    .recent-entries {
+      .section-heading {
+        width: 40%;
+      }
+
+      .recent-entry-list {
+        padding-left: 40px;
+        width: 60%;
+      }
+    }
+  }
+  //
+  // LG Size 992px <
+  //
+  @include media-breakpoint-up(lg) {
+    //
+    // Info Summary
+    //
+    .info-summary {
+      .info-summary-link {
+        .message {
+          span {
+            font-size: 2.4rem;
+          }
+        }
+      }
+    }
+    //
+    // Service Story
+    //
+    .service-stories {
+      .section-story {
+        .story-content {
+          .content-summary {
+            width: 80%;
+
+            .title {
+              font-size: 2.5rem;
+            }
+
+            .description {
+              font-size: 2rem;
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+}
+//
+// XL Size 1200px <
+//
+@include media-breakpoint-up(xl) {
+}

@@ -1,0 +1,108 @@
+//
+// XS Size 0px <
+//
+@include media-breakpoint-up(xs) {
+  //
+  // Aspect
+  //
+  .aspect-rect {
+    position: relative;
+    padding-bottom: 100%;
+  }
+
+  .aspect-16-9 {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
+  //
+  // Background Image
+  //
+  .bg-cover {
+    background-size: cover;
+    background-color: #333;
+    background-repeat: no-repeat;
+  }
+
+  .bg-center {
+    background-position: center;
+  }
+
+  .bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+  //
+  // Background Image
+  //
+  .fluid {
+    width: 100%;
+    height: 100%;
+    @include position(absolute, 0, 0, 0, 0);
+  }
+
+  .service-item {
+    float: left;
+    display: block;
+    width: 50%;
+  }
+  //
+  // Fitting height
+  //
+  .fit {
+    height: 100vh;
+    height: calc(100vh - 124px);
+  }
+  //
+  // Cover Image
+  //
+  .cover-image {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: inherit;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.bg {
+      z-index: -1;
+    }
+
+    &.vignette {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.25);
+        box-shadow: inset 0 0 300px black;
+      }
+    }
+  }
+}
+//
+// SM Size 576px <
+//
+@include media-breakpoint-up(sm) {
+}
+//
+// MD Size 768px <
+//
+@include media-breakpoint-up(md) {
+  //
+  // Fitting height
+  //
+  .fit {
+    height: calc(100vh - 78px);
+  }
+}

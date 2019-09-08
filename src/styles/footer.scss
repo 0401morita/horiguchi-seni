@@ -1,0 +1,108 @@
+//
+// XS Size 0px <
+//
+@include media-breakpoint-up(xs) {
+  .global-footer {
+    padding: 24px 0 24px 0;
+
+    .footer-container {
+      padding: 24px;
+    }
+
+    .footer-nav {
+      margin-top: 24px;
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .footer-nav-title {
+        font-weight: 500;
+        margin: 0 0 12px 0;
+        color: #2c3e50;
+      }
+    }
+
+    .footer-menu {
+      li {
+        padding: 8px 0;
+        border-bottom: 1px solid #bdc3c7;
+
+        a {
+          display: block;
+          font-weight: 400;
+          color: #7f8c8d;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 10px;
+    margin: 24px 0 0 0;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .footer-address {
+    margin: 12px 0 0 0;
+    p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+  }
+}
+//
+// SM Size 576px <
+//
+@include media-breakpoint-up(sm) {
+  .global-footer {
+    padding: 40px 0 20px 0;
+  }
+}
+//
+// MD Size 768px <
+//
+@include media-breakpoint-up(md) {
+  .global-footer {
+    padding: 40px 0 40px 0;
+
+    .footer-nav {
+      margin-top: 0;
+      width: 50%;
+
+      .footer-nav-title {
+        font-weight: 500;
+        margin: 0 0 12px 0;
+        color: #2c3e50;
+      }
+
+      svg {
+        width: 50%;
+      }
+    }
+
+    .footer-menu {
+      li {
+        padding: 8px 4px;
+        border-bottom: 0;
+
+        a {
+          display: block;
+          font-weight: 400;
+          color: #7f8c8d;
+        }
+      }
+    }
+  }
+}
+//
+// LG Size 992px <
+//
+@include media-breakpoint-up(lg) {
+}
+//
+// XL Size 1200px <
+//
+@include media-breakpoint-up(xl) {
+}

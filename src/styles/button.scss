@@ -1,0 +1,154 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 12px;
+
+  svg {
+    height: 18px;
+    position: relative;
+    top: -2px;
+    line-height: 1;
+    margin-right: 4px;
+  }
+
+  &.btn-primary {
+    border-color: $primary;
+    background-color: $primary;
+    color: #fff;
+
+    &.outline {
+      color: $primary;
+    }
+  }
+
+  &.outline {
+    background: transparent;
+  }
+
+  &.rounded {
+    border-radius: 100rem;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btn-cross {
+  display: block;
+  position: relative;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  text-decoration: none;
+  font-weight: bold;
+  color: #03a9f4;
+}
+.btn-cross:before,
+.btn-cross:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+  transition: 0.3s;
+}
+.btn-cross:before {
+  left: 7px;
+}
+.btn-cross:after {
+  right: 7px;
+}
+.btn-cross:hover:before {
+  top: 0px;
+  left: 0;
+  height: 100%;
+}
+.btn-cross:hover:after {
+  top: 0px;
+  right: 0;
+  height: 100%;
+}
+
+a {
+  &:hover {
+    .btn-read-more {
+    }
+  }
+}
+
+.btn-read-more {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  font-weight: 700;
+  padding: 8px 64px 8px 0;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  color: #333;
+  font-size: 1rem;
+
+  &:focus {
+    outline: 0;
+    color: #333;
+  }
+
+  .arrow {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: #333;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: #333;
+      transform: rotateZ(-45deg);
+      transform-origin: 100% 100%;
+    }
+  }
+
+  &.btn-white {
+    color: #fff;
+    .arrow {
+      &:before,
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
+}
