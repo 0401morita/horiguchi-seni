@@ -4561,7 +4561,7 @@ var __importStar = void 0 && (void 0).__importStar || function (mod) {
   return result;
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -4591,7 +4591,7 @@ var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtim
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -4599,11 +4599,11 @@ var DataManager =
 /*#__PURE__*/
 function () {
   function DataManager(data) {
-    (0, _classCallCheck2["default"])(this, DataManager);
-    this.data = new _map["default"](data);
+    (0, _classCallCheck2.default)(this, DataManager);
+    this.data = new _map.default(data);
   }
 
-  (0, _createClass2["default"])(DataManager, [{
+  (0, _createClass2.default)(DataManager, [{
     key: "getData",
     value: function getData() {
       return this.data;
@@ -4621,7 +4621,7 @@ function () {
   }, {
     key: "overwrite",
     value: function overwrite(data) {
-      this.data = new _map["default"](data);
+      this.data = new _map.default(data);
     }
   }]);
   return DataManager;
@@ -4655,7 +4655,7 @@ var __importStar = void 0 && (void 0).__importStar || function (mod) {
   return result;
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -4692,12 +4692,12 @@ var _create = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-core
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
 function mitt() {
-  var all = (0, _create["default"])(null);
+  var all = (0, _create.default)(null);
   return {
     on: function on(type, handler) {
       ;
@@ -4722,7 +4722,7 @@ function mitt() {
   };
 }
 
-exports["default"] = mitt;
+exports.default = mitt;
 
 /***/ }),
 
@@ -4750,7 +4750,7 @@ var __importStar = void 0 && (void 0).__importStar || function (mod) {
   return result;
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -4776,19 +4776,19 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runt
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
 function rewriteUrlForNextExport(url) {
   var _url$split = url.split('#'),
-      _url$split2 = (0, _slicedToArray2["default"])(_url$split, 2),
+      _url$split2 = (0, _slicedToArray2.default)(_url$split, 2),
       pathname = _url$split2[0],
       hash = _url$split2[1]; // tslint:disable-next-line
 
 
   var _pathname$split = pathname.split('?'),
-      _pathname$split2 = (0, _slicedToArray2["default"])(_pathname$split, 2),
+      _pathname$split2 = (0, _slicedToArray2.default)(_pathname$split, 2),
       path = _pathname$split2[0],
       qs = _pathname$split2[1];
 
@@ -4838,7 +4838,7 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
   };
 };
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -4873,7 +4873,7 @@ function () {
         Component = _ref.Component,
         err = _ref.err,
         subscription = _ref.subscription;
-    (0, _classCallCheck2["default"])(this, Router);
+    (0, _classCallCheck2.default)(this, Router);
 
     this.onPopState = function (e) {
       if (!e.state) {
@@ -4970,7 +4970,7 @@ function () {
               _as2 = _history$state.as,
               options = _history$state.options;
 
-          _this.changeState('replaceState', url, _as2, (0, _assign["default"])({}, options, {
+          _this.changeState('replaceState', url, _as2, (0, _assign.default)({}, options, {
             fromExternal: true
           }));
         }
@@ -4978,7 +4978,7 @@ function () {
     }
   }
 
-  (0, _createClass2["default"])(Router, [{
+  (0, _createClass2.default)(Router, [{
     key: "update",
     value: function update(route, Component) {
       var data = this.components[route];
@@ -4987,7 +4987,7 @@ function () {
         throw new Error("Cannot update unavailable route: ".concat(route));
       }
 
-      var newData = (0, _assign["default"])({}, data, {
+      var newData = (0, _assign.default)({}, data, {
         Component: Component
       });
       this.components[route] = newData; // pages/_app.js updated
@@ -5048,7 +5048,7 @@ function () {
     value: function change(method, _url, _as, options) {
       var _this2 = this;
 
-      return new _promise["default"](function (resolve, reject) {
+      return new _promise.default(function (resolve, reject) {
         // If url and as provided as an object representation,
         // we'll format them into the string version here.
         var url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
@@ -5107,7 +5107,7 @@ function () {
           } // Merge params into `query`, overwriting any specified in search
 
 
-          (0, _assign["default"])(query, routeMatch);
+          (0, _assign.default)(query, routeMatch);
         }
 
         Router.events.emit('routeChangeStart', as); // If shallow is true and the route exists in the router cache we reuse the previous result
@@ -5132,7 +5132,7 @@ function () {
           } // @ts-ignore pathname is always defined
 
 
-          _this2.set(route, pathname, query, as, (0, _assign["default"])({}, routeInfo, {
+          _this2.set(route, pathname, query, as, (0, _assign.default)({}, routeInfo, {
             hash: hash
           }));
 
@@ -5183,10 +5183,10 @@ function () {
       // If the route is already rendered on the screen.
 
       if (shallow && cachedRouteInfo && this.route === route) {
-        return _promise["default"].resolve(cachedRouteInfo);
+        return _promise.default.resolve(cachedRouteInfo);
       }
 
-      return new _promise["default"](function (resolve, reject) {
+      return new _promise.default(function (resolve, reject) {
         if (cachedRouteInfo) {
           return resolve(cachedRouteInfo);
         }
@@ -5208,7 +5208,7 @@ function () {
           }
         }
 
-        return new _promise["default"](function (resolve, reject) {
+        return new _promise.default(function (resolve, reject) {
           var ctx = {
             pathname: pathname,
             query: query,
@@ -5226,8 +5226,8 @@ function () {
             resolve(routeInfo);
           }, reject);
         });
-      })["catch"](function (err) {
-        return new _promise["default"](function (resolve) {
+      }).catch(function (err) {
+        return new _promise.default(function (resolve) {
           if (err.code === 'PAGE_LOAD_ERROR') {
             // If we can't load the page it could be one of following reasons
             //  1. Page doesn't exists
@@ -5261,7 +5261,7 @@ function () {
               pathname: pathname,
               query: query
             };
-            return new _promise["default"](function (resolve) {
+            return new _promise.default(function (resolve) {
               _this3.getInitialProps(Component, ctx).then(function (props) {
                 routeInfo.props = props;
                 routeInfo.error = err;
@@ -5302,12 +5302,12 @@ function () {
       if (!this.asPath) return false;
 
       var _this$asPath$split = this.asPath.split('#'),
-          _this$asPath$split2 = (0, _slicedToArray2["default"])(_this$asPath$split, 2),
+          _this$asPath$split2 = (0, _slicedToArray2.default)(_this$asPath$split, 2),
           oldUrlNoHash = _this$asPath$split2[0],
           oldHash = _this$asPath$split2[1];
 
       var _as$split = as.split('#'),
-          _as$split2 = (0, _slicedToArray2["default"])(_as$split, 2),
+          _as$split2 = (0, _slicedToArray2.default)(_as$split, 2),
           newUrlNoHash = _as$split2[0],
           newHash = _as$split2[1]; // Makes sure we scroll to the provided hash if the url/hash are the same
 
@@ -5331,7 +5331,7 @@ function () {
     key: "scrollToHash",
     value: function scrollToHash(as) {
       var _as$split3 = as.split('#'),
-          _as$split4 = (0, _slicedToArray2["default"])(_as$split3, 2),
+          _as$split4 = (0, _slicedToArray2.default)(_as$split3, 2),
           hash = _as$split4[1]; // Scroll to top if the hash is just `#` with no value
 
 
@@ -5372,7 +5372,7 @@ function () {
     value: function prefetch(url) {
       var _this4 = this;
 
-      return new _promise["default"](function (resolve, reject) {
+      return new _promise.default(function (resolve, reject) {
         // Prefetch is not supported in development mode because it would trigger on-demand-entries
         if (true) return;
 
@@ -5388,11 +5388,11 @@ function () {
   }, {
     key: "fetchComponent",
     value: function () {
-      var _fetchComponent = (0, _asyncToGenerator2["default"])(
+      var _fetchComponent = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator["default"].mark(function _callee(route) {
+      _regenerator.default.mark(function _callee(route) {
         var cancelled, cancel, Component, error;
-        return _regenerator["default"].wrap(function _callee$(_context) {
+        return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
@@ -5441,11 +5441,11 @@ function () {
   }, {
     key: "getInitialProps",
     value: function () {
-      var _getInitialProps = (0, _asyncToGenerator2["default"])(
+      var _getInitialProps = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator["default"].mark(function _callee2(Component, ctx) {
+      _regenerator.default.mark(function _callee2(Component, ctx) {
         var cancelled, cancel, App, props, err;
-        return _regenerator["default"].wrap(function _callee2$(_context2) {
+        return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
@@ -5523,8 +5523,8 @@ function () {
   return Router;
 }();
 
-Router.events = mitt_1["default"]();
-exports["default"] = Router;
+Router.events = mitt_1.default();
+exports.default = Router;
 
 /***/ }),
 
@@ -5542,7 +5542,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 }); // Identify /[param]/ in route string
 
@@ -5572,7 +5572,7 @@ var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -5587,7 +5587,7 @@ function getRouteMatcher(routeRegex) {
     }
 
     var params = {};
-    (0, _keys["default"])(groups).forEach(function (slugName) {
+    (0, _keys.default)(groups).forEach(function (slugName) {
       var m = routeMatch[groups[slugName]];
 
       if (m !== undefined) {
@@ -5616,7 +5616,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -5653,12 +5653,12 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 var runtimeConfig;
 
-exports["default"] = function () {
+exports.default = function () {
   return runtimeConfig;
 };
 
@@ -5690,7 +5690,7 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 
 var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
 
-(0, _defineProperty["default"])(exports, "__esModule", {
+(0, _defineProperty.default)(exports, "__esModule", {
   value: true
 });
 
@@ -5754,12 +5754,12 @@ function loadGetInitialProps(_x, _x2) {
 }
 
 function _loadGetInitialProps() {
-  _loadGetInitialProps = (0, _asyncToGenerator2["default"])(
+  _loadGetInitialProps = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee(Component, ctx) {
+  _regenerator.default.mark(function _callee(Component, ctx) {
     var message, res, props, _message;
 
-    return _regenerator["default"].wrap(function _callee$(_context) {
+    return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -5826,7 +5826,7 @@ exports.urlObjectKeys = ['auth', 'hash', 'host', 'hostname', 'href', 'path', 'pa
 function formatWithValidation(url, options) {
   if (true) {
     if (url !== null && typeof url === 'object') {
-      (0, _keys["default"])(url).forEach(function (key) {
+      (0, _keys.default)(url).forEach(function (key) {
         if (exports.urlObjectKeys.indexOf(key) === -1) {
           console.warn("Unknown key passed via urlObject into url.format: ".concat(key));
         }
@@ -6108,7 +6108,7 @@ if (false) {} else {
 
 
 exports.__esModule = true;
-exports["default"] = initializeBuildWatcher;
+exports.default = initializeBuildWatcher;
 
 var _eventsource = __webpack_require__(/*! ./error-overlay/eventsource */ "./node_modules/next/dist/client/dev/error-overlay/eventsource.js");
 
@@ -6366,7 +6366,7 @@ function formatMessage(message, isError) {
       return line;
     }
 
-    var _parsingError = (0, _slicedToArray2["default"])(parsingError, 4),
+    var _parsingError = (0, _slicedToArray2.default)(parsingError, 4),
         errorLine = _parsingError[1],
         errorColumn = _parsingError[2],
         errorMessage = _parsingError[3];
@@ -6483,7 +6483,7 @@ var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/hel
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = connect;
+exports.default = connect;
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
@@ -6520,7 +6520,7 @@ function connect(options) {
         colNumber = _ref.colNumber; // Resolve invalid paths coming from react-error-overlay
 
     var resolvedFilename = fileName.replace(/^webpack:\/\//, '');
-    (0, _unfetch["default"])('/_next/development/open-stack-frame-in-editor' + ("?fileName=" + window.encodeURIComponent(resolvedFilename)) + ("&lineNumber=" + (lineNumber || 1)) + ("&colNumber=" + (colNumber || 1)));
+    (0, _unfetch.default)('/_next/development/open-stack-frame-in-editor' + ("?fileName=" + window.encodeURIComponent(resolvedFilename)) + ("&lineNumber=" + (lineNumber || 1)) + ("&colNumber=" + (colNumber || 1)));
   }); // We need to keep track of if there has been a runtime error.
   // Essentially, we cannot guarantee application state was not corrupted by the
   // runtime error. To prevent confusing behavior, we forcibly reload the entire
@@ -6615,7 +6615,7 @@ function handleSuccess() {
 function handleWarnings(warnings) {
   clearOutdatedErrors(); // Print warnings to the console.
 
-  var formatted = (0, _formatWebpackMessages["default"])({
+  var formatted = (0, _formatWebpackMessages.default)({
     warnings: warnings,
     errors: []
   });
@@ -6627,7 +6627,7 @@ function handleWarnings(warnings) {
         break;
       }
 
-      console.warn((0, _stripAnsi["default"])(formatted.warnings[i]));
+      console.warn((0, _stripAnsi.default)(formatted.warnings[i]));
     }
   }
 } // Compilation with errors (e.g. syntax error or missing modules).
@@ -6638,7 +6638,7 @@ function handleErrors(errors) {
   isFirstCompilation = false;
   hasCompileErrors = true; // "Massage" webpack messages.
 
-  var formatted = (0, _formatWebpackMessages["default"])({
+  var formatted = (0, _formatWebpackMessages.default)({
     errors: errors,
     warnings: []
   }); // Only show the first error.
@@ -6647,7 +6647,7 @@ function handleErrors(errors) {
 
   if (typeof console !== 'undefined' && typeof console.error === 'function') {
     for (var i = 0; i < formatted.errors.length; i++) {
-      console.error((0, _stripAnsi["default"])(formatted.errors[i]));
+      console.error((0, _stripAnsi.default)(formatted.errors[i]));
     }
   }
 } // There is a newer version of the code available.
@@ -6701,7 +6701,7 @@ function processMessage(e) {
 
     case 'typeChecked':
       {
-        var _obj$data = (0, _slicedToArray2["default"])(obj.data, 1),
+        var _obj$data = (0, _slicedToArray2.default)(obj.data, 1),
             _obj$data$ = _obj$data[0],
             _errors = _obj$data$.errors,
             _warnings = _obj$data$.warnings;
@@ -6756,11 +6756,11 @@ function tryApplyUpdates(_x) {
 }
 
 function _tryApplyUpdates() {
-  _tryApplyUpdates = (0, _asyncToGenerator2["default"])(
+  _tryApplyUpdates = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee(onHotUpdateSuccess) {
+  _regenerator.default.mark(function _callee(onHotUpdateSuccess) {
     var handleApplyUpdates, updatedModules;
-    return _regenerator["default"].wrap(function _callee$(_context) {
+    return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -6898,7 +6898,7 @@ function rewriteTraceLine(trace, distDir) {
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js"));
 
@@ -7287,7 +7287,7 @@ function toLowerCase(name) {
 
 function HeadersPolyfill(all) {
   // Get headers: implemented according to mozilla's example code: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/getAllResponseHeaders#Example
-  var map = (0, _create["default"])(null);
+  var map = (0, _create.default)(null);
   var array = all.split('\r\n');
 
   for (var i = 0; i < array.length; i += 1) {
@@ -7359,7 +7359,7 @@ FetchTransport.prototype.open = function (xhr, onStartCallback, onProgressCallba
   var signal = controller.signal; // see #120
 
   var textDecoder = new TextDecoder();
-  (0, _unfetch["default"])(url, {
+  (0, _unfetch.default)(url, {
     headers: headers,
     credentials: withCredentials ? 'include' : 'same-origin',
     signal: signal,
@@ -7370,7 +7370,7 @@ FetchTransport.prototype.open = function (xhr, onStartCallback, onProgressCallba
       controller.abort();
       reader.cancel();
     });
-    return new _promise["default"](function (resolve, reject) {
+    return new _promise.default(function (resolve, reject) {
       var readNextChunk = function readNextChunk() {
         reader.read().then(function (result) {
           if (result.done) {
@@ -7395,12 +7395,12 @@ FetchTransport.prototype.open = function (xhr, onStartCallback, onProgressCallba
     return result;
   }, function (error) {
     onFinishCallback();
-    return _promise["default"].reject(error);
+    return _promise.default.reject(error);
   });
 };
 
 function EventTarget() {
-  this._listeners = (0, _create["default"])(null);
+  this._listeners = (0, _create.default)(null);
 }
 
 function throwError(e) {
@@ -7488,7 +7488,7 @@ function MessageEvent(type, options) {
   this.lastEventId = options.lastEventId;
 }
 
-MessageEvent.prototype = (0, _create["default"])(Event.prototype);
+MessageEvent.prototype = (0, _create.default)(Event.prototype);
 
 function ConnectionEvent(type, options) {
   Event.call(this, type);
@@ -7497,7 +7497,7 @@ function ConnectionEvent(type, options) {
   this.headers = options.headers;
 }
 
-ConnectionEvent.prototype = (0, _create["default"])(Event.prototype);
+ConnectionEvent.prototype = (0, _create.default)(Event.prototype);
 var WAITING = -1;
 var CONNECTING = 0;
 var OPEN = 1;
@@ -7512,7 +7512,7 @@ var MINIMUM_DURATION = 1000;
 var MAXIMUM_DURATION = 18000000;
 
 var parseDuration = function parseDuration(value, def) {
-  var n = (0, _parseInt2["default"])(value, 10);
+  var n = (0, _parseInt2.default)(value, 10);
 
   if (n !== n) {
     n = def;
@@ -7547,7 +7547,7 @@ function EventSourcePolyfill(url, options) {
   start(this, url, options);
 }
 
-var isFetchSupported = _unfetch["default"] != undefined && Response != undefined && 'body' in Response.prototype;
+var isFetchSupported = _unfetch.default != undefined && Response != undefined && 'body' in Response.prototype;
 
 function start(es, url, options) {
   url = String(url);
@@ -7557,7 +7557,7 @@ function start(es, url, options) {
   var lastEventId = '';
   var retry = initialRetry;
   var wasActivity = false;
-  var headers = options != undefined && options.headers != undefined ? JSON.parse((0, _stringify["default"])(options.headers)) : undefined;
+  var headers = options != undefined && options.headers != undefined ? JSON.parse((0, _stringify.default)(options.headers)) : undefined;
   var CurrentTransport = options != undefined && options.Transport != undefined ? options.Transport : XMLHttpRequest;
   var xhr = isFetchSupported && !(options != undefined && options.Transport != undefined) ? undefined : new XHRWrapper(new CurrentTransport());
   var transport = xhr == undefined ? new FetchTransport() : new XHRTransport();
@@ -7824,7 +7824,7 @@ function start(es, url, options) {
   onTimeout();
 }
 
-EventSourcePolyfill.prototype = (0, _create["default"])(EventTarget.prototype);
+EventSourcePolyfill.prototype = (0, _create.default)(EventTarget.prototype);
 EventSourcePolyfill.prototype.CONNECTING = CONNECTING;
 EventSourcePolyfill.prototype.OPEN = OPEN;
 EventSourcePolyfill.prototype.CLOSED = CLOSED;
@@ -7838,7 +7838,7 @@ EventSourcePolyfill.OPEN = OPEN;
 EventSourcePolyfill.CLOSED = CLOSED;
 EventSourcePolyfill.prototype.withCredentials = undefined;
 var _default = EventSourcePolyfill;
-exports["default"] = _default;
+exports.default = _default;
 
 /***/ }),
 
@@ -7859,7 +7859,7 @@ var _regenerator = _interopRequireDefault2(__webpack_require__(/*! @babel/runtim
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
@@ -7872,31 +7872,31 @@ var _this = void 0;
 var _default =
 /*#__PURE__*/
 function () {
-  var _ref2 = (0, _asyncToGenerator2["default"])(
+  var _ref2 = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee(_ref) {
+  _regenerator.default.mark(function _callee(_ref) {
     var assetPrefix;
-    return _regenerator["default"].wrap(function _callee$(_context) {
+    return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             assetPrefix = _ref.assetPrefix;
 
-            _router["default"].ready(function () {
-              _router["default"].events.on('routeChangeComplete', _onDemandEntriesUtils.setupPing.bind(_this, assetPrefix, function () {
-                return _router["default"].pathname;
+            _router.default.ready(function () {
+              _router.default.events.on('routeChangeComplete', _onDemandEntriesUtils.setupPing.bind(_this, assetPrefix, function () {
+                return _router.default.pathname;
               }));
             });
 
             (0, _onDemandEntriesUtils.setupPing)(assetPrefix, function () {
-              return _router["default"].pathname;
+              return _router.default.pathname;
             }, _onDemandEntriesUtils.currentPage);
             document.addEventListener('visibilitychange', function (event) {
               var state = document.visibilityState;
 
               if (state === 'visible') {
                 (0, _onDemandEntriesUtils.setupPing)(assetPrefix, function () {
-                  return _router["default"].pathname;
+                  return _router.default.pathname;
                 }, true);
               } else {
                 (0, _onDemandEntriesUtils.closePing)();
@@ -7916,7 +7916,7 @@ function () {
   };
 }();
 
-exports["default"] = _default;
+exports.default = _default;
 
 /***/ }),
 
@@ -7974,7 +7974,7 @@ function setupPing(assetPrefix, pathnameFn, retry) {
       if (payload.invalid) {
         // Payload can be invalid even if the page does not exist.
         // So, we need to make sure it exists before reloading.
-        (0, _unfetch["default"])(location.href, {
+        (0, _unfetch.default)(location.href, {
           credentials: 'same-origin'
         }).then(function (pageRes) {
           if (pageRes.status === 200) {
@@ -8003,7 +8003,7 @@ function setupPing(assetPrefix, pathnameFn, retry) {
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = initializeBuildWatcher;
+exports.default = initializeBuildWatcher;
 
 var _router = _interopRequireDefault(__webpack_require__(/*! ../router */ "./node_modules/next/dist/client/router.js"));
 
@@ -8063,7 +8063,7 @@ function initializeBuildWatcher() {
     container.classList.remove(prefix + "expanded");
   });
 
-  _router["default"].events.on('routeChangeComplete', function () {
+  _router.default.events.on('routeChangeComplete', function () {
     isVisible = window.next.isPrerendered;
     shadowHost.style.opacity = 1;
     updateContainer();
@@ -8104,7 +8104,7 @@ var _slicedToArray2 = _interopRequireDefault2(__webpack_require__(/*! @babel/run
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _hotDevClient = _interopRequireDefault(__webpack_require__(/*! ./error-overlay/hot-dev-client */ "./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js"));
 
@@ -8113,14 +8113,14 @@ var _default = function _default(_ref) {
   var options = {
     path: assetPrefix + "/_next/webpack-hmr"
   };
-  var devClient = (0, _hotDevClient["default"])(options);
+  var devClient = (0, _hotDevClient.default)(options);
   devClient.subscribeToHmrEvent(function (obj) {
     if (obj.action === 'reloadPage') {
       return window.location.reload();
     }
 
     if (obj.action === 'removedPage') {
-      var _obj$data = (0, _slicedToArray2["default"])(obj.data, 1),
+      var _obj$data = (0, _slicedToArray2.default)(obj.data, 1),
           page = _obj$data[0];
 
       if (page === window.next.router.pathname) {
@@ -8131,7 +8131,7 @@ var _default = function _default(_ref) {
     }
 
     if (obj.action === 'addedPage') {
-      var _obj$data2 = (0, _slicedToArray2["default"])(obj.data, 1),
+      var _obj$data2 = (0, _slicedToArray2.default)(obj.data, 1),
           _page = _obj$data2[0];
 
       if (_page === window.next.router.pathname && typeof window.next.router.components[_page] === 'undefined') {
@@ -8146,7 +8146,7 @@ var _default = function _default(_ref) {
   return devClient;
 };
 
-exports["default"] = _default;
+exports.default = _default;
 
 /***/ }),
 
@@ -8169,7 +8169,7 @@ var _createClass2 = _interopRequireDefault2(__webpack_require__(/*! @babel/runti
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
@@ -8186,10 +8186,10 @@ function () {
   function HeadManager() {
     var _this = this;
 
-    (0, _classCallCheck2["default"])(this, HeadManager);
+    (0, _classCallCheck2.default)(this, HeadManager);
 
     this.updateHead = function (head) {
-      var promise = _this.updatePromise = _promise["default"].resolve().then(function () {
+      var promise = _this.updatePromise = _promise.default.resolve().then(function () {
         if (promise !== _this.updatePromise) return;
         _this.updatePromise = null;
 
@@ -8200,7 +8200,7 @@ function () {
     this.updatePromise = null;
   }
 
-  (0, _createClass2["default"])(HeadManager, [{
+  (0, _createClass2.default)(HeadManager, [{
     key: "doUpdateHead",
     value: function doUpdateHead(head) {
       var _this2 = this;
@@ -8267,7 +8267,7 @@ function () {
   return HeadManager;
 }();
 
-exports["default"] = HeadManager;
+exports.default = HeadManager;
 
 function reactElementToDOM(_ref) {
   var type = _ref.type,
@@ -8328,7 +8328,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 exports.__esModule = true;
 exports.render = render;
 exports.renderError = renderError;
-exports["default"] = exports.emitter = exports.ErrorComponent = exports.router = exports.dataManager = void 0;
+exports.default = exports.emitter = exports.ErrorComponent = exports.router = exports.dataManager = void 0;
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
@@ -8372,7 +8372,7 @@ var _isDynamic = __webpack_require__(/*! next-server/dist/lib/router/utils/is-dy
 
 
 if (!window.Promise) {
-  window.Promise = _promise["default"];
+  window.Promise = _promise.default;
 }
 
 var data = JSON.parse(document.getElementById('__NEXT_DATA__').textContent);
@@ -8400,10 +8400,10 @@ envConfig.setConfig({
   publicRuntimeConfig: runtimeConfig || {}
 });
 var asPath = (0, _utils.getURL)();
-var pageLoader = new _pageLoader["default"](buildId, prefix);
+var pageLoader = new _pageLoader.default(buildId, prefix);
 
 var register = function register(_ref) {
-  var _ref6 = (0, _slicedToArray2["default"])(_ref, 2),
+  var _ref6 = (0, _slicedToArray2.default)(_ref, 2),
       r = _ref6[0],
       f = _ref6[1];
 
@@ -8416,7 +8416,7 @@ if (window.__NEXT_P) {
 
 window.__NEXT_P = [];
 window.__NEXT_P.push = register;
-var headManager = new _headManager["default"]();
+var headManager = new _headManager.default();
 var appElement = document.getElementById('__next');
 var lastAppProps;
 var webpackHMR;
@@ -8430,14 +8430,14 @@ var App;
 var Container =
 /*#__PURE__*/
 function (_react$default$Compon) {
-  (0, _inherits2["default"])(Container, _react$default$Compon);
+  (0, _inherits2.default)(Container, _react$default$Compon);
 
   function Container() {
-    (0, _classCallCheck2["default"])(this, Container);
-    return (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Container).apply(this, arguments));
+    (0, _classCallCheck2.default)(this, Container);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Container).apply(this, arguments));
   }
 
-  (0, _createClass2["default"])(Container, [{
+  (0, _createClass2.default)(Container, [{
     key: "componentDidCatch",
     value: function componentDidCatch(err, info) {
       this.props.fn(err, info);
@@ -8450,7 +8450,7 @@ function (_react$default$Compon) {
 
       if (data.nextExport && ((0, _isDynamic.isDynamicRoute)(router.pathname) || location.search)) {
         // update query on mount for exported pages
-        router.replace(router.pathname + '?' + (0, _querystring.stringify)((0, _extends2["default"])({}, router.query, (0, _querystring.parse)(location.search.substr(1)))), asPath, {
+        router.replace(router.pathname + '?' + (0, _querystring.stringify)((0, _extends2.default)({}, router.query, (0, _querystring.parse)(location.search.substr(1)))), asPath, {
           // WARNING: `_h` is an internal option for handing Next.js
           // client-side hydration. Your app should _never_ use this property.
           // It may change at any time without notice.
@@ -8485,20 +8485,20 @@ function (_react$default$Compon) {
     }
   }]);
   return Container;
-}(_react["default"].Component);
+}(_react.default.Component);
 
-var emitter = (0, _mitt["default"])();
+var emitter = (0, _mitt.default)();
 exports.emitter = emitter;
 
 var _default =
 /*#__PURE__*/
 function () {
-  var _ref2 = (0, _asyncToGenerator2["default"])(
+  var _ref2 = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee(_temp) {
+  _regenerator.default.mark(function _callee(_temp) {
     var _ref7, passedWebpackHMR, initialErr, _require, isValidElementType;
 
-    return _regenerator["default"].wrap(function _callee$(_context) {
+    return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -8598,7 +8598,7 @@ function () {
   };
 }();
 
-exports["default"] = _default;
+exports.default = _default;
 
 function render(_x2) {
   return _render.apply(this, arguments);
@@ -8608,10 +8608,10 @@ function render(_x2) {
 
 
 function _render() {
-  _render = (0, _asyncToGenerator2["default"])(
+  _render = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee2(props) {
-    return _regenerator["default"].wrap(function _callee2$(_context2) {
+  _regenerator.default.mark(function _callee2(props) {
+    return _regenerator.default.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -8639,7 +8639,7 @@ function _render() {
             _context2.prev = 9;
             _context2.t0 = _context2["catch"](4);
             _context2.next = 13;
-            return renderError((0, _extends2["default"])({}, props, {
+            return renderError((0, _extends2.default)({}, props, {
               err: _context2.t0
             }));
 
@@ -8659,11 +8659,11 @@ function renderError(_x3) {
 
 
 function _renderError() {
-  _renderError = (0, _asyncToGenerator2["default"])(
+  _renderError = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee3(props) {
+  _regenerator.default.mark(function _callee3(props) {
     var App, err, appCtx, initProps;
-    return _regenerator["default"].wrap(function _callee3$(_context3) {
+    return _regenerator.default.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
@@ -8716,7 +8716,7 @@ function _renderError() {
           case 15:
             initProps = _context3.t0;
             _context3.next = 18;
-            return doRender((0, _extends2["default"])({}, props, {
+            return doRender((0, _extends2.default)({}, props, {
               err: err,
               Component: ErrorComponent,
               props: initProps
@@ -8732,49 +8732,49 @@ function _renderError() {
   return _renderError.apply(this, arguments);
 }
 
-var isInitialRender = typeof _reactDom["default"].hydrate === 'function';
+var isInitialRender = typeof _reactDom.default.hydrate === 'function';
 
 function renderReactElement(reactEl, domEl) {
   // The check for `.hydrate` is there to support React alternatives like preact
   if (isInitialRender) {
-    _reactDom["default"].hydrate(reactEl, domEl);
+    _reactDom.default.hydrate(reactEl, domEl);
 
     isInitialRender = false;
   } else {
-    _reactDom["default"].render(reactEl, domEl);
+    _reactDom.default.render(reactEl, domEl);
   }
 }
 
 function AppContainer(_ref4) {
   var children = _ref4.children;
-  return _react["default"].createElement(Container, {
+  return _react.default.createElement(Container, {
     fn: function fn(error) {
       return renderError({
         App: App,
         err: error
-      })["catch"](function (err) {
+      }).catch(function (err) {
         return console.error('Error rendering page: ', err);
       });
     }
-  }, _react["default"].createElement(_react.Suspense, {
-    fallback: _react["default"].createElement("div", null, "Loading...")
-  }, _react["default"].createElement(_routerContext.RouterContext.Provider, {
+  }, _react.default.createElement(_react.Suspense, {
+    fallback: _react.default.createElement("div", null, "Loading...")
+  }, _react.default.createElement(_routerContext.RouterContext.Provider, {
     value: (0, _router.makePublicRouterInstance)(router)
-  }, _react["default"].createElement(_dataManagerContext.DataManagerContext.Provider, {
+  }, _react.default.createElement(_dataManagerContext.DataManagerContext.Provider, {
     value: dataManager
-  }, _react["default"].createElement(_headManagerContext.HeadManagerContext.Provider, {
+  }, _react.default.createElement(_headManagerContext.HeadManagerContext.Provider, {
     value: headManager.updateHead
   }, children)))));
 }
 
 var wrapApp = function wrapApp(App) {
   return function (props) {
-    var appProps = (0, _extends2["default"])({}, props, {
+    var appProps = (0, _extends2.default)({}, props, {
       Component: Component,
       err: err,
       router: router
     });
-    return _react["default"].createElement(AppContainer, null, _react["default"].createElement(App, appProps));
+    return _react.default.createElement(AppContainer, null, _react.default.createElement(App, appProps));
   };
 };
 
@@ -8783,12 +8783,12 @@ function doRender(_x4) {
 }
 
 function _doRender() {
-  _doRender = (0, _asyncToGenerator2["default"])(
+  _doRender = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee4(_ref5) {
+  _regenerator.default.mark(function _callee4(_ref5) {
     var App, Component, props, err, _router2, pathname, _query, _asPath, appCtx, appProps;
 
-    return _regenerator["default"].wrap(function _callee4$(_context4) {
+    return _regenerator.default.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
@@ -8821,7 +8821,7 @@ function _doRender() {
           case 7:
             Component = Component || lastAppProps.Component;
             props = props || lastAppProps.props;
-            appProps = (0, _extends2["default"])({}, props, {
+            appProps = (0, _extends2.default)({}, props, {
               Component: Component,
               err: err,
               router: router // lastAppProps has to be set before ReactDom.render to account for ReactDom throwing an error.
@@ -8834,7 +8834,7 @@ function _doRender() {
               appProps: appProps
             }); // We catch runtime errors using componentDidCatch which will trigger renderError
 
-            renderReactElement(_react["default"].createElement(AppContainer, null, _react["default"].createElement(App, appProps)), appElement);
+            renderReactElement(_react.default.createElement(AppContainer, null, _react.default.createElement(App, appProps)), appElement);
             emitter.emit('after-reactdom-render', {
               Component: Component,
               ErrorComponent: ErrorComponent,
@@ -8886,24 +8886,24 @@ var _prerenderIndicator = _interopRequireDefault(__webpack_require__(/*! ./dev/p
 __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! ./dev/noop */ "./node_modules/next/dist/client/dev/noop.js", 7)); // Support EventSource on Internet Explorer 11
 
 if (!window.EventSource) {
-  window.EventSource = _eventSourcePolyfill["default"];
+  window.EventSource = _eventSourcePolyfill.default;
 }
 
 var _window = window,
     assetPrefix = _window.__NEXT_DATA__.assetPrefix;
 var prefix = assetPrefix || '';
-var webpackHMR = (0, _webpackHotMiddlewareClient["default"])({
+var webpackHMR = (0, _webpackHotMiddlewareClient.default)({
   assetPrefix: prefix
 });
 window.next = next;
-(0, next["default"])({
+(0, next.default)({
   webpackHMR: webpackHMR
 }).then(function (emitter) {
-  (0, _onDemandEntriesClient["default"])({
+  (0, _onDemandEntriesClient.default)({
     assetPrefix: prefix
   });
-  (0, _devBuildWatcher["default"])();
-  (0, _prerenderIndicator["default"])();
+  (0, _devBuildWatcher.default)();
+  (0, _prerenderIndicator.default)();
   var lastScroll;
   emitter.on('before-reactdom-render', function (_ref) {
     var Component = _ref.Component,
@@ -8932,7 +8932,7 @@ window.next = next;
       lastScroll = null;
     }
   });
-})["catch"](function (err) {
+}).catch(function (err) {
   console.error('Error was not caught', err);
 });
 
@@ -8959,7 +8959,7 @@ var _createClass2 = _interopRequireDefault2(__webpack_require__(/*! @babel/runti
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
@@ -8992,17 +8992,17 @@ var PageLoader =
 /*#__PURE__*/
 function () {
   function PageLoader(buildId, assetPrefix) {
-    (0, _classCallCheck2["default"])(this, PageLoader);
+    (0, _classCallCheck2.default)(this, PageLoader);
     this.buildId = buildId;
     this.assetPrefix = assetPrefix;
     this.pageCache = {};
-    this.prefetchCache = new _set["default"]();
-    this.pageRegisterEvents = (0, _mitt["default"])();
+    this.prefetchCache = new _set.default();
+    this.pageRegisterEvents = (0, _mitt.default)();
     this.loadingRoutes = {};
-    this.promisedBuildId = _promise["default"].resolve();
+    this.promisedBuildId = _promise.default.resolve();
   }
 
-  (0, _createClass2["default"])(PageLoader, [{
+  (0, _createClass2.default)(PageLoader, [{
     key: "normalizeRoute",
     value: function normalizeRoute(route) {
       if (route[0] !== '/') {
@@ -9019,7 +9019,7 @@ function () {
       var _this3 = this;
 
       route = this.normalizeRoute(route);
-      return new _promise["default"](function (resolve, reject) {
+      return new _promise.default(function (resolve, reject) {
         var fire = function fire(_ref) {
           var error = _ref.error,
               page = _ref.page;
@@ -9067,8 +9067,8 @@ function () {
     value: function onDynamicBuildId() {
       var _this4 = this;
 
-      this.promisedBuildId = new _promise["default"](function (resolve) {
-        (0, _unfetch["default"])(_this4.assetPrefix + "/_next/static/HEAD_BUILD_ID").then(function (res) {
+      this.promisedBuildId = new _promise.default(function (resolve) {
+        (0, _unfetch.default)(_this4.assetPrefix + "/_next/static/HEAD_BUILD_ID").then(function (res) {
           if (res.ok) {
             return res;
           }
@@ -9080,7 +9080,7 @@ function () {
           return res.text();
         }).then(function (buildId) {
           _this4.buildId = buildId.trim();
-        })["catch"](function () {
+        }).catch(function () {
           // When this fails it's not a _huge_ deal, preload wont work and page
           // navigation will 404, triggering a SSR refresh
           console.warn('Failed to load BUILD_ID from server. ' + 'The following client-side page transition will likely 404 and cause a SSR.\n' + 'http://err.sh/zeit/next.js/head-build-id');
@@ -9092,11 +9092,11 @@ function () {
     value: function loadScript(route) {
       var _this = this;
 
-      return (0, _asyncToGenerator2["default"])(
+      return (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator["default"].mark(function _callee() {
+      _regenerator.default.mark(function _callee() {
         var scriptRoute, script, url;
-        return _regenerator["default"].wrap(function _callee$(_context) {
+        return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
@@ -9190,11 +9190,11 @@ function () {
     value: function prefetch(route) {
       var _this2 = this;
 
-      return (0, _asyncToGenerator2["default"])(
+      return (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator["default"].mark(function _callee2() {
+      _regenerator.default.mark(function _callee2() {
         var scriptRoute, link;
-        return _regenerator["default"].wrap(function _callee2$(_context2) {
+        return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
@@ -9251,10 +9251,10 @@ function () {
                   break;
                 }
 
-                return _context2.abrupt("return", _this2.loadPage(route)["catch"](function () {}));
+                return _context2.abrupt("return", _this2.loadPage(route).catch(function () {}));
 
               case 23:
-                return _context2.abrupt("return", new _promise["default"](function (resolve) {
+                return _context2.abrupt("return", new _promise.default(function (resolve) {
                   window.addEventListener('load', function () {
                     _this2.loadPage(route).then(function () {
                       return resolve();
@@ -9288,7 +9288,7 @@ function () {
   return PageLoader;
 }();
 
-exports["default"] = PageLoader;
+exports.default = PageLoader;
 
 /***/ }),
 
@@ -9313,7 +9313,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 exports.__esModule = true;
 exports.useRouter = useRouter;
 exports.makePublicRouterInstance = makePublicRouterInstance;
-exports.createRouter = exports.withRouter = exports["default"] = void 0;
+exports.createRouter = exports.withRouter = exports.default = void 0;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/extends */ "./node_modules/@babel/runtime-corejs2/helpers/extends.js"));
 
@@ -9323,14 +9323,14 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_mod
 
 var _router2 = _interopRequireWildcard(__webpack_require__(/*! next-server/dist/lib/router/router */ "./node_modules/next-server/dist/lib/router/router.js"));
 
-exports.Router = _router2["default"];
+exports.Router = _router2.default;
 exports.NextRouter = _router2.NextRouter;
 
 var _routerContext = __webpack_require__(/*! next-server/dist/lib/router-context */ "./node_modules/next-server/dist/lib/router-context.js");
 
 var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
 
-exports.withRouter = _withRouter["default"];
+exports.withRouter = _withRouter.default;
 /* global window */
 
 var singletonRouter = {
@@ -9351,9 +9351,9 @@ var propertyFields = ['components'];
 var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
-(0, _defineProperty["default"])(singletonRouter, 'events', {
+(0, _defineProperty.default)(singletonRouter, 'events', {
   get: function get() {
-    return _router2["default"].events;
+    return _router2.default.events;
   }
 });
 propertyFields.concat(urlPropertyFields).forEach(function (field) {
@@ -9361,7 +9361,7 @@ propertyFields.concat(urlPropertyFields).forEach(function (field) {
   // the property assigned to the actual router
   // The value might get changed as we change routes and this is the
   // proper way to access it
-  (0, _defineProperty["default"])(singletonRouter, field, {
+  (0, _defineProperty.default)(singletonRouter, field, {
     get: function get() {
       var router = getRouter();
       return router[field];
@@ -9379,7 +9379,7 @@ coreMethodFields.forEach(function (field) {
 });
 routerEvents.forEach(function (event) {
   singletonRouter.ready(function () {
-    _router2["default"].events.on(event, function () {
+    _router2.default.events.on(event, function () {
       var eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
       var _singletonRouter = singletonRouter;
 
@@ -9409,10 +9409,10 @@ function getRouter() {
 
 var _default = singletonRouter; // Reexport the withRoute HOC
 
-exports["default"] = _default;
+exports.default = _default;
 
 function useRouter() {
-  return _react["default"].useContext(_routerContext.RouterContext);
+  return _react.default.useContext(_routerContext.RouterContext);
 } // INTERNAL APIS
 // -------------
 // (do not use following exports inside the app)
@@ -9426,7 +9426,7 @@ var createRouter = function createRouter() {
     args[_key] = arguments[_key];
   }
 
-  singletonRouter.router = (0, _construct2["default"])(_router2["default"], args);
+  singletonRouter.router = (0, _construct2.default)(_router2.default, args);
   singletonRouter.readyCallbacks.forEach(function (cb) {
     return cb();
   });
@@ -9445,7 +9445,7 @@ function makePublicRouterInstance(router) {
     var property = _urlPropertyFields[_i];
 
     if (typeof _router[property] === 'object') {
-      instance[property] = (0, _extends2["default"])({}, _router[property]); // makes sure query is not stateful
+      instance[property] = (0, _extends2.default)({}, _router[property]); // makes sure query is not stateful
 
       continue;
     }
@@ -9454,13 +9454,13 @@ function makePublicRouterInstance(router) {
   } // Events is a static property on the router, the router doesn't have to be initialized to use it
 
 
-  instance.events = _router2["default"].events;
+  instance.events = _router2.default.events;
   propertyFields.forEach(function (field) {
     // Here we need to use Object.defineProperty because, we need to return
     // the property assigned to the actual router
     // The value might get changed as we change routes and this is the
     // proper way to access it
-    (0, _defineProperty["default"])(instance, field, {
+    (0, _defineProperty.default)(instance, field, {
       get: function get() {
         return _router[field];
       }
@@ -9501,7 +9501,7 @@ var _inherits2 = _interopRequireDefault2(__webpack_require__(/*! @babel/runtime-
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports["default"] = withRouter;
+exports.default = withRouter;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/extends */ "./node_modules/@babel/runtime-corejs2/helpers/extends.js"));
 
@@ -9513,32 +9513,32 @@ function withRouter(ComposedComponent) {
   var WithRouteWrapper =
   /*#__PURE__*/
   function (_react$default$Compon) {
-    (0, _inherits2["default"])(WithRouteWrapper, _react$default$Compon);
+    (0, _inherits2.default)(WithRouteWrapper, _react$default$Compon);
 
     function WithRouteWrapper() {
       var _this;
 
-      (0, _classCallCheck2["default"])(this, WithRouteWrapper);
-      _this = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(WithRouteWrapper).apply(this, arguments));
+      (0, _classCallCheck2.default)(this, WithRouteWrapper);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(WithRouteWrapper).apply(this, arguments));
       _this.context = void 0;
       return _this;
     }
 
-    (0, _createClass2["default"])(WithRouteWrapper, [{
+    (0, _createClass2.default)(WithRouteWrapper, [{
       key: "render",
       value: function render() {
-        return _react["default"].createElement(ComposedComponent, (0, _extends2["default"])({
+        return _react.default.createElement(ComposedComponent, (0, _extends2.default)({
           router: this.context.router
         }, this.props));
       }
     }]);
     return WithRouteWrapper;
-  }(_react["default"].Component);
+  }(_react.default.Component);
 
   WithRouteWrapper.displayName = void 0;
   WithRouteWrapper.getInitialProps = void 0;
   WithRouteWrapper.contextTypes = {
-    router: _propTypes["default"].object
+    router: _propTypes.default.object
   };
   WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps;
 
@@ -9567,7 +9567,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 var _assign = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js"));
 
 module.exports = function (options) {
-  options = (0, _assign["default"])({
+  options = (0, _assign.default)({
     onlyFirst: false
   }, options);
   var pattern = ["[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)", '(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))'].join('|');
@@ -9849,7 +9849,7 @@ var stripAnsi = function stripAnsi(string) {
 };
 
 module.exports = stripAnsi;
-module.exports["default"] = stripAnsi;
+module.exports.default = stripAnsi;
 
 /***/ }),
 
