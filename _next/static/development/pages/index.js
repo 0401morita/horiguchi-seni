@@ -21104,7 +21104,7 @@ var HeroSection = function HeroSection() {
       lineNumber: 37
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "aaa"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "slick-image",
     __source: {
       fileName: _jsxFileName,
