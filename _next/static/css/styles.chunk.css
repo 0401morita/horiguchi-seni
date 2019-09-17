@@ -3913,10 +3913,26 @@ a:hover {
 .home-visual.in .home-visual-content .title span {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
+  .home-visual.in .home-visual-content .title span:nth-child(1) {
+    transition: opacity 0.3s 1s ease-in, transform 0.3s 1s ease-in;
+    transform: translateY(0);
+    opacity: 1; }
+  .home-visual.in .home-visual-content .title span:nth-child(2) {
+    transition: opacity 0.3s 1.2s ease-in, transform 0.3s 1.2s ease-in;
+    transform: translateY(0);
+    opacity: 1; }
 
 .home-visual.in .home-visual-content .description span {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
+  .home-visual.in .home-visual-content .description span:nth-child(1) {
+    transition: opacity 0.3s 1.6s ease-in, transform 0.3s 1.6s ease-in;
+    transform: translateY(0);
+    opacity: 1; }
+  .home-visual.in .home-visual-content .description span:nth-child(2) {
+    transition: opacity 0.3s 1.8s ease-in, transform 0.3s 1.8s ease-in;
+    transform: translateY(0);
+    opacity: 1; }
 
 .home-visual.in .slick-slide.slick-active .slick-image {
   transform: scale(1, 1); }
