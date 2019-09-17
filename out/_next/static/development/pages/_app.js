@@ -13184,17 +13184,25 @@ function (_App) {
         },
         __self: this
       }, "\u682A\u5F0F\u4F1A\u793E \u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
-        name: "apple-mobile-web-app-capable",
-        content: "yes",
+        name: "viewport",
+        content: "width=device-width,minimum-scale=1,initial-scale=1,minimal-ui",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 43
         },
         __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
+        name: "apple-mobile-web-app-capable",
+        content: "yes",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 50
         },
         __self: this
       }))));
