@@ -8,7 +8,7 @@ import { Action } from 'redux';
 // Map State To Props
 //
 const mapStateToProps = (state: State) => {
-  return state.common;
+  return state.app;
 };
 //
 // Map Dispatch To Props

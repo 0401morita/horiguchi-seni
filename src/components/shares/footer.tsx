@@ -5,7 +5,6 @@ export default () => {
     <footer className="global-footer">
       <div className="footer-container d-md-flex align-items-center">
         <div className="footer-nav">
-          <h4 className="footer-nav-title">堀口繊維工業について</h4>
           <ul className="footer-menu">
             <li>
               <Link href="/about">
@@ -31,26 +30,20 @@ export default () => {
         </div>
 
         <div className="footer-nav">
-          <h4 className="footer-nav-title">サービス</h4>
           <ul className="footer-menu">
             <li>
               <Link href="/about">
-                <a className="footer-nav-link">アパレル生産</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/service">
-                <a className="footer-nav-link">クリーニング</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/service">
-                <a className="footer-nav-link">ユニフォームのリース</a>
+                <a className="footer-nav-link">縫製</a>
               </Link>
             </li>
             <li>
               <Link href="/service">
                 <a className="footer-nav-link">ユニフォーム販売</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/service">
+                <a className="footer-nav-link">リネンサプライ</a>
               </Link>
             </li>
           </ul>

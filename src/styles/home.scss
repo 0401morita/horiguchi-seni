@@ -11,200 +11,296 @@
 //
 @include media-breakpoint-up(xs) {
   //
-  // Service Story
+  // Home Visual
   //
-  .service-stories {
-    .section-story {
-      display: flex;
-      flex-direction: column;
+  .home-visual {
+    .hero-image {
+      opacity: 0;
+      transition: opacity 0.4s 0.6s ease-in;
+    }
+    //
+    // Slick Slider
+    .slick-slider,
+    .slick-list,
+    .slick-track,
+    .slick-image {
+      height: 100%;
+    }
 
-      .story-image {
-        position: relative;
-        width: 100%;
+    .slick-slide {
+      > div {
+        height: 100%;
       }
 
-      .story-content {
-        position: relative;
-        width: 100%;
-        .en-title {
-          font-size: 1rem;
-          font-weight: 300;
-          margin: 0;
-        }
-
-        .content-summary {
-          display: block;
-          position: relative;
-          padding: 24px;
-          color: #333;
-
-          .title {
-            position: relative;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 0 24px 0;
-          }
-
-          .description {
-            font-weight: 400;
-            font-size: 1rem;
-          }
-
-          .read-more {
-            position: relative;
-            display: block;
-            width: 80%;
-            text-align: left;
-            font-weight: 700;
-            margin-top: 24px;
-            padding: 12px 0 4px 0;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            transition: all 0.3s;
-
-            .arrow {
-              &:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 1px;
-                background-color: #333;
-              }
-
-              &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                width: 1px;
-                background-color: #333;
-                transform: rotateZ(-45deg);
-                transform-origin: 100% 100%;
-              }
-            }
-          }
-
-          &:hover {
-            .read-more {
-              width: 100%;
-            }
-          }
-
-          &.white {
-            color: #fff;
-
-            .arrow {
-              &:before {
-                background-color: #fff;
-              }
-
-              &:after {
-                background-color: #fff;
-              }
-            }
-          }
-        }
+      .slick-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 5s linear;
+        transform: scale(1.1, 1.1);
       }
 
       &:nth-child(1) {
-        .story-content {
-          background-color: $primary;
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/1.jpg');
         }
       }
 
       &:nth-child(2) {
-        .story-content {
-          background-color: $dark;
-          .content-summary {
-            color: #fff;
-          }
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/2.jpg');
         }
       }
 
       &:nth-child(3) {
-        .story-content {
-          background-color: $gray;
-          .content-summary {
-          }
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/3.jpg');
         }
       }
 
       &:nth-child(4) {
-        .story-content {
-          background-color: $secondary;
-          .content-summary {
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/4.jpg');
+        }
+      }
+    }
+    //
+    // Home Visual COntent
+    .home-visual-content {
+      position: absolute;
+      left: 6vw;
+      bottom: 6vw;
+      right: 0;
+      padding-right: 6vw;
+      color: #fff;
+
+      .title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.3em;
+        margin: 0 0 12px 0;
+        letter-spacing: 0em;
+
+        span {
+          display: block;
+          opacity: 0;
+          transform: translateY(12px);
+
+          &:nth-child(1) {
+            font-weight: 400;
+          }
+        }
+      }
+
+      .description {
+        font-weight: 400;
+        line-height: 1.8;
+        margin: 0;
+        font-size: 12px;
+
+        span {
+          display: block;
+          opacity: 0;
+          transform: translateY(12px);
+        }
+      }
+
+      .sailing-scroll-down {
+        position: absolute;
+        top: 0;
+        right: 6vw;
+        right: calc(6vw + 10px);
+
+        .arrow {
+          &:after {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    //
+    // Home Visual - In Effect
+    &.in {
+      .hero-image {
+        opacity: 1;
+      }
+
+      .home-visual-content {
+        .title {
+          span {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            &:nth-child(1) {
+              transition: opacity 0.3s 1s ease-in, transform 0.3s 1s ease-in;
+              transform: translateY(0);
+              opacity: 1;
+            }
+
+            &:nth-child(2) {
+              transition: opacity 0.3s 1.2s ease-in, transform 0.3s 1.2s ease-in;
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+        }
+
+        .description {
+          span {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            &:nth-child(1) {
+              transition: opacity 0.3s 1.6s ease-in, transform 0.3s 1.6s ease-in;
+              transform: translateY(0);
+              opacity: 1;
+            }
+
+            &:nth-child(2) {
+              transition: opacity 0.3s 1.8s ease-in, transform 0.3s 1.8s ease-in;
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .slick-slide {
+        &.slick-active {
+          .slick-image {
+            transform: scale(1, 1);
           }
         }
       }
     }
   }
-
   //
-  // Service Tile
+  // About Message
   //
-  .service-tile {
-    display: block;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+  .about-message {
+    max-width: 768px;
+    margin: 0 auto;
 
-    &:before {
-      content: '';
-      @include position(absolute, 0, 0, 0, 0);
-      background-color: #fff;
-      z-index: -1;
-    }
+    p {
+      font-size: 1rem;
+      margin: 1rem 0 0 0;
+      font-weight: 700;
 
-    .tile-link {
-      display: block;
-      padding-bottom: 100%;
-      z-index: 2;
-
-      &:hover {
-        .tile-cover-image {
-          transform: scale(1.05);
-        }
-      }
-    }
-
-    .tile-cover-image {
-      transition: all 0.3s;
-      z-index: -1;
-    }
-
-    .tile-overlay {
-      @include position(absolute, 0, 0, 0, 0);
-    }
-
-    .tile-summery {
-      @include position(absolute, null, null, 0, 0);
-      padding: 24px;
-
-      .title {
-        position: relative;
-        font-size: 1rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 0 24px;
-
-        &:after {
-          content: '';
-          @include position(absolute, null, null, -11px, 0);
-          width: 80px;
-          height: 2px;
-          background-color: $primary;
-        }
-      }
-
-      .description {
-        color: #fff;
-        font-weight: 400;
+      &:first-child {
+        margin: 0;
       }
     }
   }
+
+  .main-content {
+    background-color: #f9f9f9;
+    padding: 80px 8vw;
+  }
+  //
+  // Service Story / Service List - XS
+  //
+  .service-item {
+    position: relative;
+    margin: 40px 0 0 0;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    .service-image {
+      position: relative;
+      margin: 0 -8vw 0 0;
+      background: #dfe4ea;
+      background-size: cover;
+      background-position: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .service-summary {
+      position: relative;
+      top: -8vw;
+      left: -8vw;
+      background-color: #fff;
+      padding: 32px 24px 24px 24px;
+
+      .index {
+        display: none;
+
+        .number {
+          display: inline-block;
+        }
+
+        &:after {
+          display: none;
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background: #e84118;
+        }
+      }
+
+      .summary-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #3d3d3d;
+        line-height: 1;
+      }
+
+      .summary-description {
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 12px 0 0 0;
+        color: #3d3d3d;
+
+        br {
+          display: none;
+        }
+      }
+
+      .read-more {
+        position: relative;
+        padding: 48px 0 0 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 23.5px;
+          width: 100%;
+          height: 1px;
+          background-color: #dfe4ea;
+        }
+      }
+    }
+    //
+    //
+    // XS
+    // Service Item / EVEN
+    &:nth-child(odd) {
+      .service-image {
+        margin: 0 0 0 -8vw;
+      }
+
+      .service-summary {
+        left: auto;
+        right: -8vw;
+      }
+    }
+  }
+  //
+  // Section About
+  //
+  .section-about {
+    .about-image {
+      svg {
+        width: 160px;
+      }
+    }
+  }
+
   //
   // Recent Entries
   //
@@ -213,13 +309,63 @@
   }
 
   .recent-entry-list {
-    .entry-item {
-      padding: 12px 0;
-      display: flex;
-      align-items: center;
-      border-top: 1px dashed $primary;
-      &:first-child {
-        border-top: 0;
+    .recent-entry-item {
+      border-bottom: 1px solid #dfe4ea;
+      padding: 24px 0;
+
+      .recent-entry-link {
+        width: 100%;
+        color: #333;
+
+        .recent-entry-body {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .date {
+          font-size: 0.8rem;
+          margin: 0 0 4px 0;
+          font-weight: 400;
+          color: #ccc;
+        }
+
+        .label {
+          display: inline-block;
+          background-color: #000;
+          color: #fff;
+          padding: 4px 8px;
+          line-height: 1;
+        }
+
+        .title {
+          font-weight: 100;
+          font-size: 1.5rem;
+        }
+
+        .arrow {
+          position: relative;
+          display: inline-block;
+          padding-right: 24px;
+          &:before,
+          &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            display: block;
+            width: 16px;
+            height: 1px;
+            background: #333;
+          }
+          &:before {
+            transform: rotateZ(45deg) translateX(-50%);
+            top: 50%;
+          }
+          &:after {
+            transform: rotateZ(-45deg) translateX(-50%);
+            bottom: 50%;
+          }
+        }
       }
 
       .eyecatch {
@@ -246,6 +392,10 @@
           font-size: 0.8rem;
           margin: 4px 0 0 0;
         }
+      }
+
+      &:last-child {
+        border: 0;
       }
     }
   }
@@ -300,142 +450,127 @@
 // SM Size 576px <
 //
 @include media-breakpoint-up(sm) {
-  //
-  // Info Summary
-  //
-  .info-summary {
-    .info-summary-link {
-      width: auto;
-      padding: 40px;
+}
 
-      .message {
-        white-space: nowrap;
-        span {
-          font-size: 1.8rem;
+//
+// MD Size 768px <
+//
+@include media-breakpoint-up(md) {
+  //
+  // Home Visual
+  //
+  .home-visual {
+    //
+    // Home Visual Slide
+    .slick-slide {
+      &:nth-child(1) {
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/1.jpg');
         }
       }
 
-      .btn-read-more {
-        width: auto;
-        text-align: center;
+      &:nth-child(2) {
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/2.jpg');
+        }
       }
-    }
-  }
 
-  //
-  // MD Size 768px <
-  //
-  @include media-breakpoint-up(md) {
-    //
-    // Service Story
-    //
-    .service-stories {
-      .section-story {
-        flex-direction: row;
-
-        .story-image {
-          width: 50%;
+      &:nth-child(3) {
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/3.jpg');
         }
+      }
 
-        .story-content {
-          width: 50%;
-
-          .content-summary {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            padding: 24px 0;
-
-            .title {
-              font-size: 2rem;
-            }
-
-            .description {
-              font-size: 1.5rem;
-            }
-          }
-        }
-
-        &:nth-child(even) {
-          flex-direction: row-reverse;
+      &:nth-child(4) {
+        .slick-image {
+          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/4.jpg');
         }
       }
     }
+
     //
-    // Service Tile
-    .service-tile {
-      width: 50%;
-    }
-    //
-    // Info Summary
-    //
-    .info-summary {
-      .info-summary-link {
-        .message {
-          span {
-            font-size: 2rem;
-            line-height: 2em;
-          }
-        }
-      }
-    }
-    //
-    // Recent Entries
-    //
-    .recent-entries {
-      .section-heading {
-        width: 40%;
+    // Home Visual COntent
+    .home-visual-content {
+      .title {
+        font-size: 4rem;
+        line-height: 1.1em;
       }
 
-      .recent-entry-list {
-        padding-left: 40px;
-        width: 60%;
+      .description {
+        font-size: 14px;
       }
     }
   }
   //
-  // LG Size 992px <
+  // About Message
   //
-  @include media-breakpoint-up(lg) {
-    //
-    // Info Summary
-    //
-    .info-summary {
-      .info-summary-link {
-        .message {
-          span {
-            font-size: 2.4rem;
-          }
-        }
+  .about-message {
+    padding: 80px 0;
+    p {
+      font-size: 2rem;
+      margin: 1rem 0 0 0;
+      font-weight: 700;
+    }
+  }
+
+  //
+  // Service Item - MD
+  //
+  .service-item {
+    padding: 6vw 0 6vw 12vw;
+
+    &:nth-child(odd) {
+      padding: 6vw 9.375vw 6vw 0;
+      .service-summary {
+        left: auto;
+        right: 0;
+      }
+
+      .service-image {
+        margin: 0 0 0 -8vw;
       }
     }
-    //
-    // Service Story
-    //
-    .service-stories {
-      .section-story {
-        .story-content {
-          .content-summary {
-            width: 80%;
 
-            .title {
-              font-size: 2.5rem;
-            }
+    .service-summary {
+      width: 40vw;
+      padding: 90px 8vw;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-30%);
 
-            .description {
-              font-size: 2rem;
-            }
-          }
+      .index {
+        position: absolute;
+        left: 6vw;
+        height: 80px;
+        padding-left: 4px;
+        font-weight: 700;
+        font-size: 12px;
+        color: #e84118;
+
+        .number {
+          display: inline-block;
+          transform: rotateZ(90deg);
         }
+      }
 
-        &:nth-child(even) {
-          flex-direction: row-reverse;
+      .summary-description {
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 12px 0 0 0;
+        color: #3d3d3d;
+
+        br {
+          display: block;
         }
       }
     }
   }
+}
+//
+// LG Size 992px <
+//
+@include media-breakpoint-up(lg) {
 }
 //
 // XL Size 1200px <

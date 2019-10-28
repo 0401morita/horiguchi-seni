@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { commonReducer, CommonState } from './common';
+import { appReducer, AppState } from './app';
 
 export interface State {
-  common: CommonState;
+  app: AppState;
 }
 
 const reducers = combineReducers({
-  common: commonReducer
+  app: appReducer
 });
 
 export default reducers;
