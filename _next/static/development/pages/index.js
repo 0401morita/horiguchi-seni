@@ -21180,16 +21180,16 @@ var Home = function Home(props) {
 
 
   var handleScroll = function handleScroll() {
-    var _windowState = windowState,
-        windowWidth = _windowState.width,
-        windowHeight = _windowState.height,
-        messageVw = _windowState.messageVw,
-        homePrimaryMessageHeight = _windowState.homePrimaryMessageHeight,
-        homeMessageSectionHeight = _windowState.homeMessageSectionHeight;
     var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
-    var scrollBottom = scrollTop + windowHeight;
 
     if (homePrimaryMessageEl.current && homeMessageSectionEl.current) {
+      var _windowState = windowState,
+          windowWidth = _windowState.width,
+          windowHeight = _windowState.height,
+          messageVw = _windowState.messageVw,
+          homePrimaryMessageHeight = _windowState.homePrimaryMessageHeight,
+          homeMessageSectionHeight = _windowState.homeMessageSectionHeight;
+      var scrollBottom = scrollTop + windowHeight;
       var homeMessageSectionTop = homeMessageSectionEl.current.offsetTop;
       var fixPosition = 0;
 
