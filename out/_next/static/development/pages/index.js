@@ -22744,28 +22744,6 @@ var Header = function Header(_ref) {
       lineNumber: 48
     },
     __self: this
-  }, "\u304A\u554F\u3044\u5408\u308F\u305B"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "ec",
-    role: "menuitem",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "nav-menu-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: this
   }, "\u304A\u554F\u3044\u5408\u308F\u305B")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "menu-trigger",
     onClick: function onClick(e) {
@@ -22774,26 +22752,26 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 55
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "menu-trgger-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 62
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 63
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 64
     },
     __self: this
   })))));
