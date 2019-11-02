@@ -21189,7 +21189,7 @@ var Home = function Home(props) {
     var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
     var scrollBottom = scrollTop + windowHeight;
 
-    if (homePrimaryMessageEl.current && homeMessageSectionEl.current) {
+    if (homeMessageSectionEl.current) {
       var homeMessageSectionTop = homeMessageSectionEl.current.offsetTop;
       var fixPosition = 0;
 
