@@ -21160,8 +21160,8 @@ var Home = function Home(props) {
 
     timer = setTimeout(function () {
       windowState = {
-        width: window.outerWidth,
-        height: window.outerHeight
+        width: window.innerWidth,
+        height: window.innerHeight
       };
       handleScroll();
     }, timer);
@@ -21204,8 +21204,8 @@ var Home = function Home(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
     windowState = {
-      width: window.outerWidth,
-      height: window.outerHeight
+      width: window.innerWidth,
+      height: window.innerHeight
     };
     document.body.classList.add('in');
     window.addEventListener('load', handleScroll, false);
