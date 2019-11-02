@@ -21191,7 +21191,7 @@ var Home = function Home(props) {
         fixPosition = messageVw * 2 + homeMessageSectionTop + homeMessageSectionHeight / 2 + homePrimaryMessageHeight / 2;
         console.log(fixPosition, homeMessageSectionHeight, scrollBottom);
       } else {
-        fixPosition = messageVw * 2 + homeMessageSectionTop + homePrimaryMessageHeight / 2 + 180 / 2;
+        fixPosition = messageVw + homeMessageSectionTop + homePrimaryMessageHeight / 2 + 180 / 2;
       }
 
       if (fixPosition < scrollBottom) {
