@@ -21188,10 +21188,10 @@ var Home = function Home(props) {
       var fixPosition = 0;
 
       if (windowWidth >= 768) {
-        fixPosition = messageVw + homeMessageSectionTop + homeMessageSectionHeight / 2 + homePrimaryMessageHeight / 2;
+        fixPosition = messageVw * 2 + homeMessageSectionTop + homeMessageSectionHeight / 2 + homePrimaryMessageHeight / 2;
         console.log(fixPosition, homeMessageSectionHeight, scrollBottom);
       } else {
-        fixPosition = homeMessageSectionTop + homePrimaryMessageHeight / 2 + 180 / 2 + messageVw * 2;
+        fixPosition = messageVw * 2 + homeMessageSectionTop + homePrimaryMessageHeight / 2 + 180 / 2;
       }
 
       if (fixPosition < scrollBottom) {
