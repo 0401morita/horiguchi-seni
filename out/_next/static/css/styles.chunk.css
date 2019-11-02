@@ -5106,9 +5106,15 @@ a:hover {
   .home-visual .sailing-scroll-down .arrow:after {
     background-color: #fff; }
 
+.section-home-message {
+  padding-top: 180px; }
+
 .home-primary-message {
   color: #e84118;
-  margin: 0 0 24px 0; }
+  margin: 0 0 24px 0;
+  position: fixed;
+  left: 6vw;
+  bottom: 6vw; }
   .home-primary-message .title {
     font-weight: 700;
     margin: 0 0 12px 0;
@@ -5138,6 +5144,11 @@ a:hover {
       background: #fff;
       line-height: 1;
       padding: 4px; }
+
+.fix-message .home-primary-message {
+  position: absolute;
+  top: 24px;
+  bottom: auto; }
 
 .in .hero-image {
   opacity: 1; }
@@ -5429,20 +5440,28 @@ a:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    padding-top: 120px;
+    padding-bottom: 120px; }
   .home-primary-message {
-    width: 50%; }
+    width: 50%;
+    margin: 0; }
     .home-primary-message .title {
       line-height: 1.1em; }
       .home-primary-message .title span {
         font-size: 4rem; }
     .home-primary-message .description span {
       font-size: 14px; }
+  .fix-message .home-primary-message {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto; }
   .home-secondary-message {
     border: 1px solid #dfe4ea;
     width: 50%;
