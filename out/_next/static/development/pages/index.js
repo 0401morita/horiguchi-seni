@@ -21189,11 +21189,11 @@ var Home = function Home(props) {
           messageVw = _windowState.messageVw,
           homePrimaryMessageHeight = _windowState.homePrimaryMessageHeight,
           homeMessageSectionHeight = _windowState.homeMessageSectionHeight;
-      var scrollBottom = scrollTop + windowHeight;
-      var homeMessageSectionTop = homeMessageSectionEl.current.offsetTop;
       var fixPosition = 0;
+      var scrollBottom = scrollTop + windowHeight;
 
       if (windowWidth >= 768) {
+        var homeMessageSectionTop = homeMessageSectionEl.current.offsetTop;
         fixPosition = messageVw + homeMessageSectionTop + homeMessageSectionHeight / 2 + homePrimaryMessageHeight / 2;
       } else {
         fixPosition = 845;
