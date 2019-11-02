@@ -21087,6 +21087,8 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/pag
 
 
 
+function afsa() {}
+
 var Home = function Home(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([{
     image_src: 'https://0401morita.github.io/horiguchi-seni/static/images/service/machine-quilting.jpg',
@@ -21137,235 +21139,263 @@ var Home = function Home(props) {
       _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState3, 1),
       posts = _useState4[0];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(null),
-      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState5, 2),
-      rectTop = _useState6[0],
-      setRectTop = _useState6[1];
+  var windowState = {
+    width: 0,
+    height: 0
+  };
+  var homeMessageSectionEl = Object(react__WEBPACK_IMPORTED_MODULE_3__["useRef"])(null);
+  var homePrimaryMessageEl = Object(react__WEBPACK_IMPORTED_MODULE_3__["useRef"])(null);
+  /*
+   * リサイズ実行関数
+   *
+   * @event {Object} event - イベント
+   */
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])({
-    top: null,
-    height: null
-  }),
-      _useState8 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState7, 2),
-      visualMessageOffset = _useState8[0],
-      setVisualMessageOffset = _useState8[1];
+  var handleResize = function handleResize(e) {
+    var timer = 200;
 
-  var stopperEl = Object(react__WEBPACK_IMPORTED_MODULE_3__["useRef"])(null);
-  var visualMessageEl = Object(react__WEBPACK_IMPORTED_MODULE_3__["useRef"])(null);
-  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    if (stopperEl.current !== null) {
-      //const windowHeight = window.outerHeight;
-      var _rectTop = stopperEl.current.getBoundingClientRect().top;
-      setRectTop(_rectTop);
+    if (timer > 0) {
+      clearTimeout(timer);
     }
 
-    if (visualMessageEl.current) {
-      var _visualMessageEl$curr = visualMessageEl.current,
-          offsetTop = _visualMessageEl$curr.offsetTop,
-          offsetHeight = _visualMessageEl$curr.offsetHeight;
-      setVisualMessageOffset({
-        top: offsetTop,
-        height: offsetHeight
-      });
-    }
+    timer = setTimeout(function () {
+      windowState = {
+        width: window.outerWidth,
+        height: window.outerHeight
+      };
+      handleScroll();
+    }, timer);
+  };
+  /*
+   * スクロール実行関数
+   *
+   * @event {Object} event - イベント
+   */
 
-    document.body.classList.add('in');
-  }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    //const windowHeight = window.outerHeight;
-    if (stopperEl.current !== null) {
-      //const windowHeight = window.outerHeight;
-      var _rectTop2 = stopperEl.current.getBoundingClientRect().top;
-      setRectTop(_rectTop2);
-    }
 
-    if (visualMessageEl.current && stopperEl.current) {
-      //const { scrollTop } = props.app;
-      var top = visualMessageOffset.top,
-          height = visualMessageOffset.height;
+  var handleScroll = function handleScroll() {
+    var _windowState = windowState,
+        windowWidth = _windowState.width,
+        windowHeight = _windowState.height;
+    var messageVw = Math.floor(windowWidth * 0.06);
+    var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    var scrollBottom = scrollTop + windowHeight;
 
-      if (rectTop !== null && top !== null && height !== null) {
-        var rectTopp = stopperEl.current.getBoundingClientRect().top;
-        console.log(rectTopp + props.app.scrollTop, top + height + props.app.scrollTop);
+    if (homePrimaryMessageEl.current && homeMessageSectionEl.current) {
+      var homeMessageSectionTop = homeMessageSectionEl.current.offsetTop;
+      var homePrimaryMessageHeight = homePrimaryMessageEl.current.clientHeight;
+      var homeMessageSectionHeight = homeMessageSectionEl.current.clientHeight;
+      var fixPosition = 0;
+
+      if (windowWidth >= 768) {
+        fixPosition = messageVw + homeMessageSectionTop + homeMessageSectionHeight / 2 + homePrimaryMessageHeight / 2;
+        console.log(fixPosition, homeMessageSectionHeight, scrollBottom);
+      } else {
+        fixPosition = homeMessageSectionTop + homePrimaryMessageHeight / 2 + 180 / 2 + messageVw * 2;
+      }
+
+      if (fixPosition < scrollBottom) {
+        document.body.classList.add('fix-message');
+      } else {
+        document.body.classList.remove('fix-message');
       }
     }
-  }, [props.app.scrollTop]);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
+    windowState = {
+      width: window.outerWidth,
+      height: window.outerHeight
+    };
+    document.body.classList.add('in');
+    window.addEventListener('load', handleScroll, false);
+    window.addEventListener('scroll', handleScroll, false);
+    window.addEventListener('resize', handleResize, false);
+    return function () {
+      window.removeEventListener('load', handleScroll, false);
+      window.removeEventListener('scroll', handleScroll, false);
+      window.removeEventListener('resize', handleResize, false);
+    };
+  }, []);
+  console.log('render');
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 168
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_containers_header__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 169
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("article", {
     className: "home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 171
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_homes_slider__WEBPACK_IMPORTED_MODULE_8__["HeroSection"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 172
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("section", {
     className: "section section-home-message",
+    ref: homeMessageSectionEl,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 174
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "home-primary-message",
+    ref: homePrimaryMessageEl,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 178
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 179
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 180
     },
     __self: this
   }, "ENJOY"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 181
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 182
     },
     __self: this
   }, "UNIFORM")), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     className: "description",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 185
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 186
     },
     __self: this
   }, "\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u3092\u7740\u308B\u4EBA\u3092\u3082\u3063\u3068\u5FEB\u9069\u306B\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 187
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 188
     },
     __self: this
   }, "\u3082\u3063\u3068\u697D\u3057\u304F\u3002"))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "home-secondary-message",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 192
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 193
     },
     __self: this
   }, "\u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D\u306F\u3001\u6226\u5F8C\u307E\u3082\u306A\u304F\u7E2B\u88FD\u4E8B\u696D\u3092\u7ACB\u3061\u4E0A\u3052\u307E\u3057\u305F\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 194
     },
     __self: this
   }, "\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u3092\u7E2B\u88FD\u30FB\u8CA9\u58F2\u3059\u308B\u4E00\u65B9\u3067\u5E73\u6210\u306B\u5165\u308A\u30AF\u30EA\u30FC\u30CB\u30F3\u30B0\u8A2D\u5099\u3092 \u6574\u3048\u307E\u3057\u305F\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 198
     },
     __self: this
   }, "\u73FE\u5728\u3001\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u306E\u7E2B\u88FD\u30FB\u8CA9\u58F2\u30FB\u30AF\u30EA\u30FC\u30CB\u30F3\u30B0\u30FB\u30AF\u30EA\u30FC\u30CB\u30F3\u30B0\u4ED8\u30EA\u30FC\u30B9\uFF08\u30EA\u30CD\u30F3\u30B5\u30D7\u30E9\u30A4\uFF09\u3092 \u4E2D\u5FC3\u306B\u5C55\u958B\u3044\u305F\u3057\u3066\u304A\u308A\u307E\u3059\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", {
     className: "read-more-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 203
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "en",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 204
     },
     __self: this
   }, "About"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "ja",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 205
     },
     __self: this
   }, "\u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D\u306B\u3064\u3044\u3066")))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("main", {
     className: "main-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 210
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "section-heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 211
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h3", {
     className: "section-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 212
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "ja",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 213
     },
     __self: this
   }, "\u79C1\u305F\u3061\u306E\u4E8B\u696D"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "en",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 214
     },
     __self: this
   }, "Service"))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "service-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 218
     },
     __self: this
   }, Services.map(function (service, index) {
@@ -21375,7 +21405,7 @@ var Home = function Home(props) {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 174
+        lineNumber: 221
       },
       __self: this
     }));
@@ -21383,70 +21413,70 @@ var Home = function Home(props) {
     className: "section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 230
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 231
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "col-md-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 232
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "section-heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 233
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h3", {
     className: "section-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187
+      lineNumber: 234
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "ja",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 235
     },
     __self: this
   }, "\u304A\u77E5\u3089\u305B"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "en",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 236
     },
     __self: this
   }, "News and Column")))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "col-md-7",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 241
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "recent-entries",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 242
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("ul", {
     className: "recent-entry-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 243
     },
     __self: this
   }, posts.map(function (post, index) {
@@ -21454,7 +21484,7 @@ var Home = function Home(props) {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 198
+        lineNumber: 245
       },
       __self: this
     }));
@@ -21462,41 +21492,41 @@ var Home = function Home(props) {
     className: "container-fluid",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 254
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "contact-banner",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 255
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h2", {
     className: "message",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 256
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "ja",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210
+      lineNumber: 257
     },
     __self: this
   }, "\u3054\u76F8\u8AC7\u306F\u3042\u308A\u307E\u3059\u304B\uFF1F"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "en",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 258
     },
     __self: this
   }, "CONTACT")))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_shares_footer__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216
+      lineNumber: 263
     },
     __self: this
   }));
@@ -22705,6 +22735,28 @@ var Header = function Header(_ref) {
       lineNumber: 48
     },
     __self: this
+  }, "\u304A\u554F\u3044\u5408\u308F\u305B"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "ec",
+    role: "menuitem",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/contact",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "nav-menu-link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
   }, "\u304A\u554F\u3044\u5408\u308F\u305B")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "menu-trigger",
     onClick: function onClick(e) {
@@ -22713,26 +22765,26 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 60
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "menu-trgger-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 67
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 68
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 69
     },
     __self: this
   })))));
@@ -22783,7 +22835,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FApplications%2FXAMPP%2Fxamppfiles%2Fhtdocs%2Fhoriguchi-seni.com%2Fpages%2Findex.tsx ***!
   \*******************************************************************************************************************************************************/
@@ -22806,5 +22858,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

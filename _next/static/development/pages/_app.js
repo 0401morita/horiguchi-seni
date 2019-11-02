@@ -13140,7 +13140,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_styles_common_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/styles/common.scss */ "./src/styles/common.scss");
 /* harmony import */ var _src_styles_common_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_src_styles_common_scss__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _src_reducers__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../src/reducers */ "./src/reducers/index.ts");
-/* harmony import */ var _src_actions_app__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../src/actions/app */ "./src/actions/app.ts");
 
 
 
@@ -13150,7 +13149,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/pages/_app.tsx";
-
 
 
 
@@ -13177,22 +13175,6 @@ function (_App) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(MyApp, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var store = this.props.store;
-      window.addEventListener('scroll', function () {
-        return store.dispatch(Object(_src_actions_app__WEBPACK_IMPORTED_MODULE_17__["setScrollTop"])());
-      });
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      var store = this.props.store;
-      window.removeEventListener('scroll', function () {
-        return store.dispatch(Object(_src_actions_app__WEBPACK_IMPORTED_MODULE_17__["setScrollTop"])());
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -13202,27 +13184,27 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_13__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 40
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
         store: store,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 41
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("title", {
         key: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 43
         },
         __self: this
       }, "\u682A\u5F0F\u4F1A\u793E \u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
@@ -13230,7 +13212,7 @@ function (_App) {
         content: "width=device-width,minimum-scale=1,initial-scale=1,minimal-ui",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 44
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
@@ -13238,13 +13220,13 @@ function (_App) {
         content: "yes",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 48
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 51
         },
         __self: this
       }))));
@@ -13308,41 +13290,6 @@ function (_App) {
 }(next_app__WEBPACK_IMPORTED_MODULE_13___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_14__["default"])(makeStore)(MyApp));
-
-/***/ }),
-
-/***/ "./src/actions/app.ts":
-/*!****************************!*\
-  !*** ./src/actions/app.ts ***!
-  \****************************/
-/*! exports provided: actions, setScrollTop */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setScrollTop", function() { return setScrollTop; });
-/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-fsa */ "./node_modules/typescript-fsa/lib/index.js");
-/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typescript_fsa__WEBPACK_IMPORTED_MODULE_0__);
-
-//import { State } from '../reducers';
-//import { Dispatch } from 'redux';
-//import { CommonState } from '../reducers/common';
-var actionCreator = typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default()();
-var actions = {
-  setApp: actionCreator('SET_COMMON')
-}; //
-// Set ScrollTop
-//
-
-var setScrollTop = function setScrollTop() {
-  return function (dispatch) {
-    var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
-    dispatch(actions.setApp({
-      scrollTop: scrollTop
-    }));
-  };
-};
 
 /***/ }),
 
