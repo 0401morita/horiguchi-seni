@@ -21196,7 +21196,7 @@ var Home = function Home(props) {
       if (windowWidth >= 768) {
         fixPosition = messageVw + homeMessageSectionTop + homeMessageSectionHeight / 2 + homePrimaryMessageHeight / 2;
       } else {
-        fixPosition = messageVw + homeMessageSectionTop + homePrimaryMessageHeight / 2 + 180 / 2;
+        fixPosition = messageVw + homeMessageSectionTop + 180 / 2 + homePrimaryMessageHeight / 2;
       }
 
       if (fixPosition < scrollBottom) {
