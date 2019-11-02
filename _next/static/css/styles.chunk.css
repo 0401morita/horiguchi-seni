@@ -5113,9 +5113,7 @@ a:hover {
   color: #e84118;
   position: fixed;
   left: 6vw;
-  bottom: 6vw;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
+  bottom: 6vw; }
   .home-primary-message .title {
     font-weight: 700;
     margin: 0 0 12px 0;
