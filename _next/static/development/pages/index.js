@@ -21164,7 +21164,7 @@ var Home = function Home(props) {
     timer = setTimeout(function () {
       windowState = {
         width: window.innerWidth,
-        height: window.innerWidth,
+        height: window.innerHeight,
         messageVw: Math.floor(window.innerWidth * 0.06),
         homePrimaryMessageHeight: homePrimaryMessageEl.current ? homePrimaryMessageEl.current.clientHeight : 0,
         homeMessageSectionHeight: homeMessageSectionEl.current ? homeMessageSectionEl.current.clientHeight : 0
@@ -21189,14 +21189,14 @@ var Home = function Home(props) {
     var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
     var scrollBottom = scrollTop + windowHeight;
 
-    if (homeMessageSectionEl.current) {
+    if (homePrimaryMessageEl.current && homeMessageSectionEl.current) {
       var homeMessageSectionTop = homeMessageSectionEl.current.offsetTop;
       var fixPosition = 0;
 
       if (windowWidth >= 768) {
         fixPosition = messageVw + homeMessageSectionTop + homeMessageSectionHeight / 2 + homePrimaryMessageHeight / 2;
       } else {
-        fixPosition = messageVw + homeMessageSectionTop + 180 / 2 + homePrimaryMessageHeight / 2;
+        fixPosition = messageVw + homeMessageSectionTop + homePrimaryMessageHeight / 2 + 180 / 2;
       }
 
       if (fixPosition < scrollBottom) {
@@ -21210,7 +21210,7 @@ var Home = function Home(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
     windowState = {
       width: window.innerWidth,
-      height: window.innerWidth,
+      height: window.innerHeight,
       messageVw: Math.floor(window.innerWidth * 0.06),
       homePrimaryMessageHeight: homePrimaryMessageEl.current ? homePrimaryMessageEl.current.clientHeight : 0,
       homeMessageSectionHeight: homeMessageSectionEl.current ? homeMessageSectionEl.current.clientHeight : 0
