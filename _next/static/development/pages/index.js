@@ -21164,7 +21164,7 @@ var Home = function Home(props) {
     timer = setTimeout(function () {
       windowState = {
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: document.documentElement.clientHeight,
         messageVw: Math.floor(window.innerWidth * 0.06),
         homePrimaryMessageHeight: homePrimaryMessageEl.current ? homePrimaryMessageEl.current.clientHeight : 0,
         homeMessageSectionHeight: homeMessageSectionEl.current ? homeMessageSectionEl.current.clientHeight : 0
@@ -21210,7 +21210,7 @@ var Home = function Home(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
     windowState = {
       width: window.innerWidth,
-      height: window.innerHeight,
+      height: document.documentElement.clientHeight,
       messageVw: Math.floor(window.innerWidth * 0.06),
       homePrimaryMessageHeight: homePrimaryMessageEl.current ? homePrimaryMessageEl.current.clientHeight : 0,
       homeMessageSectionHeight: homeMessageSectionEl.current ? homeMessageSectionEl.current.clientHeight : 0
