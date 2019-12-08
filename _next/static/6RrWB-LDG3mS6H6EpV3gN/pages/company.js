@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{FG4e:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/company",function(){var n=t("XH+Z");return{page:n.default||n}}])},"XH+Z":function(n,e,t){"use strict";t.r(e);var u=t("q1tI"),a=t.n(u);e.default=function(){return a.a.createElement("div",null,"a")}}},[["FG4e",1,0]]]);

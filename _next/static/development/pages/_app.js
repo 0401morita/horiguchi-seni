@@ -36117,6 +36117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_reducers__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../src/reducers */ "./src/reducers/index.ts");
 /* harmony import */ var _src_containers_header__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../src/containers/header */ "./src/containers/header.ts");
 /* harmony import */ var _src_components_shares_footer__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../src/components/shares/footer */ "./src/components/shares/footer.tsx");
+/* harmony import */ var _src_components_recent_entries_list__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../src/components/recent_entries/list */ "./src/components/recent_entries/list.tsx");
 
 
 
@@ -36126,6 +36127,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/pages/_app.tsx";
+
 
 
 
@@ -36163,27 +36165,27 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_13__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
         store: store,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 44
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("title", {
         key: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         },
         __self: this
       }, "\u682A\u5F0F\u4F1A\u793E \u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
@@ -36191,7 +36193,7 @@ function (_App) {
         content: "width=device-width,minimum-scale=1,initial-scale=1,minimal-ui",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 46
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
@@ -36199,32 +36201,94 @@ function (_App) {
         content: "yes",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 50
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_src_containers_header__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 53
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 54
         },
         __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_src_components_shares_footer__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("section", {
+        className: "section sectionRecentEntries",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 56
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "col-md-5",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "section-heading",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h3", {
+        className: "section-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "ja",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61
+        },
+        __self: this
+      }, "\u304A\u77E5\u3089\u305B"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "en",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, "News and Column")))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "col-md-7",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_src_components_recent_entries_list__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
+      }))))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_src_components_shares_footer__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
         },
         __self: this
       })));
@@ -36718,6 +36782,151 @@ var BrandIcon3Base = function BrandIcon3Base(_ref2) {
   }));
 };
 var BrandIcon3 = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(BrandIcon3Base)(_templateObject2());
+
+/***/ }),
+
+/***/ "./src/components/recent_entries/item.tsx":
+/*!************************************************!*\
+  !*** ./src/components/recent_entries/item.tsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/recent_entries/item.tsx";
+
+
+var RecentPostItem = function RecentPostItem(_ref) {
+  var title = _ref.title,
+      created = _ref.created,
+      category = _ref.category,
+      _ref$link = _ref.link,
+      link = _ref$link === void 0 ? '/news' : _ref$link;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "recent-entry-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: link,
+    className: "recent-entry-link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "recent-entry-meta",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, created, "\u30FB", category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "recent-entry-body",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RecentPostItem);
+
+/***/ }),
+
+/***/ "./src/components/recent_entries/list.tsx":
+/*!************************************************!*\
+  !*** ./src/components/recent_entries/list.tsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./item */ "./src/components/recent_entries/item.tsx");
+
+
+var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/recent_entries/list.tsx";
+
+
+
+var RecentEntries = function RecentEntries() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])([{
+    title: '夏季休暇のお知らせ',
+    created: '2019/10/21',
+    category: 'News',
+    link: '/news'
+  }, {
+    title: '暑い夏を快適に過ごせる素材',
+    created: '2019/10/19',
+    category: 'Column',
+    link: '/news'
+  }, {
+    title: '企業におけるユニフォーム導入の価値',
+    created: '2019/10/17',
+    category: 'Column',
+    link: '/news'
+  }, {
+    title: 'キャドカム導入のお知らせ',
+    created: '2019/10/10',
+    category: 'News',
+    link: '/news'
+  }]),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState, 1),
+      posts = _useState2[0];
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "recent-entries",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
+    className: "recent-entry-list",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, posts.map(function (post, index) {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_item__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
+      key: index,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }));
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RecentEntries);
 
 /***/ }),
 
