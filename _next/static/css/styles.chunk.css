@@ -4488,6 +4488,19 @@ textarea.form-control {
     letter-spacing: 0.1em;
     font-weight: 100;
     font-size: 12px; }
+  .mainContainer .sailingScrollDown {
+    position: absolute;
+    left: -4vw;
+    top: calc(4vw - 136px); }
+    .mainContainer .sailingScrollDown.fixed {
+      position: fixed;
+      left: 4vw;
+      top: calc(76px + 8vh); }
+    .mainContainer .sailingScrollDown.fix {
+      position: absolute;
+      top: auto;
+      left: -4vw;
+      bottom: 4vh; }
 
 /*---
 
@@ -5231,16 +5244,7 @@ a:hover {
       background: #DA4741;
       vertical-align: top; }
 
-.hero-section .sailing-scroll-down {
-  position: absolute;
-  left: 4vw;
-  bottom: 2vw;
-  height: 120px;
-  color: #fff; }
-  .hero-section .sailing-scroll-down .arrow:after {
-    background-color: #fff; }
-
-.sailing-scroll-down {
+.sailingScrollDown {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5248,40 +5252,45 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative; }
-  .sailing-scroll-down .txt {
+  position: relative;
+  color: #fff; }
+  .sailingScrollDown__txt {
     position: relative;
     display: inline-block;
     left: -50%;
-    -webkit-transform: rotateZ(90deg) translate(-50%, 0);
-            transform: rotateZ(90deg) translate(-50%, 0);
+    -webkit-transform: rotateZ(90deg) translate(-50%, -1px);
+            transform: rotateZ(90deg) translate(-50%, -1px);
     -webkit-transform-origin: center;
             transform-origin: center;
     letter-spacing: 0.3em;
-    font-weight: 500;
-    font-size: 10px;
+    font-weight: 400;
+    font-size: 12px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
     line-height: 1; }
-  .sailing-scroll-down .arrow {
+  .sailingScrollDown__arrow {
     position: relative;
     display: inline-block;
     width: 1px;
-    height: 100%;
+    height: 120px;
     overflow: hidden;
-    top: 4px; }
-    .sailing-scroll-down .arrow:after {
+    margin-top: 4px; }
+    .sailingScrollDown__arrow:after {
       content: '';
       position: absolute;
       width: 1px;
       height: 100%;
-      background: #000;
+      background-color: #fff;
       -webkit-transform-origin: left top;
               transform-origin: left top;
-      -webkit-animation: sailingScrollDown 3.2s infinite ease-in;
-              animation: sailingScrollDown 3.2s infinite ease-in; }
+      -webkit-animation: sailingScrollDown 2.4s infinite ease-in;
+              animation: sailingScrollDown 2.4s infinite ease-in; }
+  .sailingScrollDown.feature {
+    color: #e84118; }
+    .sailingScrollDown.feature .sailingScrollDown__arrow:after {
+      background-color: #e84118; }
 
 .read-more-link {
   display: block;
