@@ -1274,6 +1274,56 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
+/***/ "./node_modules/clsx/dist/clsx.m.js":
+/*!******************************************!*\
+  !*** ./node_modules/clsx/dist/clsx.m.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function toVal(mix) {
+	var k, y, str='';
+	if (mix) {
+		if (typeof mix === 'object') {
+			if (!!mix.push) {
+				for (k=0; k < mix.length; k++) {
+					if (mix[k] && (y = toVal(mix[k]))) {
+						str && (str += ' ');
+						str += y;
+					}
+				}
+			} else {
+				for (k in mix) {
+					if (mix[k] && (y = toVal(k))) {
+						str && (str += ' ');
+						str += y;
+					}
+				}
+			}
+		} else if (typeof mix !== 'boolean' && !mix.call) {
+			str && (str += ' ');
+			str += mix;
+		}
+	}
+	return str;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+	var i=0, x, str='';
+	while (i < arguments.length) {
+		if (x = toVal(arguments[i++])) {
+			str && (str += ' ');
+			str += x
+		}
+	}
+	return str;
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/fn/array/is-array.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/library/fn/array/is-array.js ***!
@@ -21502,6 +21552,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_components_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../src/components/icons */ "./src/components/icons/index.ts");
 /* harmony import */ var react_event_listener__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-event-listener */ "./node_modules/react-event-listener/dist/react-event-listener.cjs.js");
 /* harmony import */ var react_event_listener__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_event_listener__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _src_containers_sailingScrollDown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../src/containers/sailingScrollDown */ "./src/containers/sailingScrollDown.ts");
 
 
 
@@ -21515,7 +21566,10 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/pag
 
 
 
-var Home = function Home(props) {
+
+var Home = function Home(_ref) {
+  var app = _ref.app;
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([{
     image_src: 'https://0401morita.github.io/horiguchi-seni/static/images/service/machine-quilting.jpg',
     title: '縫製・販売',
@@ -21532,10 +21586,10 @@ var Home = function Home(props) {
     link: '/service/sale'
   }, {
     image_src: 'https://0401morita.github.io/horiguchi-seni/static/images/service/iron.jpg',
-    title: 'リネンサプライ',
+    title: 'クリーニング付リース',
     summary: 'ユニフォームのリースやクリーニング付リース',
-    label_en: 'Linen supply',
-    label_ja: 'リネンサプライについて',
+    label_en: 'Cleaning&Lease',
+    label_ja: 'クリーニング付リースについて',
     link: '/service/linen-supply'
   }]),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState, 1),
@@ -21581,17 +21635,6 @@ var Home = function Home(props) {
     }
 
     timer = setTimeout(function () {
-      var width = window.innerWidth;
-      var height = window.innerHeight;
-      setWindowState(function (prevState) {
-        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, prevState, {
-          width: width,
-          height: height,
-          vw: Math.floor(width * 0.01),
-          vh: Math.floor(height * 0.01)
-        });
-      });
-
       if (primaryMessageEl.current) {
         var primaryHeight = primaryMessageEl.current.offsetHeight || 0;
         setPrimaryState(function (prev) {
@@ -21619,20 +21662,19 @@ var Home = function Home(props) {
 
 
   var handleScroll = function handleScroll() {
-    var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
-
     if (primaryMessageEl.current) {
-      var windowWidth = windowState.width,
-          windowHeight = windowState.height,
-          vw = windowState.vw,
-          vh = windowState.vh;
+      var _app$windows = app.windows,
+          windowWidth = _app$windows.width,
+          windowHeight = _app$windows.height,
+          vw = _app$windows.vw,
+          vh = _app$windows.vh;
       var primaryHeight = primaryState.height;
       var messageSectionHeight = messageSectionState.height;
       var isSmartPhone = windowWidth < 768;
-      var isfix = scrollTop > vh * 16 + primaryHeight / 2 + messageSectionHeight / 2;
+      var isfix = app.scrollTop > vh * 16 + primaryHeight / 2 + messageSectionHeight / 2;
 
       if (isSmartPhone) {
-        isfix = scrollTop > vh * 8 + primaryHeight;
+        isfix = app.scrollTop > vh * 8 + primaryHeight;
       }
 
       if (isfix) {
@@ -21644,17 +21686,6 @@ var Home = function Home(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    setWindowState(function (prevState) {
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, prevState, {
-        width: width,
-        height: height,
-        vw: Math.floor(width * 0.01),
-        vh: Math.floor(height * 0.01)
-      });
-    });
-
     if (primaryMessageEl.current) {
       var primaryHeight = primaryMessageEl.current.offsetHeight || 0;
       setPrimaryState(function (prev) {
@@ -21678,7 +21709,7 @@ var Home = function Home(props) {
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 133
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_event_listener__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -21687,34 +21718,41 @@ var Home = function Home(props) {
     onResize: handleResize,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 134
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_homes_slider__WEBPACK_IMPORTED_MODULE_7__["HeroSection"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 140
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("main", {
     className: "mainContainer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 141
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_containers_sailingScrollDown__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    text: "HOME",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "mainContainer__index",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 144
     },
     __self: this
   }, "Company - \u4F1A\u793E\u6982\u8981"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "content mainContainer__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 145
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("section", {
@@ -21722,14 +21760,14 @@ var Home = function Home(props) {
     ref: messageSectionEl,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 146
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "homeMessage__primary",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 147
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
@@ -21737,145 +21775,145 @@ var Home = function Home(props) {
     ref: primaryMessageEl,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 148
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h2", {
     className: "primaryMessage__title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 149
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 150
     },
     __self: this
   }, "ENJOY"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 151
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 152
     },
     __self: this
   }, "UNIFORM")), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     className: "primaryMessage__description",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 154
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 155
     },
     __self: this
   }, "\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u3092\u7740\u308B\u4EBA\u3092\u3082\u3063\u3068\u5FEB\u9069\u306B\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 156
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 157
     },
     __self: this
   }, "\u3082\u3063\u3068\u697D\u3057\u304F\u3002")))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "homeMessage__secondary",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 161
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "secondaryMessage",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 162
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 163
     },
     __self: this
   }, "\u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D\u306F\u3001\u6226\u5F8C\u307E\u3082\u306A\u304F\u7E2B\u88FD\u4E8B\u696D\u3092\u7ACB\u3061\u4E0A\u3052\u307E\u3057\u305F\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 164
     },
     __self: this
   }, "\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u3092\u7E2B\u88FD\u30FB\u8CA9\u58F2\u3059\u308B\u4E00\u65B9\u3067\u5E73\u6210\u306B\u5165\u308A\u30AF\u30EA\u30FC\u30CB\u30F3\u30B0\u8A2D\u5099\u3092 \u6574\u3048\u307E\u3057\u305F\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 168
     },
     __self: this
   }, "\u73FE\u5728\u3001\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u306E\u7E2B\u88FD\u30FB\u8CA9\u58F2\u30FB\u30AF\u30EA\u30FC\u30CB\u30F3\u30B0\u30FB\u30AF\u30EA\u30FC\u30CB\u30F3\u30B0\u4ED8\u30EA\u30FC\u30B9\uFF08\u30EA\u30CD\u30F3\u30B5\u30D7\u30E9\u30A4\uFF09\u3092 \u4E2D\u5FC3\u306B\u5C55\u958B\u3044\u305F\u3057\u3066\u304A\u308A\u307E\u3059\u3002"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", {
     className: "read-more-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 173
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "en",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 174
     },
     __self: this
   }, "About"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "ja",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 175
     },
     __self: this
   }, "\u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D\u306B\u3064\u3044\u3066"))))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "contentInnerHeader",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 181
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h3", {
     className: "contentInnerHeader__title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210
+      lineNumber: 182
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "ja",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 183
     },
     __self: this
   }, "\u79C1\u305F\u3061\u306E\u4E8B\u696D"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: "en",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 212
+      lineNumber: 184
     },
     __self: this
   }, "Service"))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "service-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216
+      lineNumber: 188
     },
     __self: this
   }, Services.map(function (service, index) {
@@ -21885,7 +21923,7 @@ var Home = function Home(props) {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 219
+        lineNumber: 191
       },
       __self: this
     }));
@@ -21893,27 +21931,27 @@ var Home = function Home(props) {
     className: "contentFooter",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 227
+      lineNumber: 199
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/contact",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228
+      lineNumber: 200
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", {
     className: "btn btn-black contentFooter__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 229
+      lineNumber: 201
     },
     __self: this
   }, "\u304A\u554F\u3044\u5408\u308F\u305B", react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_icons__WEBPACK_IMPORTED_MODULE_9__["ArrowRightIcon"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 203
     },
     __self: this
   })))))));
@@ -22123,28 +22161,7 @@ var HeroSection = function HeroSection() {
       lineNumber: 32
     },
     __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "sailing-scroll-down",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    className: "txt",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }, "Scroll"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    className: "arrow",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  })));
+  }))));
 };
 
 /***/ }),
@@ -22907,6 +22924,136 @@ var Plane = function Plane(props) {
     __self: this
   }))));
 };
+
+/***/ }),
+
+/***/ "./src/components/shares/sailingScrollDown.tsx":
+/*!*****************************************************!*\
+  !*** ./src/components/shares/sailingScrollDown.tsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var react_event_listener__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-event-listener */ "./node_modules/react-event-listener/dist/react-event-listener.cjs.js");
+/* harmony import */ var react_event_listener__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_event_listener__WEBPACK_IMPORTED_MODULE_3__);
+
+var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/shares/sailingScrollDown.tsx";
+
+
+
+
+var SailingScrollDown = function SailingScrollDown(_ref) {
+  var text = _ref.text,
+      scrollTop = _ref.scrollTop,
+      windows = _ref.windows;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      isFixed = _useState2[0],
+      setIsFixed = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
+      isFeature = _useState4[0],
+      setIsFeature = _useState4[1];
+
+  var handleScroll = function handleScroll() {
+    var width = windows.width,
+        vw = windows.vw,
+        vh = windows.vh;
+    var isSmartPhone = width < 768;
+    var headerHeight = 76;
+
+    if (isSmartPhone) {
+      headerHeight = 56;
+    }
+
+    var fixed = windows.height - 10 * vh - 173 - headerHeight;
+
+    if (scrollTop >= fixed) {
+      setIsFixed(true);
+    } else {
+      setIsFixed(false);
+    }
+
+    if (scrollTop - (86 + 4 * vh) >= fixed) {
+      setIsFeature(true);
+    } else {
+      setIsFeature(false);
+    }
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      sailingScrollDown: true,
+      fixed: isFixed,
+      feature: isFeature
+    }),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_event_listener__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    target: "window",
+    onScroll: handleScroll,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    className: "sailingScrollDown__txt",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }, text), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    className: "sailingScrollDown__arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SailingScrollDown);
+
+/***/ }),
+
+/***/ "./src/containers/sailingScrollDown.ts":
+/*!*********************************************!*\
+  !*** ./src/containers/sailingScrollDown.ts ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _components_shares_sailingScrollDown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/shares/sailingScrollDown */ "./src/components/shares/sailingScrollDown.tsx");
+
+
+
+//
+// Map State To Props
+//
+var mapStateToProps = function mapStateToProps(state) {
+  return state.app;
+}; //
+// Connect
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps)(_components_shares_sailingScrollDown__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
