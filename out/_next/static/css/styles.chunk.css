@@ -4524,6 +4524,11 @@ textarea.form-control {
   .content__caroucel {
     padding: 24px 0;
     margin: 0 -8vw 0 -8vw; }
+  .content__figure {
+    padding: 24px 0; }
+    .content__figure .image {
+      max-width: 100%;
+      margin: 0 auto; }
 
 /*---
 
@@ -4561,13 +4566,13 @@ textarea.form-control {
       -ms-flex-pack: justify;
           justify-content: space-between; }
   .contentInnerHeader__title {
-    padding-right: 12px;
-    white-space: nowrap; }
+    width: 100%;
+    padding-right: 12px; }
     .contentInnerHeader__title span {
       display: block; }
     .contentInnerHeader__title .ja {
       font-weight: 100;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       font-weight: 300;
       letter-spacing: 0.1em; }
     .contentInnerHeader__title .en {
@@ -4579,7 +4584,7 @@ textarea.form-control {
     content: '';
     display: block;
     height: 1px;
-    width: 100%;
+    width: 20%;
     background-color: #a4b0be; }
 
 /*---
@@ -4673,6 +4678,9 @@ textarea.form-control {
     font-size: 3rem; }
   .content__lead {
     font-size: 1.25rem; }
+  .content__figure .image {
+    width: 100%;
+    padding: 0 20%; }
   /*---
 
   MD
@@ -4688,7 +4696,8 @@ textarea.form-control {
       .contentInnerHeader__title span {
         display: block; }
       .contentInnerHeader__title .ja {
-        font-weight: 100; }
+        font-weight: 100;
+        font-size: 2.5rem; }
       .contentInnerHeader__title .en {
         font-size: 1rem;
         font-weight: 500;
