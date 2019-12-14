@@ -21590,7 +21590,7 @@ var Home = function Home(_ref) {
     summary: 'ユニフォームのリースやクリーニング付リース',
     label_en: 'Cleaning&Lease',
     label_ja: 'クリーニング付リースについて',
-    link: '/service/linen-supply'
+    link: '/service/cleaning-lease'
   }]),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState, 1),
       Services = _useState2[0];
@@ -23057,7 +23057,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FApplications%2FXAMPP%2Fxamppfiles%2Fhtdocs%2Fhoriguchi-seni.com%2Fpages%2Findex.tsx ***!
   \*******************************************************************************************************************************************************/
@@ -23080,5 +23080,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
