@@ -1,4 +1,8 @@
-node_modules
-horiguchi-seni.com.code-workspace
-out
-.vscode
+.vscode/
+.next/
+node_modules/
+out/
+/npm-debug.log
+/yarn-error.log
+/horiguchi-seni.com.code-workspace
+

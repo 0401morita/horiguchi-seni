@@ -12,6 +12,7 @@ import Header from '../src/containers/header';
 import Footer from '../src/components/shares/footer';
 import RecentEntries from '../src/components/recent_entries/list';
 import { AppState } from '../src/reducers/app';
+import { NextPageContext } from 'next';
 
 const makeStore = () => {
   return createStore(reducers, applyMiddleware(thunk));
@@ -29,7 +30,7 @@ class MyApp extends App<AppProps> {
     ctx
   }: {
     Component: any;
-    ctx: any;
+    ctx: NextPageContext;
   }) {
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
