@@ -1,62 +1,69 @@
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { IconBrand } from '../icons/brand';
-import IconEnvelope from '../icons/envelope';
+import { BrandIconBase } from '../icons/brand';
 
 const Header = ({ toggleMenu }: any) => {
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      headerRef.current.classList.add('in');
+    }
+  }, []);
+
   return (
-    <header className="header">
-      <div className="brand">
-        <IconBrand />
-      </div>
+    <header className="header" ref={headerRef}>
+      <div className="header-container">
+        <Link href="/">
+          <a className="brand">
+            <BrandIconBase />
+          </a>
+        </Link>
 
-      <nav className="global-nav">
-        <ul className="nav-menu">
-          <li>
-            <Link href="about">
-              <a className="nav-menu-link">堀口繊維について</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="about">
-              <a className="nav-menu-link">サービス</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="about">
-              <a className="nav-menu-link">施設と設備</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="about">
-              <a className="nav-menu-link">会社情報</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <div className="global-nav-container">
+          <nav className="global-nav" role="menubar">
+            <ul className="nav-menu" role="menu">
+              <li role="menuitem">
+                <Link href="/service">
+                  <a className="nav-menu-link">サービス</a>
+                </Link>
+              </li>
+              <li role="menuitem">
+                <Link href="/facility">
+                  <a className="nav-menu-link">施設と設備</a>
+                </Link>
+              </li>
+              <li role="menuitem">
+                <Link href="/entry">
+                  <a className="nav-menu-link">お知らせ</a>
+                </Link>
+              </li>
+              <li role="menuitem">
+                <Link href="/company">
+                  <a className="nav-menu-link">会社情報</a>
+                </Link>
+              </li>
+              <li className="contact" role="menuitem">
+                <Link href="/contact">
+                  <a className="nav-menu-link">お問い合わせ</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-      <div className="feature-nav">
-        <ul className="nav-menu">
-          <li>
-            <Link href="about">
-              <a className="btn btn-primary">
-                <IconEnvelope />
-                お問い合わせ
-              </a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
-      <div
-        className="xs-menu-trigger"
-        onClick={e => {
-          e.preventDefault();
-          toggleMenu();
-        }}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
+        <div
+          className="menu-trigger"
+          onClick={e => {
+            e.preventDefault();
+            toggleMenu();
+          }}
+        >
+          <div className="menu-trgger-btn">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </div>
     </header>
   );

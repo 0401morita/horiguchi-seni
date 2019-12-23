@@ -1,0 +1,37 @@
+.machineList {
+  margin: 24px 0 0 0;
+  &__taxonomy {
+    font-weight: 900;
+    margin: 0 0 4px 0;
+  }
+}
+
+.machineItem {
+  &__maker {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  &__number {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+/*
+//
+// MD Size 768px <
+//
+*/
+@include media-breakpoint-up(md) {
+  .machineList {
+    display: flex;
+    &__taxonomy {
+      width: 30%;
+    }
+
+    .machineItem {
+      width: 70%;
+    }
+  }
+}
