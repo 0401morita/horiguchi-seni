@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { connect } from 'react-redux';\nimport SailingScrollDown from '../components/shares/sailingScrollDown';\n\n//\n// Map State To Props\n//\nconst mapStateToProps = state => {\n  return state.app;\n}; //\n// Connect\n//\n\n\nexport default connect(mapStateToProps)(SailingScrollDown);","map":null,"metadata":{},"sourceType":"module"}

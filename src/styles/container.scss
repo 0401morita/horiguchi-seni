@@ -1,0 +1,299 @@
+.mainContainer {
+  position: relative;
+  margin: -8vw 0 12vw 8vw;
+
+  &__index {
+    position: fixed;
+    left: 4vw;
+    z-index: 5;
+    transform-origin: top left;
+    transform: rotateZ(-90deg) translate(calc(-100% - 9vw), calc(50% - 1rem));
+    letter-spacing: 0.1em;
+    font-weight: 100;
+    font-size: 12px;
+  }
+
+  .sailingScrollDown {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(calc(-4vw - 6px), calc(4vw - 100%));
+
+    &.fixed {
+      position: fixed;
+      left: calc(4vw - 6px);
+      top: 60px;
+      transform: none;
+    }
+    &.fix {
+      position: absolute;
+      top: auto;
+      left: -4vw;
+      bottom: 4vh;
+    }
+  }
+}
+
+/*---
+
+  Main Container
+  メインコンテナ
+
+---*/
+.content {
+  position: relative;
+  background: #f6f6f6;
+  padding: 8vw 8vw 12vw;
+  z-index: 1;
+
+  &__lead,
+  &__error {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  &__divider {
+    margin: 80px 0;
+    background: #a4b0be;
+    border: 0;
+    height: 1px;
+  }
+
+  &__caroucel {
+    padding: 24px 0;
+    margin: 0 -8vw 0 -8vw;
+  }
+
+  &__figure {
+    padding: 24px 0;
+    .image {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__error {
+    text-align: center;
+    margin: 0;
+  }
+}
+/*---
+
+  Content Header
+  メインコンテナのヘッダー
+
+---*/
+.contentHeader {
+  margin: 0 0 24px 0;
+  &__title {
+    span {
+      display: block;
+    }
+    .en {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+
+    .ja {
+      font-weight: 100;
+      font-size: 2rem;
+    }
+  }
+}
+/*---
+
+  Content Inner Header
+  コンテンツ内のヘッダー
+
+---*/
+.contentInnerHeader {
+  margin: 40px 0 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__title {
+    width: 100%;
+    padding-right: 12px;
+    span {
+      display: block;
+    }
+
+    .ja {
+      font-weight: 100;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+
+    .en {
+      font-size: 10px;
+      font-weight: 500;
+      color: #e84118;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 20%;
+    background-color: #a4b0be;
+  }
+}
+/*---
+
+  Content Information
+  メインコンテナのインフォメーション
+
+---*/
+.contentInfoList {
+  margin: 12px 0 0 0;
+}
+
+.contentInfo {
+  display: flex;
+  font-size: 12px;
+  margin: 4px 0 0 0;
+
+  &:first-child {
+    margin: 0;
+  }
+  &__title {
+    font-weight: 500;
+    &:after {
+      content: ':';
+      padding: 0 4px;
+    }
+  }
+
+  &__attention {
+    &:before {
+      content: '※';
+    }
+  }
+}
+/*---
+
+  Content Footer
+  メインコンテナのフッター
+
+---*/
+.contentFooter {
+  &__button {
+    position: absolute;
+    bottom: 0;
+    right: 8vw;
+    width: 50%;
+    padding: 4vw;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    transform: translateY(50%);
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      fill: #fff;
+    }
+  }
+}
+/*---
+
+  Flickity Carousel
+  カルーセル
+
+---*/
+.flickityCarousel {
+  &__image {
+    max-width: 100%;
+  }
+}
+/*---
+
+  Sub Content
+  サブコンテンツ
+
+---*/
+.subContent {
+  margin: 0 0 8vw 8vw;
+}
+/*
+//
+// MD Size 768px <
+//
+*/
+@include media-breakpoint-up(md) {
+  .mainContainer {
+    .sailingScrollDown {
+      &.fixed {
+        top: 80px;
+      }
+    }
+  }
+
+  /*---
+
+  MS
+  Content Header
+  メインコンテナのヘッダー
+
+  ---*/
+  .contentHeader {
+    &__title {
+      .ja {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .content {
+    &__lead {
+      font-size: 1.25rem;
+    }
+
+    &__figure {
+      .image {
+        width: 100%;
+        padding: 0 20%;
+      }
+    }
+  }
+  /*---
+
+  MD
+  Content Inner Header
+  コンテンツ内のヘッダー
+
+  ---*/
+  .contentInnerHeader {
+    margin: 40px 0 24px 0;
+    &__title {
+      padding-right: 24px;
+      word-break: break-all;
+      span {
+        display: block;
+      }
+
+      .ja {
+        font-weight: 100;
+        font-size: 2.5rem;
+      }
+
+      .en {
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        margin: 8px 0 0 0;
+      }
+    }
+
+    &:after {
+      width: 100%;
+    }
+  }
+}

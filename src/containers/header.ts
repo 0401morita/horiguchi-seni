@@ -14,7 +14,9 @@ const mapStateToProps = (state: State) => {
 // Map Dispatch To Props
 //
 const mapDispatchToProps = (dispatch: ThunkDispatch<State, void, Action>) => ({
-  toggleMenu: () => dispatch(toggleMenu())
+  toggleMenu: () => {
+    dispatch(toggleMenu());
+  }
 });
 //
 // Connect

@@ -42,146 +42,128 @@
 
       &:nth-child(1) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/1.jpg');
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/xs/1.jpg');
         }
       }
 
       &:nth-child(2) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/2.jpg');
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/xs/2.jpg');
         }
       }
 
       &:nth-child(3) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/3.jpg');
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/xs/3.jpg');
         }
       }
 
       &:nth-child(4) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/xs/4.jpg');
-        }
-      }
-    }
-    //
-    // Home Visual COntent
-    .home-visual-content {
-      position: absolute;
-      left: 6vw;
-      bottom: 6vw;
-      right: 0;
-      padding-right: 6vw;
-      color: #fff;
-
-      .title {
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.3em;
-        margin: 0 0 12px 0;
-        letter-spacing: 0em;
-
-        span {
-          display: block;
-          opacity: 0;
-          transform: translateY(12px);
-
-          &:nth-child(1) {
-            font-weight: 400;
-          }
-        }
-      }
-
-      .description {
-        font-weight: 400;
-        line-height: 1.8;
-        margin: 0;
-        font-size: 12px;
-
-        span {
-          display: block;
-          opacity: 0;
-          transform: translateY(12px);
-        }
-      }
-
-      .sailing-scroll-down {
-        position: absolute;
-        top: 0;
-        right: 6vw;
-        right: calc(6vw + 10px);
-
-        .arrow {
-          &:after {
-            background-color: #fff;
-          }
-        }
-      }
-    }
-    //
-    // Home Visual - In Effect
-    &.in {
-      .hero-image {
-        opacity: 1;
-      }
-
-      .home-visual-content {
-        .title {
-          span {
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            &:nth-child(1) {
-              transition: opacity 0.3s 1s ease-in, transform 0.3s 1s ease-in;
-              transform: translateY(0);
-              opacity: 1;
-            }
-
-            &:nth-child(2) {
-              transition: opacity 0.3s 1.2s ease-in, transform 0.3s 1.2s ease-in;
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
-        }
-
-        .description {
-          span {
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            &:nth-child(1) {
-              transition: opacity 0.3s 1.6s ease-in, transform 0.3s 1.6s ease-in;
-              transform: translateY(0);
-              opacity: 1;
-            }
-
-            &:nth-child(2) {
-              transition: opacity 0.3s 1.8s ease-in, transform 0.3s 1.8s ease-in;
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
-        }
-      }
-
-      .slick-slide {
-        &.slick-active {
-          .slick-image {
-            transform: scale(1, 1);
-          }
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/xs/4.jpg');
         }
       }
     }
   }
-  //
-  // About Message
-  //
-  .about-message {
-    max-width: 768px;
-    margin: 0 auto;
 
+  .homeMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__primary {
+      width: 100%;
+      min-height: 132px;
+      display: flex;
+      justify-content: center;
+      margin: 0 0 24px 0;
+    }
+  }
+
+  .primaryMessage {
+    position: fixed;
+    left: 16vw;
+    bottom: 8vh;
+    width: 100%;
+    color: #e84118;
+
+    &__title {
+      width: 100%;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      letter-spacing: 0em;
+      font-size: 0;
+
+      span {
+        font-size: 2rem;
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(12px);
+        line-height: 1;
+        padding: 4px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        &:nth-child(1) {
+          transition: opacity 0.3s 1s ease-in, transform 0.3s 1s ease-in;
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        &:nth-child(3) {
+          transition: opacity 0.3s 1.2s ease-in, transform 0.3s 1.2s ease-in;
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        &:nth-child(1) {
+          font-weight: 400;
+        }
+      }
+    }
+
+    &__description {
+      width: 100%;
+      font-weight: 400;
+      margin: 0;
+      font-size: 0;
+
+      span {
+        font-size: 12px;
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(12px);
+        line-height: 1;
+        padding: 4px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        &:nth-child(1) {
+          transition: opacity 0.3s 1.6s ease-in, transform 0.3s 1.6s ease-in;
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        &:nth-child(3) {
+          transition: opacity 0.3s 1.8s ease-in, transform 0.3s 1.8s ease-in;
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .primary-fix {
+    .primaryMessage {
+      position: relative;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .secondaryMessage {
+    width: 100%;
     p {
       font-size: 1rem;
-      margin: 1rem 0 0 0;
+      margin: 2rem 0 0 0;
       font-weight: 700;
 
       &:first-child {
@@ -190,12 +172,21 @@
     }
   }
 
-  .main-content {
-    background-color: #f9f9f9;
-    padding: 80px 8vw;
+  .in {
+    .hero-image {
+      opacity: 1;
+    }
+
+    .slick-slide {
+      &.slick-active {
+        .slick-image {
+          transform: scale(1, 1);
+        }
+      }
+    }
   }
   //
-  // Service Story / Service List - XS
+  // Service Item / Service List - XS
   //
   .service-item {
     position: relative;
@@ -218,6 +209,7 @@
     }
 
     .service-summary {
+      display: block;
       position: relative;
       top: -8vw;
       left: -8vw;
@@ -225,19 +217,23 @@
       padding: 32px 24px 24px 24px;
 
       .index {
-        display: none;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 12px;
+        color: #e84118;
+        margin: 0 0 24px 0;
 
         .number {
           display: inline-block;
+          letter-spacing: 0.1em;
         }
 
         &:after {
-          display: none;
           content: '';
-          position: absolute;
-          left: 0;
-          width: 1px;
-          height: 100%;
+          width: 80px;
+          height: 1px;
+          margin: 0 0 0 4px;
           background: #e84118;
         }
       }
@@ -264,14 +260,51 @@
       .read-more {
         position: relative;
         padding: 48px 0 0 0;
+        span {
+          display: block;
+          color: #a4b0be;
+          transition: all 0.3s linear;
+        }
 
-        &:before {
+        .en {
+          font-size: 10px;
+        }
+
+        .ja {
+          margin: 4px 0 0 0;
+        }
+
+        &:before,
+        &:after {
           content: '';
           position: absolute;
           top: 23.5px;
           width: 100%;
           height: 1px;
-          background-color: #dfe4ea;
+        }
+
+        &:before {
+          background-color: #a4b0be;
+        }
+
+        &:after {
+          z-index: 1;
+          background-color: #e84118;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in;
+          transform-origin: top left;
+        }
+      }
+
+      &:hover {
+        .read-more {
+          span {
+            color: #e84118;
+          }
+
+          &:after {
+            transform: scaleX(1);
+          }
         }
       }
     }
@@ -310,24 +343,40 @@
 
   .recent-entry-list {
     .recent-entry-item {
+      position: relative;
       border-bottom: 1px solid #dfe4ea;
       padding: 24px 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #e84118;
+        z-index: 1;
+        transform: scaleX(0);
+        transition: 0.3s all ease-in;
+        transform-origin: top left;
+      }
 
       .recent-entry-link {
         width: 100%;
         color: #333;
 
-        .recent-entry-body {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .date {
+        .recent-entry-meta {
           font-size: 0.8rem;
           margin: 0 0 4px 0;
           font-weight: 400;
           color: #ccc;
+          transition: 0.3s all linear;
+        }
+
+        .recent-entry-body {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
 
         .label {
@@ -397,6 +446,16 @@
       &:last-child {
         border: 0;
       }
+
+      &:hover {
+        .recent-entry-meta {
+          color: #e84118;
+        }
+
+        &:after {
+          transform: scaleX(1);
+        }
+      }
     }
   }
   //
@@ -465,51 +524,65 @@
     .slick-slide {
       &:nth-child(1) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/1.jpg');
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/md/1.jpg');
         }
       }
 
       &:nth-child(2) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/2.jpg');
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/md/2.jpg');
         }
       }
 
       &:nth-child(3) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/3.jpg');
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/md/3.jpg');
         }
       }
 
       &:nth-child(4) {
         .slick-image {
-          background-image: url('https://0401morita.github.io/horiguchi-seni/static/images/caroucel/md/4.jpg');
+          background-image: url('http://horiguchi-seni.com/static/images/caroucel/md/4.jpg');
         }
-      }
-    }
-
-    //
-    // Home Visual COntent
-    .home-visual-content {
-      .title {
-        font-size: 4rem;
-        line-height: 1.1em;
-      }
-
-      .description {
-        font-size: 14px;
       }
     }
   }
   //
-  // About Message
-  //
-  .about-message {
-    padding: 80px 0;
+  // MD
+  // Home Message
+  .homeMessage {
+    flex-direction: row;
+
+    &__primary {
+      width: 100%;
+      display: inline-block;
+      margin: 0;
+    }
+  }
+
+  .primaryMessage {
+    margin: 0;
+    bottom: 16vh;
+
+    &__title {
+      line-height: 1.1em;
+      span {
+        font-size: 4rem;
+      }
+    }
+
+    &__description {
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .secondaryMessage {
+    padding: 80px;
     p {
-      font-size: 2rem;
-      margin: 1rem 0 0 0;
-      font-weight: 700;
+      font-size: 1.3rem;
+      font-weight: 500;
     }
   }
 
@@ -517,18 +590,27 @@
   // Service Item - MD
   //
   .service-item {
-    padding: 6vw 0 6vw 12vw;
+    padding: 6vw 0 6vw 8vw;
 
     &:nth-child(odd) {
-      padding: 6vw 9.375vw 6vw 0;
+      padding: 6vw 8vw 6vw 0;
       .service-summary {
         left: auto;
         right: 0;
+
+        .index {
+          left: 6vw;
+          right: auto;
+          transform-origin: top left;
+        }
       }
 
       .service-image {
-        margin: 0 0 0 -8vw;
+        margin: 0;
       }
+    }
+    .service-image {
+      margin: 0;
     }
 
     .service-summary {
@@ -541,16 +623,14 @@
 
       .index {
         position: absolute;
-        left: 6vw;
-        height: 80px;
-        padding-left: 4px;
-        font-weight: 700;
-        font-size: 12px;
-        color: #e84118;
+        top: 90px;
+        left: 36vw;
+        margin: 0;
+        transform: rotateZ(90deg);
+        transform-origin: top left;
 
         .number {
           display: inline-block;
-          transform: rotateZ(90deg);
         }
       }
 

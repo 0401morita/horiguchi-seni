@@ -1,52 +1,69 @@
 import Link from 'next/link';
+import { BrandIconBase } from '../icons/brand';
 
 export default () => {
   return (
     <footer className="global-footer">
-      <div className="footer-container d-md-flex align-items-center">
-        <div className="footer-nav">
-          <ul className="footer-menu">
-            <li>
-              <Link href="/about">
-                <a className="footer-nav-link">堀口繊維工業について</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/service">
-                <a className="footer-nav-link">施設と設備</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/service">
-                <a className="footer-nav-link">会社情報</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/service">
-                <a className="footer-nav-link">お知らせ</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <div className="container-fluid">
+        <div className="footer-row">
+          <div className="footer-col">
+            <h5 className="title">Company</h5>
+            <ul className="footer-nav">
+              <li>
+                <Link href="/about">
+                  <a className="footer-nav-link">堀口繊維工業について</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/service">
+                  <a className="footer-nav-link">施設と設備</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/service">
+                  <a className="footer-nav-link">会社情報</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/service">
+                  <a className="footer-nav-link">お知らせ</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-        <div className="footer-nav">
-          <ul className="footer-menu">
-            <li>
-              <Link href="/about">
-                <a className="footer-nav-link">縫製</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/service">
-                <a className="footer-nav-link">ユニフォーム販売</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/service">
-                <a className="footer-nav-link">リネンサプライ</a>
-              </Link>
-            </li>
-          </ul>
+          <div className="footer-col">
+            <h5 className="title">Service</h5>
+            <ul className="footer-nav">
+              <li>
+                <Link href="/about">
+                  <a className="footer-nav-link">縫製・販売</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/service">
+                  <a className="footer-nav-link">ユニフォーム販売</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/service">
+                  <a className="footer-nav-link">リネンサプライ</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <div className="brand">
+              <BrandIconBase />
+            </div>
+            <address className="footer-address">
+              <p className="address">〒950-2052 新潟県新潟市西区寺尾2-19</p>
+              <div className="tel">
+                <a href="tel:025-269-2591">025-269-2591</a>
+              </div>
+            </address>
+          </div>
         </div>
       </div>
 

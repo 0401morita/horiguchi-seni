@@ -16,7 +16,6 @@ export const HeroSection: FC<{}> = () => {
   };
 
   const HomeVisualRef: any = useRef(null);
-
   useEffect(() => {
     if (HomeVisualRef.current) {
       HomeVisualRef.current.classList.add('in');
@@ -32,22 +31,6 @@ export const HeroSection: FC<{}> = () => {
           <div className="slick-image"></div>
           <div className="slick-image"></div>
         </Slider>
-      </div>
-
-      <div className="home-visual-content">
-        <h2 className="title">
-          <span>ENJOY</span>
-          <span>UNIFORM</span>
-        </h2>
-        <p className="description">
-          <span>ユニフォームを着る人をもっと快適に。</span>
-          <span>もっと楽しく。</span>
-        </p>
-
-        <div className="sailing-scroll-down">
-          <span className="txt">Scroll</span>
-          <span className="arrow"></span>
-        </div>
       </div>
     </section>
   );

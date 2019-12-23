@@ -20,20 +20,6 @@
       padding: 18px 12px;
     }
 
-    .brand {
-      display: inline-block;
-      height: 20px;
-      line-height: 1;
-
-      svg {
-        height: 100%;
-
-        .cls-2 {
-          fill: #e84118;
-        }
-      }
-    }
-
     &.in {
       transform: none;
     }

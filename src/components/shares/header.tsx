@@ -24,22 +24,22 @@ const Header = ({ toggleMenu }: any) => {
           <nav className="global-nav" role="menubar">
             <ul className="nav-menu" role="menu">
               <li role="menuitem">
-                <Link href="about">
-                  <a className="nav-menu-link">堀口繊維について</a>
-                </Link>
-              </li>
-              <li role="menuitem">
-                <Link href="about">
+                <Link href="/service">
                   <a className="nav-menu-link">サービス</a>
                 </Link>
               </li>
               <li role="menuitem">
-                <Link href="about">
+                <Link href="/facility">
                   <a className="nav-menu-link">施設と設備</a>
                 </Link>
               </li>
               <li role="menuitem">
-                <Link href="about">
+                <Link href="/entry">
+                  <a className="nav-menu-link">お知らせ</a>
+                </Link>
+              </li>
+              <li role="menuitem">
+                <Link href="/company">
                   <a className="nav-menu-link">会社情報</a>
                 </Link>
               </li>

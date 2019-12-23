@@ -1,0 +1,241 @@
+.hero {
+  position: relative;
+  height: 800px;
+  height: 50vh;
+
+  .hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('http://horiguchi-seni.com/static/images/caroucel/md/4.jpg');
+  }
+}
+
+/*---
+
+  Service Flow
+  サービスフロー
+
+---*/
+.serviceFlow {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 1px;
+    height: 100%;
+  }
+}
+
+.serviceFlowItem {
+  position: relative;
+  padding: 0 0 0 92px;
+  margin: 40px 0 0 0;
+  min-height: 80px;
+  &__index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #e84118;
+    color: #e84118;
+    font-weight: 100;
+  }
+
+  &__title {
+    margin: 0 0 23px 0;
+    padding: 12px 0 0 0;
+    span {
+      display: block;
+      line-height: 1;
+    }
+    .en {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .ja {
+      font-weight: 100;
+      font-size: 1.25rem;
+      margin: 12px 0 0 0;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-weight: 300;
+  }
+}
+/*---
+
+  Other Service
+  その他のサービス
+
+---*/
+.otherServiceList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.otherServiceItem {
+  margin: 0 0 0 12px;
+  &:first-child {
+    margin: 0;
+  }
+
+  &__link {
+    display: block;
+    color: #57606f;
+
+    &:hover {
+      color: #e84118;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__title {
+    margin: 12px 0 0 0;
+    span {
+      display: block;
+      line-height: 1;
+    }
+    .en {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .ja {
+      font-weight: 100;
+      font-size: 1.25rem;
+      margin: 12px 0 0 0;
+      text-indent: -0.1em;
+    }
+  }
+
+  &__description {
+    margin: 12px 0 0 0;
+    font-weight: 300;
+  }
+}
+
+.imageCaroucel {
+  &__item {
+    padding: 0 4px;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  .slick-track {
+    margin: 0 -4px 0 -4px;
+  }
+
+  .slick-dots {
+    margin: 4px 0 0 0;
+    padding: 0 8px 0 0;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      width: 100%;
+      height: 2px;
+      display: block;
+      button {
+        display: block;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        font-size: 0;
+        background: #dcdcdc;
+        text-indent: -9999px;
+        outline: none;
+        -webkit-appearance: none;
+      }
+
+      &.slick-active {
+        button {
+          background: #000;
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #fff;
+    outline: none;
+    color: transparent;
+    display: none !important;
+
+    &.slick-prev {
+      left: 0;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        height: 1px;
+        background-color: #fff;
+      }
+
+      &:before {
+        top: 8px;
+        transform: rotateZ(-45deg);
+      }
+
+      &:after {
+        bottom: 8px;
+        transform: rotateZ(45deg);
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+
+      &:after {
+        content: '';
+      }
+    }
+  }
+}
+/*
+//
+// MD Size 768px <
+//
+*/
+@include media-breakpoint-up(md) {
+  .serviceFlow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .serviceFlowItem {
+    width: 50%;
+  }
+}

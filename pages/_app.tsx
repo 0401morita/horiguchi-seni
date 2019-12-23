@@ -7,7 +7,11 @@ import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import '../src/styles/common.scss';
 import reducers from '../src/reducers';
-import { setScrollTop } from '../src/actions/app';
+import { actions, closeMenu } from '../src/actions/app';
+import Header from '../src/containers/header';
+import Footer from '../src/components/shares/footer';
+import RecentEntries from '../src/components/recent_entries/list';
+import { AppState } from '../src/reducers/app';
 
 const makeStore = () => {
   return createStore(reducers, applyMiddleware(thunk));
@@ -27,26 +31,100 @@ class MyApp extends App<AppProps> {
     Component: any;
     ctx: any;
   }) {
-    ctx.store.dispatch({ type: 'FOO', payload: 'foo' });
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
       : {};
-    console.log('pageProps');
     return { pageProps };
   }
 
+  handleScroll = () => {
+    const scrollTop: number =
+      Math.max(
+        window.pageYOffset,
+        document.documentElement.scrollTop,
+        document.body.scrollTop
+      ) || 0;
+
+    const props = this.props;
+    const { app } = props.store.getState();
+    const updateState = {
+      ...app,
+      windows: {
+        ...app.windows,
+        scrollTop: scrollTop
+      }
+    };
+    this.props.store.dispatch(actions.setApp(updateState));
+  };
+
+  handleResize = () => {
+    let timer = 200;
+    if (timer > 0) {
+      clearTimeout(timer);
+    }
+
+    const props = this.props;
+    timer = setTimeout(function() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const scrollTop: number =
+        Math.max(
+          window.pageYOffset,
+          document.documentElement.scrollTop,
+          document.body.scrollTop
+        ) || 0;
+
+      props.store.dispatch(
+        actions.setApp({
+          windows: {
+            scrollTop: scrollTop,
+            width: width,
+            height: height,
+            vw: Math.floor(width * 0.01),
+            vh: Math.floor(height * 0.01)
+          }
+        })
+      );
+    }, timer);
+  };
+
+  componentDidUpdate() {
+    this.props.store.dispatch(closeMenu());
+  }
+
   componentDidMount() {
-    const { store } = this.props;
-    window.addEventListener('scroll', () => store.dispatch(setScrollTop()));
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const scrollTop: number =
+      Math.max(
+        window.pageYOffset,
+        document.documentElement.scrollTop,
+        document.body.scrollTop
+      ) || 0;
+
+    this.props.store.dispatch(
+      actions.setApp({
+        windows: {
+          scrollTop: scrollTop,
+          width: width,
+          height: height,
+          vw: Math.floor(width * 0.01),
+          vh: Math.floor(height * 0.01)
+        }
+      })
+    );
+    document.addEventListener('scroll', this.handleScroll, false);
+    window.addEventListener('resize', this.handleResize, false);
   }
 
   componentWillUnmount() {
-    const { store } = this.props;
-    window.removeEventListener('scroll', () => store.dispatch(setScrollTop()));
+    document.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleScroll);
   }
 
   render() {
     const { Component, pageProps, store } = this.props;
+
     return (
       <Container>
         <Provider store={store}>
@@ -58,8 +136,28 @@ class MyApp extends App<AppProps> {
             />
             <meta name="apple-mobile-web-app-capable" content="yes" />
           </Head>
+          <div className="wrapper">
+            <Header />
+            <Component {...pageProps} />
 
-          <Component {...pageProps} />
+            <section className="section sectionRecentEntries">
+              <div className="row">
+                <div className="col-md-5">
+                  <div className="section-heading">
+                    <h3 className="section-title">
+                      <span className="ja">お知らせ</span>
+                      <span className="en">News and Column</span>
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="col-md-7">
+                  <RecentEntries />
+                </div>
+              </div>
+            </section>
+          </div>
+          <Footer />
         </Provider>
       </Container>
     );

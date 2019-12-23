@@ -1,17 +1,23 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { actions } from '../actions/header';
+import { actions } from '../actions/app';
 export interface AppState {
   open_menu: boolean;
-  scrollTop: number;
+  windows: { [key: string]: number };
 }
 
 export const initialState: AppState = {
   open_menu: false,
-  scrollTop: 0
+  windows: {
+    scrollTop: 0,
+    windowWidth: 0,
+    windowHeight: 0,
+    vw: 0,
+    vh: 0
+  }
 };
 
 export const appReducer = reducerWithInitialState(initialState).case(
-  actions.setCommon,
+  actions.setApp,
   (state: AppState, data: any) => {
     return { ...state, ...data };
   }
