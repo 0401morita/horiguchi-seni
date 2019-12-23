@@ -1254,27 +1254,27 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
     return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_8__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 130
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_6__["Provider"], {
       store: store,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 131
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 132
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("title", {
       key: "title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 133
       },
       __self: this
     }, "\u682A\u5F0F\u4F1A\u793E \u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("meta", {
@@ -1282,7 +1282,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
       content: "width=device-width,minimum-scale=1,initial-scale=1,minimal-ui",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133
+        lineNumber: 134
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("meta", {
@@ -1290,94 +1290,94 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
       content: "yes",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137
+        lineNumber: 138
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139
+        lineNumber: 140
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_containers_header__WEBPACK_IMPORTED_MODULE_13__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140
+        lineNumber: 141
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 142
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("section", {
       className: "section sectionRecentEntries",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
+        lineNumber: 144
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144
+        lineNumber: 145
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "col-md-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145
+        lineNumber: 146
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "section-heading",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 147
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h3", {
       className: "section-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 147
+        lineNumber: 148
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
       className: "ja",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 148
+        lineNumber: 149
       },
       __self: this
     }, "\u304A\u77E5\u3089\u305B"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
       className: "en",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 149
+        lineNumber: 150
       },
       __self: this
     }, "News and Column")))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "col-md-7",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154
+        lineNumber: 155
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_recent_entries_list__WEBPACK_IMPORTED_MODULE_15__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155
+        lineNumber: 156
       },
       __self: this
     }))))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_shares_footer__WEBPACK_IMPORTED_MODULE_14__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 160
+        lineNumber: 161
       },
       __self: this
     })));

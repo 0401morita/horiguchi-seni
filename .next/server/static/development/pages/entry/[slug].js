@@ -898,37 +898,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _src_components_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../src/components/icons */ "./src/components/icons/index.ts");
-/* harmony import */ var _src_containers_sailingScrollDown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../src/containers/sailingScrollDown */ "./src/containers/sailingScrollDown.ts");
-/* harmony import */ var _src_styles_home_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../src/styles/home.scss */ "./src/styles/home.scss");
-/* harmony import */ var _src_styles_home_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_src_styles_home_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _src_containers_entries_show__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../src/containers/entries/show */ "./src/containers/entries/show.ts");
+/* harmony import */ var _src_components_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../src/components/icons */ "./src/components/icons/index.ts");
+/* harmony import */ var _src_containers_sailingScrollDown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../src/containers/sailingScrollDown */ "./src/containers/sailingScrollDown.ts");
+/* harmony import */ var _src_styles_home_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../src/styles/home.scss */ "./src/styles/home.scss");
+/* harmony import */ var _src_styles_home_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_styles_home_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/pages/entry/[slug].tsx";
 
 
 
 
+ //import Entry from '../../src/containers/entries/show';
 
 
 
-
-const Home = props => {
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    console.log(props);
-  }, []);
+const EntryPage = props => {
+  console.log(props);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "hero",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 22
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -938,275 +935,77 @@ const Home = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 23
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
     className: "mainContainer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_containers_sailingScrollDown__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    text: "News",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "content mainContainer__content",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 31
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_containers_entries_show__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_containers_sailingScrollDown__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    text: "News",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "contentFooter",
+    className: "content mainContainer__content",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "contentFooter",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/contact",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "btn btn-black contentFooter__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: undefined
-  }, "\u304A\u554F\u3044\u5408\u308F\u305B", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_icons__WEBPACK_IMPORTED_MODULE_3__["ArrowRightIcon"], {
+  }, "\u304A\u554F\u3044\u5408\u308F\u305B", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_icons__WEBPACK_IMPORTED_MODULE_2__["ArrowRightIcon"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: undefined
   })))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(state => state)(Home));
-
-/***/ }),
-
-/***/ "./src/actions/wp.ts":
-/*!***************************!*\
-  !*** ./src/actions/wp.ts ***!
-  \***************************/
-/*! exports provided: actions, getWpPostBySlug, getWpPosts */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWpPostBySlug", function() { return getWpPostBySlug; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWpPosts", function() { return getWpPosts; });
-/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-fsa */ "typescript-fsa");
-/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typescript_fsa__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! query-string */ "query-string");
-/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(query_string__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-//import { Dispatch } from 'redux';
-//import { CommonState } from '../reducers/common';
-
-/*
- * Action Setting
- */
-const axios = axios__WEBPACK_IMPORTED_MODULE_2___default.a.create({
-  baseURL: 'https://wp.horiguchi-seni.com/',
-  headers: {
-    'Content-Type': 'application/json'
-  }
-});
-const actionCreator = typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default()(); //
-// Actions
-//
-
-const actions = {
-  setWp: actionCreator('SET_WP'),
-  setWpPost: actionCreator('SET_WP_POST'),
-  setWpPosts: actionCreator('SET_WP_POSTS'),
-  setWpPostsHeaders: actionCreator('SET_WP_POSTS_HEADERS')
-}; //
-// Get Post By Slug
-//
-
-const getWpPostBySlug = slug => {
-  return (dispatch, getState) => {
-    axios.get(`/wp-json/wp/v2/posts/?_embed&slug=${slug}`).then(({
-      status,
-      data
-    }) => {
-      console.log(data[0]);
-
-      if (status === 200 && data.length) {
-        dispatch(actions.setWpPost(data[0]));
-      }
-    }).catch(({
-      response
-    }) => {});
-  };
-}; //
-// Get Posts
-//
-
-const getWpPosts = () => {
-  return (dispatch, getState) => {
-    let url = '/wp-json/wp/v2/posts/?_embed';
-    const search = location.search;
-    const parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_1__["parse"])(search);
-
-    if (parseSearch.page) {
-      url += '&' + Object(query_string__WEBPACK_IMPORTED_MODULE_1__["stringify"])(parseSearch);
-    }
-
-    dispatch(actions.setWp({
-      isLoading: true,
-      isError: false
-    }));
-    axios.get(url).then(res => {
-      const {
-        status,
-        data,
-        headers,
-        config
-      } = res;
-
-      if (status === 200 && data.length) {
-        dispatch(actions.setWpPostsHeaders(headers));
-        dispatch(actions.setWpPosts(data));
-      }
-    }).catch(res => {
-      dispatch(actions.setWp({
-        isError: true
-      }));
-    }).finally(() => {
-      setTimeout(() => {
-        dispatch(actions.setWp({
-          isLoading: false
-        }));
-      }, 500);
-    });
-  };
-};
-
-/***/ }),
-
-/***/ "./src/components/entries/show.tsx":
-/*!*****************************************!*\
-  !*** ./src/components/entries/show.tsx ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _styles_twentytwenty_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../styles/twentytwenty.scss */ "./src/styles/twentytwenty.scss");
-/* harmony import */ var _styles_twentytwenty_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_twentytwenty_scss__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/entries/show.tsx";
-
-
-
-
-const Entry = ({
-  wpPost,
-  getWpPostBySlug
+EntryPage.getInitialProps = async ({
+  query
 }) => {
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])();
+  console.log(query);
   const {
     slug
-  } = router.query;
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    console.log(wpPost);
-    if (typeof slug !== 'string') return;
-    getWpPostBySlug(slug);
-    console.log(wpPost);
-  }, []);
-
-  if (wpPost.data) {
-    const {
-      title,
-      content
-    } = wpPost.data;
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "contentHeader",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-      className: "contentHeader__title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "en",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: undefined
-    }, "Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "ja",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: undefined
-    }, title.rendered))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "entry-content",
-      dangerouslySetInnerHTML: {
-        __html: content.rendered
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 43
-      },
-      __self: undefined
-    }));
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "error",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  }, "404");
+  } = query;
+  if (typeof slug !== 'string') return;
+  const url = encodeURI(`https://wp.horiguchi-seni.com/wp-json/wp/v2/posts/?_embed&slug=${slug}`);
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default()(url);
+  const json = await res.json();
+  return {
+    data: json
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Entry);
+/* harmony default export */ __webpack_exports__["default"] = (EntryPage);
 
 /***/ }),
 
@@ -2177,44 +1976,6 @@ const SailingScrollDown = ({
 
 /***/ }),
 
-/***/ "./src/containers/entries/show.ts":
-/*!****************************************!*\
-  !*** ./src/containers/entries/show.ts ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions_wp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/wp */ "./src/actions/wp.ts");
-/* harmony import */ var _components_entries_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/entries/show */ "./src/components/entries/show.tsx");
-
-
-
-
-//
-// Map State To Props
-//
-const mapStateToProps = state => {
-  return state;
-}; //
-// Map Dispatch To Props
-//
-
-
-const mapDispatchToProps = dispatch => ({
-  getWpPostBySlug: slug => dispatch(Object(_actions_wp__WEBPACK_IMPORTED_MODULE_1__["getWpPostBySlug"])(slug))
-}); //
-// Connect
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_components_entries_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
-
-/***/ }),
-
 /***/ "./src/containers/sailingScrollDown.ts":
 /*!*********************************************!*\
   !*** ./src/containers/sailingScrollDown.ts ***!
@@ -2255,17 +2016,6 @@ const mapStateToProps = state => {
 
 /***/ }),
 
-/***/ "./src/styles/twentytwenty.scss":
-/*!**************************************!*\
-  !*** ./src/styles/twentytwenty.scss ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ 3:
 /*!**************************************!*\
   !*** multi ./pages/entry/[slug].tsx ***!
@@ -2275,17 +2025,6 @@ const mapStateToProps = state => {
 
 module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/pages/entry/[slug].tsx */"./pages/entry/[slug].tsx");
 
-
-/***/ }),
-
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
 
 /***/ }),
 
@@ -2366,6 +2105,17 @@ module.exports = require("core-js/library/fn/object/keys");
 
 /***/ }),
 
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
 /***/ "next-server/dist/lib/router-context":
 /*!******************************************************!*\
   !*** external "next-server/dist/lib/router-context" ***!
@@ -2410,17 +2160,6 @@ module.exports = require("next-server/dist/lib/utils");
 
 /***/ }),
 
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
-
-/***/ }),
-
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -2440,17 +2179,6 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("prop-types-exact");
-
-/***/ }),
-
-/***/ "query-string":
-/*!*******************************!*\
-  !*** external "query-string" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("query-string");
 
 /***/ }),
 
@@ -2495,17 +2223,6 @@ module.exports = require("react-redux");
 /***/ (function(module, exports) {
 
 module.exports = require("styled-components");
-
-/***/ }),
-
-/***/ "typescript-fsa":
-/*!*********************************!*\
-  !*** external "typescript-fsa" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("typescript-fsa");
 
 /***/ }),
 

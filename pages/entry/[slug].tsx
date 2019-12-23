@@ -1,19 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { NextPage, NextPageContext } from 'next';
+import { useRouter } from 'next/router';
+
 import Link from 'next/link';
 import { connect } from 'react-redux';
 import { ArrowRightIcon } from '../../src/components/icons';
 import { State } from '../../src/reducers';
 import SailingScrollDown from '../../src/containers/sailingScrollDown';
 import '../../src/styles/home.scss';
-import Entry from '../../src/containers/entries/show';
+//import Entry from '../../src/containers/entries/show';
+import fetch from 'isomorphic-unfetch';
 
-interface ServiceListProps {}
+interface ServiceListProps {
+  data?: any;
+}
 
-const Home: React.FC<ServiceListProps & State> = props => {
-  useEffect(() => {
-    console.log(props);
-  }, []);
-
+const EntryPage: NextPage<any> = props => {
+  console.log(props);
   return (
     <React.Fragment>
       <section className="hero">
@@ -29,8 +32,6 @@ const Home: React.FC<ServiceListProps & State> = props => {
         <SailingScrollDown text="News" />
 
         <div className="content mainContainer__content">
-          <Entry />
-
           <div className="contentFooter">
             <Link href="/contact">
               <a className="btn btn-black contentFooter__button">
@@ -45,4 +46,17 @@ const Home: React.FC<ServiceListProps & State> = props => {
   );
 };
 
-export default connect(state => state)(Home);
+EntryPage.getInitialProps = async ({ query }: NextPageContext) => {
+  console.log(query);
+  const { slug } = query;
+  if (typeof slug !== 'string') return;
+  const url = encodeURI(
+    `https://wp.horiguchi-seni.com/wp-json/wp/v2/posts/?_embed&slug=${slug}`
+  );
+  const res = await fetch(url);
+  const json = await res.json();
+
+  return { data: json };
+};
+
+export default EntryPage;
