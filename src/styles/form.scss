@@ -1,0 +1,51 @@
+.formLabel {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  justify-content: space-between;
+  margin: 0;
+  &__tips {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 4px;
+    margin: 0 0 0 4px;
+    height: auto;
+    font-size: 10px;
+    font-weight: 100;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.formFooter {
+  margin: 24px 0 0 0;
+  overflow: hidden;
+
+  &__submit {
+    display: block;
+    width: 100%;
+  }
+}
+/*
+//
+// MD Size 768px <
+//
+*/
+@include media-breakpoint-up(md) {
+  .formLabel {
+    justify-content: start;
+  }
+
+  .formFooter {
+    &__submit {
+      width: auto;
+      display: inline-block;
+      float: right;
+    }
+  }
+}

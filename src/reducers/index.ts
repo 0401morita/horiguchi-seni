@@ -1,12 +1,23 @@
 import { combineReducers } from 'redux';
-import { commonReducer, CommonState } from './common';
+import { appReducer, AppState } from './app';
+import { serviceReducer, ServiceState } from './service';
+import { reducer as reduxFormReducer } from 'redux-form';
+import { WpPostsReducer, WpPostsState } from './wp_posts';
+import { WpPostReducer, WpPostState } from './wp/post';
 
 export interface State {
-  common: CommonState;
+  app: AppState;
+  service: ServiceState;
+  wpPosts: WpPostsState;
+  wpPost: WpPostState;
 }
 
 const reducers = combineReducers({
-  common: commonReducer
+  app: appReducer,
+  service: serviceReducer,
+  form: reduxFormReducer,
+  wpPosts: WpPostsReducer,
+  wpPost: WpPostReducer
 });
 
 export default reducers;

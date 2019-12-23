@@ -1,0 +1,37 @@
+{
+  "modules": {
+    "byIdentifier": {},
+    "usedIds": {}
+  },
+  "chunks": {
+    "byName": {
+      "pages/_error.js": 0,
+      "pages/company.js": 1,
+      "pages/contact.js": 2,
+      "pages/entry.js": 3,
+      "pages/entry/[slug].js": 4,
+      "pages/entry/show.js": 5,
+      "pages/facility.js": 6,
+      "pages/index.js": 7,
+      "pages/service.js": 8,
+      "pages/service/cleaning-lease.js": 9,
+      "pages/service/sales.js": 10,
+      "pages/service/sewing.js": 11
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      10,
+      11,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}

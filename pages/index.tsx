@@ -1,310 +1,186 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import IconEnvelope from '../src/components/icons/envelope';
+import { connect } from 'react-redux';
 import '../src/styles/home.scss';
-import Header from '../src/containers/header';
-import Footer from '../src/components/shares/footer';
+import { HeroSection } from '../src/components/homes/slider';
+import ServiceItem from '../src/components/homes/service_item';
+import { ArrowRightIcon } from '../src/components/icons';
+import { State } from '../src/reducers';
+import EventListener from 'react-event-listener';
+import SailingScrollDown from '../src/containers/sailingScrollDown';
 
-interface getInitialProps {
-  store: any;
-}
+interface HomeProps {}
 
-interface HomeProps {
-  custom: string;
-}
+const Home: React.FC<HomeProps & State> = ({ app, service }) => {
+  const [windowState, setWindowState] = useState({
+    width: 0,
+    height: 0,
+    vw: 0,
+    vh: 0
+  });
 
-class Home extends Component<HomeProps> {
-  static getInitialProps({ store }: getInitialProps) {
-    store.dispatch({ type: 'FOO', payload: 'foo' }); // component will be able to read from store's state when rendered
-    return { custom: 'custom' }; // you can pass some custom props to component from here
-  }
+  const [primaryState, setPrimaryState] = useState({
+    height: 0
+  });
 
-  render() {
-    return (
-      <div className="wrapper">
-        <Header />
+  const [messageSectionState, setMessageSectionState] = useState({
+    height: 0
+  });
 
-        <article className="home">
-          <section className="hero-section section-visual">
-            <div className="hero-image bg filter">
-              <img src="/static/images/visual/02.jpg" />
-            </div>
+  const primaryMessageEl = useRef<HTMLDivElement>(null);
+  const messageSectionEl = useRef<HTMLDivElement>(null);
+  /*
+   * リサイズ実行関数
+   *
+   * @event {Object} event - イベント
+   */
+  const handleResize = (e: any) => {
+    let timer = 200;
+    if (timer > 0) {
+      clearTimeout(timer);
+    }
 
-            <div className="hero-content center">
-              <Link href="/about">
-                <a className="visual-content-link">
-                  <h2 className="title">
-                    <span>私たちはユニフォームに関する</span>
-                    <br className="d-none d-md-block" />
-                    <span>トータルソリューションを提供します。</span>
-                  </h2>
-                  <p className="description">
-                    堀口繊維工業はユニフォームの縫製 / 販売 / リース /
-                    クリーニングのワンストップサービスを提供します。真に価値のあるユニフォームとサービスを提供し、ユニフォームの導入から運用までをトータルでサポートします。
-                  </p>
+    timer = setTimeout(function() {
+      if (primaryMessageEl.current) {
+        const primaryHeight = primaryMessageEl.current.offsetHeight || 0;
+        setPrimaryState(prev => {
+          return { ...prev, height: primaryHeight };
+        });
+      }
 
-                  <button className="btn btn-white btn-read-more mt-4">
-                    <span className="txt">View About</span>
-                    <span className="arrow"></span>
-                  </button>
-                </a>
-              </Link>
-            </div>
-          </section>
+      if (messageSectionEl.current) {
+        const messageSectionHeight = messageSectionEl.current.offsetHeight || 0;
+        setMessageSectionState(prev => {
+          return { ...prev, height: messageSectionHeight };
+        });
+      }
+    }, timer);
+  };
+  /*
+   * スクロール実行関数
+   *
+   * @event {Object} event - イベント
+   */
+  const handleScroll = () => {
+    if (primaryMessageEl.current) {
+      const {
+        scrollTop,
+        width: windowWidth,
+        height: windowHeight,
+        vw,
+        vh
+      } = app.windows;
+      const { height: primaryHeight } = primaryState;
+      const { height: messageSectionHeight } = messageSectionState;
+      const isSmartPhone = windowWidth < 768;
+      let isfix =
+        scrollTop > vh * 16 + primaryHeight / 2 + messageSectionHeight / 2;
+      if (isSmartPhone) {
+        isfix = scrollTop > vh * 8 + primaryHeight;
+      }
 
-          <article className="service-stories">
-            <section className="section-story">
-              <div className="story-image">
-                <div
-                  className="aspect-rect bg-cover bg-center bg-no-repeat"
-                  style={{
-                    backgroundImage: 'url(/static/images/tiles/sewing.jpg)'
-                  }}
-                ></div>
-              </div>
+      if (isfix) {
+        document.body.classList.add('primary-fix');
+      } else {
+        document.body.classList.remove('primary-fix');
+      }
+    }
+  };
 
-              <div className="story-content">
-                <div className="content-summary white">
-                  <div className="en-title">
-                    Original Equipment Manufacturer
-                  </div>
+  useEffect(() => {
+    if (primaryMessageEl.current) {
+      const primaryHeight = primaryMessageEl.current.offsetHeight || 0;
+      setPrimaryState(prev => {
+        return { ...prev, height: primaryHeight };
+      });
+    }
 
-                  <h4 className="title">アパレル生産</h4>
-                  <div className="description">
-                    小規模から対応可能なアパレルのOEM生産サービスです。デザインから素材まで全てのカスタマイズが可能です。
-                  </div>
+    if (messageSectionEl.current) {
+      const messageSectionHeight = messageSectionEl.current.offsetHeight || 0;
+      setMessageSectionState(prev => {
+        return { ...prev, height: messageSectionHeight };
+      });
+    }
 
-                  <div className="read-more">
-                    <span className="txt">View More</span>
-                    <span className="arrow"></span>
-                  </div>
-                </div>
-              </div>
-            </section>
+    document.body.classList.add('in');
+  }, []);
 
-            <section className="section-story">
-              <div className="story-image">
-                <div
-                  className="aspect-rect bg-cover bg-center bg-no-repeat"
-                  style={{
-                    backgroundImage: 'url(/static/images/tiles/iron.jpg)'
-                  }}
-                ></div>
-              </div>
+  return (
+    <React.Fragment>
+      <EventListener
+        target="window"
+        onScroll={handleScroll}
+        onResize={handleResize}
+      />
 
-              <div className="story-content">
-                <Link href="/service/cleaning">
-                  <a className="content-summary white">
-                    <div className="en-title">Cleaning</div>
+      <HeroSection />
+      <main className="mainContainer">
+        <SailingScrollDown text="HOME" />
 
-                    <h4 className="title">クリーニング</h4>
-                    <p className="description">
-                      毎日使うユニフォームやホテルのシーツ・タオルを清潔な状態でお届けします。大規模クリーニングのサービスです。
-                    </p>
-
-                    <div className="read-more">
-                      <span className="txt">View More</span>
-                      <span className="arrow"></span>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-            </section>
-
-            {/* Lease */}
-            <section className="section-story">
-              <div className="story-image">
-                <div
-                  className="aspect-rect bg-cover bg-center bg-no-repeat"
-                  style={{
-                    backgroundImage: 'url(/static/images/tiles/lease.jpg)'
-                  }}
-                ></div>
-              </div>
-
-              <div className="story-content">
-                <Link href="/service/cleaning">
-                  <a className="content-summary">
-                    <div className="en-title">Leasing a Uniform</div>
-
-                    <h4 className="title">ユニフォーム・リース</h4>
-                    <p className="description">
-                      クリーニング済み衛生的なユニフォームを定期的にお届けします。医療現場や清潔感を求められる環境に最適です。
-                    </p>
-
-                    <div className="read-more">
-                      <span className="txt">View More</span>
-                      <span className="arrow"></span>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-            </section>
-
-            {/* Sales */}
-            <section className="section-story">
-              <div className="story-image">
-                <div
-                  className="aspect-rect bg-cover bg-center bg-no-repeat"
-                  style={{
-                    backgroundImage: 'url(/static/images/tiles/uniform.jpg)'
-                  }}
-                ></div>
-              </div>
-
-              <div className="story-content">
-                <Link href="/service/cleaning">
-                  <a className="content-summary white">
-                    <div className="en-title">Sales a Uniform</div>
-
-                    <h4 className="title">ユニフォーム販売</h4>
-                    <p className="description">
-                      制服や作業着などユーザーに合わせたユニフォーム販売・導入をサポートします。
-                    </p>
-
-                    <div className="read-more">
-                      <span className="txt">View More</span>
-                      <span className="arrow"></span>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-            </section>
-          </article>
-
-          <section className="section section-space">
-            <div className="recent-entries d-md-flex flex-wrap align-items-center">
-              <div className="section-heading">
-                <h3 className="section-title">
-                  <span className="ja">最新記事</span>
-                  <span className="en">News Topics</span>
-                </h3>
-              </div>
-
-              <div className="recent-entry-list">
-                <div className="entry-item">
-                  <div className="eyecatch">
-                    <div
-                      className="bg-cover bg-center image"
-                      style={{
-                        backgroundImage: `url(/static/images/visual/03.jpg)`
-                      }}
-                    ></div>
-                  </div>
-                  <div className="entry-meta">
-                    <a href="/" className="name">
-                      夏も涼しく清潔に。快適に過ごせるユニフォーム素材。
-                    </a>
-                    <span className="cat">コラム</span>
-                  </div>
-                </div>
-
-                <div className="entry-item">
-                  <div className="eyecatch">
-                    <div
-                      className="bg-cover bg-center image"
-                      style={{
-                        backgroundImage: `url(/static/images/visual/03.jpg)`
-                      }}
-                    ></div>
-                  </div>
-                  <div className="entry-meta">
-                    <a href="/" className="name">
-                      夏も涼しく清潔に。快適に過ごせるユニフォーム素材。
-                    </a>
-                    <span className="cat">コラム</span>
-                  </div>
-                </div>
-
-                <div className="entry-item">
-                  <div className="eyecatch">
-                    <div
-                      className="bg-cover bg-center image"
-                      style={{
-                        backgroundImage: `url(/static/images/visual/03.jpg)`
-                      }}
-                    ></div>
-                  </div>
-                  <div className="entry-meta">
-                    <a href="/" className="name">
-                      夏も涼しく清潔に。快適に過ごせるユニフォーム素材。
-                    </a>
-                    <span className="cat">コラム</span>
-                  </div>
-                </div>
-
-                <div className="entry-item">
-                  <div className="eyecatch">
-                    <div
-                      className="bg-cover bg-center image"
-                      style={{
-                        backgroundImage: `url(/static/images/visual/03.jpg)`
-                      }}
-                    ></div>
-                  </div>
-                  <div className="entry-meta">
-                    <a href="/" className="name">
-                      夏も涼しく清潔に。快適に過ごせるユニフォーム素材。
-                    </a>
-                    <span className="cat">コラム</span>
-                  </div>
-                </div>
+        <div className="mainContainer__index">Company - 会社概要</div>
+        <div className="content mainContainer__content">
+          <section className="homeMessage" ref={messageSectionEl}>
+            <div className="homeMessage__primary">
+              <div className="primaryMessage" ref={primaryMessageEl}>
+                <h2 className="primaryMessage__title">
+                  <span>ENJOY</span>
+                  <br />
+                  <span>UNIFORM</span>
+                </h2>
+                <p className="primaryMessage__description">
+                  <span>ユニフォームを着る人をもっと快適に。</span>
+                  <br />
+                  <span>もっと楽しく。</span>
+                </p>
               </div>
             </div>
+            <div className="homeMessage__secondary">
+              <div className="secondaryMessage">
+                <p>堀口繊維工業は、戦後まもなく縫製事業を立ち上げました。</p>
+                <p>
+                  ユニフォームを縫製・販売する一方で平成に入りクリーニング設備を
+                  整えました。
+                </p>
+                <p>
+                  現在、ユニフォームの縫製・販売・クリーニング・クリーニング付リース（リネンサプライ）を
+                  中心に展開いたしております。
+                </p>
 
-            <div className="mt-4 mt-md-5 d-flex clearfix justify-content-center">
-              <Link href="/news">
-                <a className="btn btn-read-more">
-                  <span className="txt">View Topics</span>
-                  <span className="arrow"></span>
-                </a>
-              </Link>
-            </div>
-          </section>
-
-          <section className="section-cover-message fit">
-            <div
-              className="fluid bg-cover bg-center image"
-              style={{
-                backgroundImage: `url(/static/images/footer-main-visual.jpg)`
-              }}
-            ></div>
-
-            <div className="overlay">
-              <div className="info-summary">
-                <Link href="/facility">
-                  <a className="info-summary-link">
-                    <h3 className="title">OPEN INNOVATION</h3>
-                    <p className="message">
-                      <span>堀口繊維工業は、</span>
-                      <span>共創活動で縫製工場の</span>
-                      <span>イノベーションを生み出します。</span>
-                    </p>
-
-                    <div className="btn btn-white btn-read-more pull-right">
-                      <span className="txt">View Facility</span>
-                      <span className="arrow"></span>
-                    </div>
+                <Link href="/service">
+                  <a className="read-more-link">
+                    <span className="en">About</span>
+                    <span className="ja">堀口繊維工業について</span>
                   </a>
                 </Link>
               </div>
             </div>
           </section>
-        </article>
 
-        <div className="fixed-flow">
-          <a href="/contact" className="fixed-flow-inner">
-            <span className="icon">
-              <IconEnvelope />
-            </span>
-            <span className="txt">お問い合わせ・お見積もり</span>
-          </a>
+          <div className="contentInnerHeader">
+            <h3 className="contentInnerHeader__title">
+              <span className="ja">私たちの事業</span>
+              <span className="en">Service</span>
+            </h3>
+          </div>
+
+          <div className="service-list">
+            {service.list.map((service: any, index: number) => {
+              return <ServiceItem {...service} index={index} key={index} />;
+            })}
+          </div>
+
+          <div className="contentFooter">
+            <Link href="/contact">
+              <a className="btn btn-black contentFooter__button">
+                お問い合わせ
+                <ArrowRightIcon />
+              </a>
+            </Link>
+          </div>
         </div>
-        <Footer />
-      </div>
-    );
-  }
-}
+      </main>
+    </React.Fragment>
+  );
+};
 
 export default connect(state => state)(Home);

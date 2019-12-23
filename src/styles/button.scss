@@ -37,6 +37,11 @@
     }
   }
 
+  &.btn-black {
+    background-color: #000;
+    color: #fff;
+  }
+
   &.outline {
     background: transparent;
   }
@@ -47,9 +52,13 @@
     padding-right: 16px;
   }
 
-  .btn-block {
+  &.btn-block {
     display: block;
     width: 100%;
+  }
+
+  &.btn-lg {
+    padding: 24px;
   }
 }
 
