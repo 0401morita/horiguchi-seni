@@ -6902,6 +6902,63 @@ a:hover {
         .service-item .service-summary .summary-description br {
           display: block; } }
 
+.entry-content p {
+  font-size: 1.2rem; }
+
+.entry-content h2,
+.entry-content h3,
+.entry-content h4 {
+  font-weight: 500; }
+
+.entry-content h2 {
+  font-size: 3rem; }
+
+.entry-content h3 {
+  font-size: 2.5rem; }
+
+.entry-content h4 {
+  font-size: 2rem; }
+
+.entry-content figure img {
+  max-width: 100%; }
+
+.entry-content figcaption {
+  font-weight: 500;
+  font-size: 10px;
+  margin: 8px 0 0 0; }
+
+.entry-content .wp-block-image {
+  margin-top: 5vw;
+  margin-bottom: 5vw; }
+  .entry-content .wp-block-image.is-style-circle-mask img {
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+    mask-mode: alpha;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    border-radius: none; }
+  .entry-content .wp-block-image.alignwide img {
+    width: calc(100% + 8vw);
+    max-width: calc(100% + 8vw);
+    margin-left: -4vw; }
+  .entry-content .wp-block-image.alignfull img {
+    width: calc(100% + 16vw);
+    max-width: calc(100% + 16vw);
+    margin-left: -8vw; }
+  .entry-content .wp-block-image .alignleft,
+  .entry-content .wp-block-image .alignright {
+    position: static;
+    max-width: 50%;
+    height: 100%; }
+  .entry-content .wp-block-image.alignleft {
+    position: absolute;
+    right: calc((100vw - 58rem) / 2 + 58rem + 2rem);
+    max-width: calc((100% - 58rem) / 2 - 6rem); }
+
 .entryList {
   margin: -40px 0;
   display: -webkit-box;
@@ -6960,29 +7017,6 @@ a:hover {
   .entryItemSummary__title {
     font-size: 1rem;
     letter-spacing: 0.05em; } }
-
-.contactPhone {
-  margin: 24px 0 0 0; }
-  .contactPhone__attention {
-    margin: 12px 0 0 0; }
-
-.phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-  .phone__icon {
-    height: 2rem; }
-  .phone__number {
-    font-size: 2rem;
-    font-weight: 100;
-    color: #000;
-    line-height: 1;
-    margin: 0 0 0 12px; }
-    .phone__number:hover {
-      color: #000; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

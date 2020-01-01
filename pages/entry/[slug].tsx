@@ -11,7 +11,7 @@ import '../../src/styles/home.scss';
 //import Entry from '../../src/containers/entries/show';
 import fetch from 'isomorphic-unfetch';
 import moment from 'moment/moment';
-import '../../src/styles/twentytwenty.scss';
+import '../../src/styles/entry.scss';
 interface ServiceListProps {
   data?: any;
 }
