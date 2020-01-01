@@ -20,6 +20,7 @@ module.exports = withCSS(
       const res = await fetch(
         'https://horiguchi-seni.sauce.jp/wp-json/wp/v2/posts/?_embed'
       );
+      console.log('entries', res);
       const entries = await res.json();
       if (!entries.length) {
         return paths;
