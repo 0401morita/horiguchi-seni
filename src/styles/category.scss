@@ -1,0 +1,15 @@
+.categoryName {
+  color: #ff7f50;
+
+  &[data-slug='pr'] {
+    color: #2ed573;
+  }
+
+  &[data-slug='media'] {
+    color: #5352ed;
+  }
+
+  &[data-slug='event'] {
+    color: #1e90ff;
+  }
+}

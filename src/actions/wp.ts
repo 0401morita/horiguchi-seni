@@ -9,7 +9,7 @@ import { State } from '../reducers';
  * Action Setting
  */
 const axios = axiosBase.create({
-  baseURL: 'https://wp.horiguchi-seni.com/',
+  baseURL: 'https://horiguchi-seni.sauce.jp/',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -43,6 +43,26 @@ export const getWpPostBySlug = (slug: string) => {
 //
 // Get Posts
 //
+export const fetchWpPosts = (url: string) => {
+  return new Promise((resolve, reject) => {
+    let url = '/wp-json/wp/v2/posts/?_embed';
+    const search = location.search;
+    const parseSearch = parse(search);
+    if (parseSearch.page) {
+      url += '&' + stringify(parseSearch);
+    }
+
+    axios
+      .get(url)
+      .then(res => {
+        resolve(res);
+      })
+      .catch((error: Error) => {
+        reject(error);
+      });
+  });
+};
+
 export const getWpPosts = () => {
   return (dispatch: Dispatch, getState: () => State) => {
     let url = '/wp-json/wp/v2/posts/?_embed';
@@ -59,7 +79,7 @@ export const getWpPosts = () => {
     );
 
     axios
-      .get(url)
+      .get('/wp-json/wp/v2/posts/?_embed')
       .then(res => {
         const { status, data, headers, config } = res;
         if (status === 200 && data.length) {

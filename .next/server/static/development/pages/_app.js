@@ -1141,7 +1141,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_actions_app__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../src/actions/app */ "./src/actions/app.ts");
 /* harmony import */ var _src_containers_header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../src/containers/header */ "./src/containers/header.ts");
 /* harmony import */ var _src_components_shares_footer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../src/components/shares/footer */ "./src/components/shares/footer.tsx");
-/* harmony import */ var _src_components_recent_entries_list__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/components/recent_entries/list */ "./src/components/recent_entries/list.tsx");
+/* harmony import */ var _src_containers_recentEntries__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/containers/recentEntries */ "./src/containers/recentEntries/index.ts");
 
 
 
@@ -1220,7 +1220,10 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
   }
 
   componentDidUpdate() {
-    this.props.store.dispatch(Object(_src_actions_app__WEBPACK_IMPORTED_MODULE_12__["closeMenu"])());
+    const {
+      store
+    } = this.props;
+    store.dispatch(Object(_src_actions_app__WEBPACK_IMPORTED_MODULE_12__["closeMenu"])());
   }
 
   componentDidMount() {
@@ -1254,27 +1257,27 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
     return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_8__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 132
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_6__["Provider"], {
       store: store,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 133
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 134
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("title", {
       key: "title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133
+        lineNumber: 135
       },
       __self: this
     }, "\u682A\u5F0F\u4F1A\u793E \u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("meta", {
@@ -1282,7 +1285,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
       content: "width=device-width,minimum-scale=1,initial-scale=1,minimal-ui",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 136
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("meta", {
@@ -1290,94 +1293,94 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
       content: "yes",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 140
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140
+        lineNumber: 142
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_containers_header__WEBPACK_IMPORTED_MODULE_13__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 143
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142
+        lineNumber: 144
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("section", {
       className: "section sectionRecentEntries",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144
+        lineNumber: 146
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145
+        lineNumber: 147
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "col-md-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 148
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "section-heading",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 147
+        lineNumber: 149
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h3", {
       className: "section-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 148
+        lineNumber: 150
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
       className: "ja",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 149
+        lineNumber: 151
       },
       __self: this
     }, "\u304A\u77E5\u3089\u305B"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
       className: "en",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150
+        lineNumber: 152
       },
       __self: this
     }, "News and Column")))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "col-md-7",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155
+        lineNumber: 157
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_recent_entries_list__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_containers_recentEntries__WEBPACK_IMPORTED_MODULE_15__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156
+        lineNumber: 158
       },
       __self: this
     }))))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_shares_footer__WEBPACK_IMPORTED_MODULE_14__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 161
+        lineNumber: 163
       },
       __self: this
     })));
@@ -1462,24 +1465,121 @@ const toggleMenu = () => (dispatch, getState) => {
 
 /***/ }),
 
+/***/ "./src/actions/recentPosts.ts":
+/*!************************************!*\
+  !*** ./src/actions/recentPosts.ts ***!
+  \************************************/
+/*! exports provided: actions, getWpRecentPosts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWpRecentPosts", function() { return getWpRecentPosts; });
+/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-fsa */ "typescript-fsa");
+/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typescript_fsa__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+//import { Dispatch } from 'redux';
+//import { CommonState } from '../reducers/common';
+
+/*
+ * Action Setting
+ */
+const axios = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
+  baseURL: 'https://horiguchi-seni.sauce.jp/',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+const actionCreator = typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default()(); //
+// Actions
+//
+
+const actions = {
+  setRecentPosts: actionCreator('SET_RECENT_POSTS')
+};
+const getWpRecentPosts = limit => {
+  return (dispatch, getState) => {
+    dispatch(actions.setRecentPosts({
+      isLoading: true,
+      isError: false
+    }));
+    axios.get(`/wp-json/wp/v2/posts/?_embed&per_page=${limit}`).then(res => {
+      const {
+        status,
+        data
+      } = res;
+
+      if (status === 200 && data.length) {
+        dispatch(actions.setRecentPosts({
+          posts: data
+        }));
+      }
+    }).catch(({
+      request,
+      response,
+      message
+    }) => {
+      if (response) {
+        dispatch(actions.setRecentPosts({
+          isError: true,
+          error: {
+            code: request.status,
+            message: message
+          }
+        }));
+      } else if (request) {
+        dispatch(actions.setRecentPosts({
+          isError: true,
+          error: {
+            code: request.status,
+            message: message
+          }
+        }));
+      } else {
+        dispatch(actions.setRecentPosts({
+          isError: true,
+          error: {
+            code: request.status,
+            message: 'Bad Request'
+          }
+        }));
+      }
+    }).finally(() => {
+      dispatch(actions.setRecentPosts({
+        isLoading: false
+      }));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./src/actions/wp.ts":
 /*!***************************!*\
   !*** ./src/actions/wp.ts ***!
   \***************************/
-/*! exports provided: actions, getWpPostBySlug, getWpPosts */
+/*! exports provided: actions, getWpPostBySlug, fetchWpPosts, getWpPosts */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWpPostBySlug", function() { return getWpPostBySlug; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchWpPosts", function() { return fetchWpPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWpPosts", function() { return getWpPosts; });
-/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-fsa */ "typescript-fsa");
-/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typescript_fsa__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! query-string */ "query-string");
-/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(query_string__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typescript-fsa */ "typescript-fsa");
+/* harmony import */ var typescript_fsa__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typescript_fsa__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! query-string */ "query-string");
+/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(query_string__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -1489,13 +1589,13 @@ __webpack_require__.r(__webpack_exports__);
 /*
  * Action Setting
  */
-const axios = axios__WEBPACK_IMPORTED_MODULE_2___default.a.create({
-  baseURL: 'https://wp.horiguchi-seni.com/',
+const axios = axios__WEBPACK_IMPORTED_MODULE_3___default.a.create({
+  baseURL: 'https://horiguchi-seni.sauce.jp/',
   headers: {
     'Content-Type': 'application/json'
   }
 });
-const actionCreator = typescript_fsa__WEBPACK_IMPORTED_MODULE_0___default()(); //
+const actionCreator = typescript_fsa__WEBPACK_IMPORTED_MODULE_1___default()(); //
 // Actions
 //
 
@@ -1527,21 +1627,38 @@ const getWpPostBySlug = slug => {
 // Get Posts
 //
 
+const fetchWpPosts = url => {
+  return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a((resolve, reject) => {
+    let url = '/wp-json/wp/v2/posts/?_embed';
+    const search = location.search;
+    const parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_2__["parse"])(search);
+
+    if (parseSearch.page) {
+      url += '&' + Object(query_string__WEBPACK_IMPORTED_MODULE_2__["stringify"])(parseSearch);
+    }
+
+    axios.get(url).then(res => {
+      resolve(res);
+    }).catch(error => {
+      reject(error);
+    });
+  });
+};
 const getWpPosts = () => {
   return (dispatch, getState) => {
     let url = '/wp-json/wp/v2/posts/?_embed';
     const search = location.search;
-    const parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_1__["parse"])(search);
+    const parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_2__["parse"])(search);
 
     if (parseSearch.page) {
-      url += '&' + Object(query_string__WEBPACK_IMPORTED_MODULE_1__["stringify"])(parseSearch);
+      url += '&' + Object(query_string__WEBPACK_IMPORTED_MODULE_2__["stringify"])(parseSearch);
     }
 
     dispatch(actions.setWp({
       isLoading: true,
       isError: false
     }));
-    axios.get(url).then(res => {
+    axios.get('/wp-json/wp/v2/posts/?_embed').then(res => {
       const {
         status,
         data,
@@ -1968,15 +2085,22 @@ const BrandIcon3 = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Bran
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "moment/moment");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/recent_entries/item.tsx";
 
 
-const RecentPostItem = ({
-  title,
-  created,
-  category,
-  link = '/news'
-}) => {
+
+
+const RecentPostItem = props => {
+  const {
+    title,
+    slug,
+    date
+  } = props;
+  const formatDate = moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(date).format('DD.MM.YYYY');
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "recent-entry-item",
     __source: {
@@ -1984,43 +2108,49 @@ const RecentPostItem = ({
       lineNumber: 17
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: link,
-    className: "recent-entry-link",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: `/entry/${slug}`,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "recent-entry-link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "recent-entry-meta",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: undefined
-  }, created, "\u30FB", category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, formatDate), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "recent-entry-body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: undefined
-  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, title.rendered), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: undefined
-  }))));
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RecentPostItem);
@@ -2040,45 +2170,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./item */ "./src/components/recent_entries/item.tsx");
+/* harmony import */ var _wp_error__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../wp/error */ "./src/components/wp/error.tsx");
 
 var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/recent_entries/list.tsx";
 
 
 
-const RecentEntries = () => {
-  const [posts] = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([{
-    title: '夏季休暇のお知らせ',
-    created: '2019/10/21',
-    category: 'News',
-    link: '/news'
-  }, {
-    title: '暑い夏を快適に過ごせる素材',
-    created: '2019/10/19',
-    category: 'Column',
-    link: '/news'
-  }, {
-    title: '企業におけるユニフォーム導入の価値',
-    created: '2019/10/17',
-    category: 'Column',
-    link: '/news'
-  }, {
-    title: 'キャドカム導入のお知らせ',
-    created: '2019/10/10',
-    category: 'News',
-    link: '/news'
-  }]);
+
+const RecentEntries = props => {
+  const {
+    getWpRecentPosts,
+    posts,
+    isLoading,
+    isError,
+    error
+  } = props;
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    if (!posts.length) {
+      getWpRecentPosts(5);
+    }
+  }, []);
+  let loadingComponent, errorComponent;
+
+  if (isLoading) {
+    loadingComponent = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "loading",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: undefined
+    });
+  }
+
+  if (isError) {
+    errorComponent = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wp_error__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      message: error.message,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: undefined
+    });
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "recent-entries",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 27
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+  }, loadingComponent, errorComponent, posts && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "recent-entry-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 32
     },
     __self: undefined
   }, posts.map((post, index) => {
@@ -2086,7 +2233,7 @@ const RecentEntries = () => {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 34
       },
       __self: undefined
     }));
@@ -2608,6 +2755,85 @@ const Header = ({
 
 /***/ }),
 
+/***/ "./src/components/wp/error.tsx":
+/*!*************************************!*\
+  !*** ./src/components/wp/error.tsx ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/wp/error.tsx";
+
+
+
+const WpError = ({
+  icon,
+  title = 'Error',
+  message,
+  transfer_link,
+  transfer_label = ''
+}) => {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "wpError",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, icon && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "wpError__icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, icon), title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+    className: "wpError__title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, title), message && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "wpError__message",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }), transfer_link && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: transfer_link,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "wpError__transfer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, transfer_label)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (WpError);
+
+/***/ }),
+
 /***/ "./src/containers/header.ts":
 /*!**********************************!*\
   !*** ./src/containers/header.ts ***!
@@ -2645,6 +2871,44 @@ const mapDispatchToProps = dispatch => ({
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_components_shares_header__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./src/containers/recentEntries/index.ts":
+/*!***********************************************!*\
+  !*** ./src/containers/recentEntries/index.ts ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_recent_entries_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/recent_entries/list */ "./src/components/recent_entries/list.tsx");
+/* harmony import */ var _actions_recentPosts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/recentPosts */ "./src/actions/recentPosts.ts");
+
+
+
+
+//
+// Map State To Props
+//
+const mapStateToProps = state => {
+  return state.recentPosts;
+}; //
+// Map Dispatch To Props
+//
+
+
+const mapDispatchToProps = dispatch => ({
+  getWpRecentPosts: limit => dispatch(Object(_actions_recentPosts__WEBPACK_IMPORTED_MODULE_2__["getWpRecentPosts"])(limit))
+}); //
+// Connect
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_components_recent_entries_list__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -2699,6 +2963,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_form__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(redux_form__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wp_posts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./wp_posts */ "./src/reducers/wp_posts.ts");
 /* harmony import */ var _wp_post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./wp/post */ "./src/reducers/wp/post.ts");
+/* harmony import */ var _recentPosts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./recentPosts */ "./src/reducers/recentPosts.ts");
+
 
 
 
@@ -2710,9 +2976,42 @@ const reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   service: _service__WEBPACK_IMPORTED_MODULE_2__["serviceReducer"],
   form: redux_form__WEBPACK_IMPORTED_MODULE_3__["reducer"],
   wpPosts: _wp_posts__WEBPACK_IMPORTED_MODULE_4__["WpPostsReducer"],
-  wpPost: _wp_post__WEBPACK_IMPORTED_MODULE_5__["WpPostReducer"]
+  wpPost: _wp_post__WEBPACK_IMPORTED_MODULE_5__["WpPostReducer"],
+  recentPosts: _recentPosts__WEBPACK_IMPORTED_MODULE_6__["RecentPostsReducer"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (reducers);
+
+/***/ }),
+
+/***/ "./src/reducers/recentPosts.ts":
+/*!*************************************!*\
+  !*** ./src/reducers/recentPosts.ts ***!
+  \*************************************/
+/*! exports provided: RecentPostsReducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecentPostsReducer", function() { return RecentPostsReducer; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var typescript_fsa_reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typescript-fsa-reducers */ "typescript-fsa-reducers");
+/* harmony import */ var typescript_fsa_reducers__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typescript_fsa_reducers__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_recentPosts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/recentPosts */ "./src/actions/recentPosts.ts");
+
+
+
+const initialState = {
+  isLoading: false,
+  isError: false,
+  error: {
+    code: '',
+    message: ''
+  },
+  posts: []
+};
+const RecentPostsReducer = Object(typescript_fsa_reducers__WEBPACK_IMPORTED_MODULE_1__["reducerWithInitialState"])(initialState).case(_actions_recentPosts__WEBPACK_IMPORTED_MODULE_2__["actions"].setRecentPosts, (state, data) => {
+  return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, data);
+});
 
 /***/ }),
 
@@ -2938,6 +3237,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "moment/moment":
+/*!********************************!*\
+  !*** external "moment/moment" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("moment/moment");
 
 /***/ }),
 

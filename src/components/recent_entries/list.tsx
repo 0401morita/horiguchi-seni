@@ -1,41 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RecentPostItem from './item';
+import { RecentPostsState } from '../../reducers/recentPosts';
+import { RecentEntriesActions } from '../../containers/recentEntries';
+import WpError from '../wp/error';
 
-const RecentEntries: React.FC<{}> = () => {
-  const [posts] = useState([
-    {
-      title: '夏季休暇のお知らせ',
-      created: '2019/10/21',
-      category: 'News',
-      link: '/news'
-    },
-    {
-      title: '暑い夏を快適に過ごせる素材',
-      created: '2019/10/19',
-      category: 'Column',
-      link: '/news'
-    },
-    {
-      title: '企業におけるユニフォーム導入の価値',
-      created: '2019/10/17',
-      category: 'Column',
-      link: '/news'
-    },
-    {
-      title: 'キャドカム導入のお知らせ',
-      created: '2019/10/10',
-      category: 'News',
-      link: '/news'
+const RecentEntries: React.FC<
+  RecentPostsState & RecentEntriesActions
+> = props => {
+  const { getWpRecentPosts, posts, isLoading, isError, error } = props;
+  useEffect(() => {
+    if (!posts.length) {
+      getWpRecentPosts(5);
     }
-  ]);
+  }, []);
+
+  let loadingComponent, errorComponent;
+  if (isLoading) {
+    loadingComponent = <div className="loading"></div>;
+  }
+
+  if (isError) {
+    errorComponent = <WpError message={error.message} />;
+  }
 
   return (
     <div className="recent-entries">
-      <ul className="recent-entry-list">
-        {posts.map((post, index) => {
-          return <RecentPostItem {...post} key={index} />;
-        })}
-      </ul>
+      {loadingComponent}
+      {errorComponent}
+
+      {posts && (
+        <ul className="recent-entry-list">
+          {posts.map((post: any, index: number) => {
+            return <RecentPostItem {...post} key={index} />;
+          })}
+        </ul>
+      )}
     </div>
   );
 };
