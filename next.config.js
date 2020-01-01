@@ -21,9 +21,11 @@ module.exports = withCSS(
         'https://horiguchi-seni.sauce.jp/wp-json/wp/v2/posts/?_embed'
       );
       const entries = await res.json();
-      console.log(entries);
-      const slugs = entries.map(entry => entry.slug);
 
+      if (!entries.length) {
+        return paths;
+      }
+      const slugs = entries.map(entry => entry.slug);
       slugs.forEach(slug => {
         paths[`/entry/${slug}`] = {
           page: '/entry/[slug]',
