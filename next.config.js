@@ -21,6 +21,7 @@ module.exports = withCSS(
         'https://horiguchi-seni.sauce.jp/wp-json/wp/v2/posts/?_embed'
       );
       const entries = await res.json();
+      console.log('entries', entries);
       if (!entries.length) {
         return paths;
       }
