@@ -4545,6 +4545,14 @@ textarea.form-control {
 ---*/
 .contentHeader {
   margin: 0 0 24px 0; }
+  .contentHeader__meta > span {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em; }
+    .contentHeader__meta > span:before {
+      content: '\30FB'; }
+    .contentHeader__meta > span:first-child:before {
+      content: ''; }
   .contentHeader__title span {
     display: block; }
   .contentHeader__title .en {
@@ -5191,6 +5199,15 @@ textarea.form-control {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; } }
+
+.categoryName {
+  color: #ff7f50; }
+  .categoryName[data-slug='pr'] {
+    color: #2ed573; }
+  .categoryName[data-slug='media'] {
+    color: #5352ed; }
+  .categoryName[data-slug='event'] {
+    color: #1e90ff; }
 
 .loading {
   position: relative;
@@ -6884,6 +6901,88 @@ a:hover {
         color: #3d3d3d; }
         .service-item .service-summary .summary-description br {
           display: block; } }
+
+.entryList {
+  margin: -40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .entryList__item {
+    width: 50%;
+    padding: 40px 0; }
+
+.entryItem {
+  display: block;
+  color: #666; }
+  .entryItem:hover {
+    color: #666; }
+  .entryItem__summary {
+    padding: 0 2vw;
+    margin: 2vw 0 0 0; }
+
+.entryItemFigure {
+  position: relative; }
+  .entryItemFigure__image {
+    max-width: 100%; }
+
+.entryItemSummary__title {
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin: 0; }
+
+.entryItemSummary__meta {
+  display: block;
+  margin: 12px 0 0 0; }
+
+.entryItemMeta {
+  font-size: 10px;
+  color: #a4b0be; }
+  .entryItemMeta span {
+    position: relative;
+    line-height: 1; }
+    .entryItemMeta span:first-child {
+      margin: 0; }
+      .entryItemMeta span:first-child:before {
+        content: '';
+        padding: 0; }
+    .entryItemMeta span:before {
+      content: '/';
+      padding: 0 6px; }
+  .entryItemMeta__cat {
+    font-weight: 700; }
+
+@media screen and (min-width: 768px) {
+  .entryList__item {
+    width: 33.3333333%; }
+  .entryItemSummary__title {
+    font-size: 1rem;
+    letter-spacing: 0.05em; } }
+
+.contactPhone {
+  margin: 24px 0 0 0; }
+  .contactPhone__attention {
+    margin: 12px 0 0 0; }
+
+.phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .phone__icon {
+    height: 2rem; }
+  .phone__number {
+    font-size: 2rem;
+    font-weight: 100;
+    color: #000;
+    line-height: 1;
+    margin: 0 0 0 12px; }
+    .phone__number:hover {
+      color: #000; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

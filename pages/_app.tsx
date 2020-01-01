@@ -10,7 +10,7 @@ import reducers from '../src/reducers';
 import { actions, closeMenu } from '../src/actions/app';
 import Header from '../src/containers/header';
 import Footer from '../src/components/shares/footer';
-import RecentEntries from '../src/components/recent_entries/list';
+import RecentEntries from '../src/containers/recentEntries';
 import { AppState } from '../src/reducers/app';
 import { NextPageContext } from 'next';
 
@@ -35,6 +35,7 @@ class MyApp extends App<AppProps> {
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
       : {};
+
     return { pageProps };
   }
 
@@ -90,7 +91,8 @@ class MyApp extends App<AppProps> {
   };
 
   componentDidUpdate() {
-    this.props.store.dispatch(closeMenu());
+    const { store } = this.props;
+    store.dispatch(closeMenu());
   }
 
   componentDidMount() {

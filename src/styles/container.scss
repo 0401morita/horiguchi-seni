@@ -85,6 +85,24 @@
 ---*/
 .contentHeader {
   margin: 0 0 24px 0;
+  &__meta {
+    > span {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+
+      &:before {
+        content: '・';
+      }
+
+      &:first-child {
+        &:before {
+          content: '';
+        }
+      }
+    }
+  }
+
   &__title {
     span {
       display: block;

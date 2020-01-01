@@ -24,10 +24,8 @@ const Entry: React.FC<State & EntriesListProps & EntryActionsTypes> = ({
   const router = useRouter();
   const { slug } = router.query;
   useEffect(() => {
-    console.log(wpPost);
     if (typeof slug !== 'string') return;
     getWpPostBySlug(slug);
-    console.log(wpPost);
   }, []);
 
   if (wpPost.data) {

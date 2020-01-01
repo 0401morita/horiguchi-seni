@@ -10,13 +10,15 @@ import SailingScrollDown from '../../src/containers/sailingScrollDown';
 import '../../src/styles/home.scss';
 //import Entry from '../../src/containers/entries/show';
 import fetch from 'isomorphic-unfetch';
-
+import moment from 'moment/moment';
+import '../../src/styles/twentytwenty.scss';
 interface ServiceListProps {
   data?: any;
 }
 
-const EntryPage: NextPage<any> = props => {
-  console.log(props);
+const EntryPage: NextPage<any> = ({ title, content, date, category }) => {
+  const formatDate = moment(date).format('DD.MM.YYYY');
+
   return (
     <React.Fragment>
       <section className="hero">
@@ -32,6 +34,23 @@ const EntryPage: NextPage<any> = props => {
         <SailingScrollDown text="News" />
 
         <div className="content mainContainer__content">
+          <div className="contentHeader">
+            <div className="contentHeader__meta">
+              <span className="categoryName" data-slug={category.slug}>
+                {category.name}
+              </span>
+              <span className="date">{formatDate}</span>
+            </div>
+            <h3 className="contentHeader__title">
+              <span className="ja">{title.rendered}</span>
+            </h3>
+          </div>
+
+          <div
+            className="entry-content"
+            dangerouslySetInnerHTML={{ __html: content.rendered }}
+          />
+
           <div className="contentFooter">
             <Link href="/contact">
               <a className="btn btn-black contentFooter__button">
@@ -47,16 +66,16 @@ const EntryPage: NextPage<any> = props => {
 };
 
 EntryPage.getInitialProps = async ({ query }: NextPageContext) => {
-  console.log(query);
   const { slug } = query;
   if (typeof slug !== 'string') return;
   const url = encodeURI(
-    `https://wp.horiguchi-seni.com/wp-json/wp/v2/posts/?_embed&slug=${slug}`
+    `https://horiguchi-seni.sauce.jp/wp-json/wp/v2/posts/?_embed&slug=${slug}`
   );
+
   const res = await fetch(url);
   const json = await res.json();
-
-  return { data: json };
+  console.log(json);
+  return json[0];
 };
 
 export default EntryPage;
