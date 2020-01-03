@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRightIcon } from '../../src/components/icons';
 import Slider from '../../src/components/shares/slider';
