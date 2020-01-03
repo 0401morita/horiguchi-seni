@@ -16,8 +16,24 @@ interface ServiceListProps {
   data?: any;
 }
 
-const EntryPage: NextPage<any> = ({ title, content, date, category }) => {
+const EntryPage: NextPage<any> = props => {
+  const { title, content, date, category, _embedded } = props;
   const formatDate = moment(date).format('DD.MM.YYYY');
+  let eyecatch = '/static/images/service/winding.jpg';
+  console.log(props);
+
+  if (
+    _embedded['wp:featuredmedia'] &&
+    _embedded['wp:featuredmedia'].length &&
+    _embedded['wp:featuredmedia'][0]['id']
+  ) {
+    const media = _embedded['wp:featuredmedia'][0]['media_details'];
+    if (media.sizes.medium_large) {
+      eyecatch = media.sizes.medium_large.source_url;
+    } else {
+      eyecatch = media.sizes.full.source_url;
+    }
+  }
 
   return (
     <React.Fragment>
@@ -25,7 +41,7 @@ const EntryPage: NextPage<any> = ({ title, content, date, category }) => {
         <div
           className="hero-image"
           style={{
-            backgroundImage: `url(http://horiguchi-seni.com/static/images/service/winding.jpg)`
+            backgroundImage: `url(${eyecatch})`
           }}
         ></div>
       </section>
@@ -61,6 +77,10 @@ const EntryPage: NextPage<any> = ({ title, content, date, category }) => {
           </div>
         </div>
       </main>
+
+      <div className="subContent">
+        <div className="otherServiceList"></div>
+      </div>
     </React.Fragment>
   );
 };
