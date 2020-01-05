@@ -10,8 +10,8 @@ export default () => {
             <h5 className="title">Company</h5>
             <ul className="footer-nav">
               <li>
-                <Link href="/about">
-                  <a className="footer-nav-link">堀口繊維工業について</a>
+                <Link href="/service">
+                  <a className="footer-nav-link">私たちの事業について</a>
                 </Link>
               </li>
               <li>
@@ -20,7 +20,7 @@ export default () => {
                 </Link>
               </li>
               <li>
-                <Link href="/service">
+                <Link href="/company">
                   <a className="footer-nav-link">会社情報</a>
                 </Link>
               </li>

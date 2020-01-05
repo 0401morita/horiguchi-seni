@@ -65,7 +65,7 @@ export const fetchWpPosts = (url: string) => {
 
 export const getWpPosts = () => {
   return (dispatch: Dispatch, getState: () => State) => {
-    let url = '/wp-json/wp/v2/posts/?_embed';
+    let url = '/wp-json/wp/v2/posts/?_embed&per_page=12';
     const search = location.search;
     const parseSearch = parse(search);
     if (parseSearch.page) {
@@ -79,7 +79,7 @@ export const getWpPosts = () => {
     );
 
     axios
-      .get('/wp-json/wp/v2/posts/?_embed')
+      .get(url)
       .then(res => {
         const { status, data, headers, config } = res;
         if (status === 200 && data.length) {

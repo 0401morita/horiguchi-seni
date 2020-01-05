@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import Link from 'next/link';
 import EntriesList from './list';
 import { State } from '../../reducers';
+import Router from 'next/router';
+
 interface EntriesProps {
   getWpPosts: any;
 }
@@ -9,8 +10,7 @@ interface EntriesProps {
 const Entries: React.FC<State & EntriesProps> = ({ wpPosts, getWpPosts }) => {
   useEffect(() => {
     getWpPosts();
-    console.log(wpPosts);
-  }, []);
+  }, [Router.router ? Router.router.query : null]);
 
   return (
     <div className="entriesContainer">
@@ -28,7 +28,7 @@ const Entries: React.FC<State & EntriesProps> = ({ wpPosts, getWpPosts }) => {
           );
         }
 
-        return <EntriesList posts={wpPosts.data} />;
+        return <EntriesList {...wpPosts} />;
       })()}
 
       <div className="entriesPagination">

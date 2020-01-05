@@ -1,26 +1,29 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { NextPage, NextPageContext } from 'next';
-import { useRouter } from 'next/router';
-
 import Link from 'next/link';
-import { connect } from 'react-redux';
 import { ArrowRightIcon } from '../../src/components/icons';
-import { State } from '../../src/reducers';
 import SailingScrollDown from '../../src/containers/sailingScrollDown';
-import '../../src/styles/home.scss';
-//import Entry from '../../src/containers/entries/show';
 import fetch from 'isomorphic-unfetch';
 import moment from 'moment/moment';
 import '../../src/styles/entry.scss';
+import NextPrevPost from '../../src/components/entries/next_prev';
+import MetaCategories from '../../src/components/entries/meta_categories';
 interface ServiceListProps {
   data?: any;
 }
 
 const EntryPage: NextPage<any> = props => {
-  const { title, content, date, category, _embedded } = props;
+  const {
+    title,
+    content,
+    date,
+    post_categories,
+    _embedded,
+    prev,
+    next
+  } = props;
   const formatDate = moment(date).format('DD.MM.YYYY');
   let eyecatch = '/static/images/service/winding.jpg';
-  console.log(props);
 
   if (
     _embedded['wp:featuredmedia'] &&
@@ -52,9 +55,8 @@ const EntryPage: NextPage<any> = props => {
         <div className="content mainContainer__content">
           <div className="contentHeader">
             <div className="contentHeader__meta">
-              <span className="categoryName" data-slug={category.slug}>
-                {category.name}
-              </span>
+              <MetaCategories categories={post_categories} />
+
               <span className="date">{formatDate}</span>
             </div>
             <h3 className="contentHeader__title">
@@ -79,7 +81,7 @@ const EntryPage: NextPage<any> = props => {
       </main>
 
       <div className="subContent">
-        <div className="otherServiceList"></div>
+        <NextPrevPost next={next} prev={prev} />
       </div>
     </React.Fragment>
   );
