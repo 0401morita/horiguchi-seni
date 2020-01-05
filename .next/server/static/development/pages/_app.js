@@ -1646,7 +1646,7 @@ const fetchWpPosts = url => {
 };
 const getWpPosts = () => {
   return (dispatch, getState) => {
-    let url = '/wp-json/wp/v2/posts/?_embed';
+    let url = '/wp-json/wp/v2/posts/?_embed&per_page=12';
     const search = location.search;
     const parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_2__["parse"])(search);
 
@@ -1658,7 +1658,7 @@ const getWpPosts = () => {
       isLoading: true,
       isError: false
     }));
-    axios.get('/wp-json/wp/v2/posts/?_embed').then(res => {
+    axios.get(url).then(res => {
       const {
         status,
         data,
@@ -1683,6 +1683,55 @@ const getWpPosts = () => {
     });
   };
 };
+
+/***/ }),
+
+/***/ "./src/components/entries/meta_categories.tsx":
+/*!****************************************************!*\
+  !*** ./src/components/entries/meta_categories.tsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/entries/meta_categories.tsx";
+
+
+const MetaCategories = ({
+  categories
+}) => {
+  if (!categories || !categories.length) {
+    return null;
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, categories.map((category, index) => {
+    if (!category) {
+      return null;
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "category-name",
+      "data-slug": category.slug,
+      key: index,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: undefined
+    }, category.name);
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MetaCategories);
 
 /***/ }),
 
@@ -2089,7 +2138,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "moment/moment");
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _entries_meta_categories__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../entries/meta_categories */ "./src/components/entries/meta_categories.tsx");
 var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src/components/recent_entries/item.tsx";
+
 
 
 
@@ -2098,56 +2149,71 @@ const RecentPostItem = props => {
   const {
     title,
     slug,
-    date
+    date,
+    post_categories
   } = props;
   const formatDate = moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(date).format('DD.MM.YYYY');
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "recent-entry-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 19
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: `/entry/${slug}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "recent-entry-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 21
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "recent-entry-meta",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "entryItemMeta",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 22
     },
     __self: undefined
-  }, formatDate), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_entries_meta_categories__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    categories: post_categories,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "entryItemMeta__date",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, formatDate)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "recent-entry-body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 26
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 27
     },
     __self: undefined
   }, title.rendered), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 28
     },
     __self: undefined
   })))));
@@ -2312,7 +2378,7 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about",
+    href: "/service",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
@@ -2325,7 +2391,7 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
       lineNumber: 14
     },
     __self: undefined
-  }, "\u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D\u306B\u3064\u3044\u3066"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "\u79C1\u305F\u3061\u306E\u4E8B\u696D\u306B\u3064\u3044\u3066"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
@@ -2352,7 +2418,7 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/service",
+    href: "/company",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23

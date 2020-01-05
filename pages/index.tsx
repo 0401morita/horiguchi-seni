@@ -148,8 +148,8 @@ const Home: React.FC<HomeProps & State> = ({ app, service }) => {
 
                 <Link href="/service">
                   <a className="read-more-link">
-                    <span className="en">About</span>
-                    <span className="ja">堀口繊維工業について</span>
+                    <span className="en">Service</span>
+                    <span className="ja">堀口繊維工業の事業について</span>
                   </a>
                 </Link>
               </div>
