@@ -37,9 +37,7 @@ export default () => {
             <ul className="footer-nav">
               <li>
                 <Link href="/service/sewing">
-                  <a className="footer-nav-link">
-                    生地・デザインの選定からユニフォームを縫製販売
-                  </a>
+                  <a className="footer-nav-link">ユニフォームの縫製販売</a>
                 </Link>
               </li>
               <li>
