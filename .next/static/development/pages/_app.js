@@ -57284,7 +57284,7 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/service",
+    href: "/facility",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
@@ -57324,7 +57324,7 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/service",
+    href: "/entry",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
@@ -57365,7 +57365,7 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about",
+    href: "/service/sewing",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
@@ -57378,14 +57378,14 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
       lineNumber: 40
     },
     __self: this
-  }, "\u7E2B\u88FD\u30FB\u8CA9\u58F2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u306E\u7E2B\u88FD\u8CA9\u58F2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 43
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/service",
+    href: "/service/sales",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44
@@ -57405,7 +57405,7 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/service",
+    href: "/service/cleaning-lease",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49
@@ -57418,59 +57418,59 @@ var _jsxFileName = "/Applications/XAMPP/xamppfiles/htdocs/horiguchi-seni.com/src
       lineNumber: 50
     },
     __self: this
-  }, "\u30EA\u30CD\u30F3\u30B5\u30D7\u30E9\u30A4"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "\u30E6\u30CB\u30D5\u30A9\u30FC\u30E0\u306E\u30AF\u30EA\u30FC\u30CB\u30F3\u30B0\u4ED8\u304D\u30EA\u30FC\u30B9"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-col",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 58
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "brand",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 59
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_brand__WEBPACK_IMPORTED_MODULE_2__["BrandIconBase"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 60
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("address", {
     className: "footer-address",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 62
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "address",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 63
     },
     __self: this
   }, "\u3012950-2052 \u65B0\u6F5F\u770C\u65B0\u6F5F\u5E02\u897F\u533A\u5BFA\u5C3E2-19"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 64
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "tel:025-269-2591",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 65
     },
     __self: this
   }, "025-269-2591")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "copyright",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 72
     },
     __self: this
   }, "\xA9 Horiguchi, Inc."));

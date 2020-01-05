@@ -15,7 +15,7 @@ export default () => {
                 </Link>
               </li>
               <li>
-                <Link href="/service">
+                <Link href="/facility">
                   <a className="footer-nav-link">施設と設備</a>
                 </Link>
               </li>
@@ -25,7 +25,7 @@ export default () => {
                 </Link>
               </li>
               <li>
-                <Link href="/service">
+                <Link href="/entry">
                   <a className="footer-nav-link">お知らせ</a>
                 </Link>
               </li>
@@ -36,18 +36,20 @@ export default () => {
             <h5 className="title">Service</h5>
             <ul className="footer-nav">
               <li>
-                <Link href="/about">
-                  <a className="footer-nav-link">縫製・販売</a>
+                <Link href="/service/sewing">
+                  <a className="footer-nav-link">ユニフォームの縫製販売</a>
                 </Link>
               </li>
               <li>
-                <Link href="/service">
+                <Link href="/service/sales">
                   <a className="footer-nav-link">ユニフォーム販売</a>
                 </Link>
               </li>
               <li>
-                <Link href="/service">
-                  <a className="footer-nav-link">リネンサプライ</a>
+                <Link href="/service/cleaning-lease">
+                  <a className="footer-nav-link">
+                    ユニフォームのクリーニング付きリース
+                  </a>
                 </Link>
               </li>
             </ul>
