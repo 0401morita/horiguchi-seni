@@ -45,8 +45,6 @@ const ServiceItem: React.FC<ServiceItemProps & AppState> = ({
     setAnimIn(true);
   }
 
-  console.log('measurement', animIn, showPoint, scrollTop + height);
-
   return (
     <div className={clsx('service-item', { in: animIn })} ref={serviceRef}>
       <figure className="service-image">
