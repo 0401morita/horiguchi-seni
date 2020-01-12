@@ -12,10 +12,6 @@ interface EntryListProps {}
 interface EntryListItemProps {}
 
 const Entries: React.FC<EntryListProps & State> = ({ service }) => {
-  useEffect(() => {
-    document.body.classList.add('in');
-  }, []);
-
   return (
     <React.Fragment>
       <section className="hero">

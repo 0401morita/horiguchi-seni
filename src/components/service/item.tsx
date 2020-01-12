@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { AppState } from '../../reducers/app';
+import clsx from 'clsx';
+import Router from 'next/router';
 
 interface ServiceItemProps {
   index: number;
@@ -11,19 +14,41 @@ interface ServiceItemProps {
   link: string;
 }
 
-const ServiceItem: React.FC<ServiceItemProps> = ({
+const ServiceItem: React.FC<ServiceItemProps & AppState> = ({
   index,
   title,
   summary,
   image_src,
   label_ja,
   label_en,
+  windows,
   link = '/service/sewing'
 }) => {
   let str_index = '0' + index.toString();
+  const { scrollTop, height } = windows;
+  const serviceRef = useRef<HTMLDivElement>(null);
+  const [showPoint, setShowPoint] = useState(0);
+  const [animIn, setAnimIn] = useState(false);
+
+  useEffect(() => {
+    if (serviceRef.current) {
+      const {
+        top: clientTop,
+        height: clientHeight
+      } = serviceRef.current.getBoundingClientRect();
+
+      setShowPoint(clientTop + clientHeight / 2);
+    }
+  }, []);
+
+  if (!animIn && showPoint !== 0 && showPoint < scrollTop + height) {
+    setAnimIn(true);
+  }
+
+  console.log('measurement', animIn, showPoint, scrollTop + height);
 
   return (
-    <div className="service-item">
+    <div className={clsx('service-item', { in: animIn })} ref={serviceRef}>
       <figure className="service-image">
         <img src={image_src} />
       </figure>

@@ -8,6 +8,8 @@ import moment from 'moment/moment';
 import '../../src/styles/entry.scss';
 import NextPrevPost from '../../src/components/entries/next_prev';
 import MetaCategories from '../../src/components/entries/meta_categories';
+import queryString from 'query-string';
+
 interface ServiceListProps {
   data?: any;
 }
@@ -89,14 +91,14 @@ const EntryPage: NextPage<any> = props => {
 
 EntryPage.getInitialProps = async ({ query }: NextPageContext) => {
   const { slug } = query;
-  if (typeof slug !== 'string') return;
-  const url = encodeURI(
-    `https://horiguchi-seni.sauce.jp/wp-json/wp/v2/posts/?_embed&slug=${slug}`
-  );
+  let slugQuery = `slug=${slug}`;
+  if (slug instanceof Array) {
+    slugQuery = queryString.stringify({ slug: slug }, { arrayFormat: 'comma' });
+  }
 
+  const url = `https://horiguchi-seni.sauce.jp/wp-json/wp/v2/posts/?_embed&${slugQuery}`;
   const res = await fetch(url);
   const json = await res.json();
-  console.log(json);
   return json[0];
 };
 

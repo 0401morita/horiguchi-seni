@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import '../src/styles/home.scss';
 import { HeroSection } from '../src/components/homes/slider';
-import ServiceItem from '../src/components/homes/service_item';
+import ServiceItem from '../src/components/service/item';
 import { ArrowRightIcon } from '../src/components/icons';
 import { State } from '../src/reducers';
 import EventListener from 'react-event-listener';
@@ -12,13 +12,6 @@ import SailingScrollDown from '../src/containers/sailingScrollDown';
 interface HomeProps {}
 
 const Home: React.FC<HomeProps & State> = ({ app, service }) => {
-  const [windowState, setWindowState] = useState({
-    width: 0,
-    height: 0,
-    vw: 0,
-    vh: 0
-  });
-
   const [primaryState, setPrimaryState] = useState({
     height: 0
   });
@@ -63,13 +56,7 @@ const Home: React.FC<HomeProps & State> = ({ app, service }) => {
    */
   const handleScroll = () => {
     if (primaryMessageEl.current) {
-      const {
-        scrollTop,
-        width: windowWidth,
-        height: windowHeight,
-        vw,
-        vh
-      } = app.windows;
+      const { scrollTop, width: windowWidth, vh } = app.windows;
       const { height: primaryHeight } = primaryState;
       const { height: messageSectionHeight } = messageSectionState;
       const isSmartPhone = windowWidth < 768;
@@ -124,12 +111,10 @@ const Home: React.FC<HomeProps & State> = ({ app, service }) => {
               <div className="primaryMessage" ref={primaryMessageEl}>
                 <h2 className="primaryMessage__title">
                   <span>ENJOY</span>
-                  <br />
                   <span>UNIFORM</span>
                 </h2>
                 <p className="primaryMessage__description">
                   <span>ユニフォームを着る人をもっと快適に。</span>
-                  <br />
                   <span>もっと楽しく。</span>
                 </p>
               </div>
@@ -165,7 +150,14 @@ const Home: React.FC<HomeProps & State> = ({ app, service }) => {
 
           <div className="service-list">
             {service.list.map((service: any, index: number) => {
-              return <ServiceItem {...service} index={index} key={index} />;
+              return (
+                <ServiceItem
+                  {...service}
+                  {...app}
+                  index={index + 1}
+                  key={index}
+                />
+              );
             })}
           </div>
 

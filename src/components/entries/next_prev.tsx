@@ -35,7 +35,6 @@ const NextPrevPost: React.FC<NextPrevPostsProps> = ({ next, prev }) => {
         let eyecatch = featured_image_src
           ? featured_image_src
           : '/static/images/service/winding.jpg';
-        console.log(typeof post_categories, post_categories);
         return (
           <div className="next-prev" key={index}>
             <Link href={`/entry/${post_name}`}>

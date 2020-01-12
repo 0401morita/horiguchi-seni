@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import EntriesList from './list';
 import { State } from '../../reducers';
 import Router from 'next/router';
@@ -7,10 +7,18 @@ interface EntriesProps {
   getWpPosts: any;
 }
 
+interface MountState {}
 const Entries: React.FC<State & EntriesProps> = ({ wpPosts, getWpPosts }) => {
   useEffect(() => {
-    getWpPosts();
-  }, [Router.router ? Router.router.query : null]);
+    const handleRouteChange = (url: string) => {
+      getWpPosts();
+    };
+
+    Router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      Router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, []);
 
   return (
     <div className="entriesContainer">
@@ -30,12 +38,6 @@ const Entries: React.FC<State & EntriesProps> = ({ wpPosts, getWpPosts }) => {
 
         return <EntriesList {...wpPosts} />;
       })()}
-
-      <div className="entriesPagination">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
     </div>
   );
 };

@@ -1257,27 +1257,27 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
     return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_8__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 133
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_6__["Provider"], {
       store: store,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133
+        lineNumber: 134
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 135
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("title", {
       key: "title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 136
       },
       __self: this
     }, "\u682A\u5F0F\u4F1A\u793E \u5800\u53E3\u7E4A\u7DAD\u5DE5\u696D"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("meta", {
@@ -1285,7 +1285,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
       content: "width=device-width,minimum-scale=1,initial-scale=1,minimal-ui",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 136
+        lineNumber: 137
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("meta", {
@@ -1293,94 +1293,94 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
       content: "yes",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140
+        lineNumber: 141
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142
+        lineNumber: 143
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_containers_header__WEBPACK_IMPORTED_MODULE_13__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
+        lineNumber: 144
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144
+        lineNumber: 145
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("section", {
       className: "section sectionRecentEntries",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 147
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 147
+        lineNumber: 148
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "col-md-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 148
+        lineNumber: 149
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "section-heading",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 149
+        lineNumber: 150
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h3", {
       className: "section-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150
+        lineNumber: 151
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
       className: "ja",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151
+        lineNumber: 152
       },
       __self: this
     }, "\u304A\u77E5\u3089\u305B"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
       className: "en",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152
+        lineNumber: 153
       },
       __self: this
     }, "News and Column")))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
       className: "col-md-7",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 158
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_containers_recentEntries__WEBPACK_IMPORTED_MODULE_15__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 158
+        lineNumber: 159
       },
       __self: this
     }))))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_src_components_shares_footer__WEBPACK_IMPORTED_MODULE_14__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163
+        lineNumber: 164
       },
       __self: this
     })));
@@ -1646,7 +1646,7 @@ const fetchWpPosts = url => {
 };
 const getWpPosts = () => {
   return (dispatch, getState) => {
-    let url = '/wp-json/wp/v2/posts/?_embed&per_page=12';
+    let url = '/wp-json/wp/v2/posts/?_embed&per_page=1';
     const search = location.search;
     const parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_2__["parse"])(search);
 
