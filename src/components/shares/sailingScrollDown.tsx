@@ -12,12 +12,6 @@ const SailingScrollDown: React.FC<SailingScrollDownProps & AppState> = ({
   windows
 }) => {
   const sailingScrollDownEl = useRef<HTMLDivElement>(null);
-  if (sailingScrollDownEl.current) {
-    const clientRect: any = sailingScrollDownEl.current
-      ? sailingScrollDownEl.current.getBoundingClientRect()
-      : null;
-  }
-
   const [targetBox, setTargetBox] = useState({
     fixedPoint: 0,
     width: 0,
@@ -154,6 +148,7 @@ const SailingScrollDown: React.FC<SailingScrollDownProps & AppState> = ({
     } else {
       setIsFeature(false);
     }
+    return () => console.log('unmounting...');
   }, []);
 
   return (

@@ -116,6 +116,7 @@ class MyApp extends App<AppProps> {
         }
       })
     );
+
     document.addEventListener('scroll', this.handleScroll, false);
     window.addEventListener('resize', this.handleResize, false);
   }

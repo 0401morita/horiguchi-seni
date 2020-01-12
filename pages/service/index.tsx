@@ -1,17 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import { HeroSection } from '../../src/components/homes/slider';
-import ServiceItem from '../../src/components/homes/service_item';
+import ServiceItem from '../../src/components/service/item';
 import { ArrowRightIcon } from '../../src/components/icons';
 import { State } from '../../src/reducers';
-import EventListener from 'react-event-listener';
 import SailingScrollDown from '../../src/containers/sailingScrollDown';
 import '../../src/styles/home.scss';
 
 interface ServiceListProps {}
 
-const Home: React.FC<ServiceListProps & State> = ({ service }) => {
+const Home: React.FC<ServiceListProps & State> = ({ app, service }) => {
   useEffect(() => {
     document.body.classList.add('in');
   }, []);
@@ -40,7 +38,14 @@ const Home: React.FC<ServiceListProps & State> = ({ service }) => {
 
           <div className="service-list">
             {service.list.map((service: any, index: number) => {
-              return <ServiceItem {...service} index={index} key={index} />;
+              return (
+                <ServiceItem
+                  {...service}
+                  {...app}
+                  index={index + 1}
+                  key={index}
+                />
+              );
             })}
           </div>
 
