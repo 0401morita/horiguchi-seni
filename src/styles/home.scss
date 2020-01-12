@@ -83,7 +83,7 @@
   .primaryMessage {
     position: fixed;
     left: 16vw;
-    bottom: 8vh;
+    bottom: 16vw;
     width: 100%;
     color: #e84118;
 
@@ -589,7 +589,7 @@
 
   .primaryMessage {
     margin: 0;
-    bottom: 16vh;
+    bottom: 12vw;
 
     &__title {
       line-height: 1.1em;
