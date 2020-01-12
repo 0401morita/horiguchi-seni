@@ -63,7 +63,6 @@ const Home: React.FC<HomeProps & State> = ({ app, service }) => {
       let isfix = false;
       if (isSmartPhone) {
         isfix = scrollTop > 16 * vw + primaryHeight;
-        console.log(scrollTop, vw * 16 + primaryHeight, vw * 16, primaryHeight);
       } else {
         isfix =
           scrollTop > vw * 16 + primaryHeight / 2 + messageSectionHeight / 2;
