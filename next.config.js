@@ -20,9 +20,7 @@ module.exports = withCSS(
       const res = await fetch(
         'https://horiguchi-seni.sauce.jp/wp-json/wp/v2/posts/?_embed'
       );
-      console.log('entries', res);
       if (res.status !== 200) return paths;
-
       const entries = await res.json();
       if (!entries.length) {
         return paths;
@@ -30,7 +28,7 @@ module.exports = withCSS(
 
       const slugs = entries.map(entry => entry.slug);
       slugs.forEach(slug => {
-        paths[`/entry/${slug}`] = {
+        paths[`/entry/${encodeURI(slug)}`] = {
           page: '/entry/[slug]',
           query: { slug: slug }
         };
