@@ -28,7 +28,7 @@ module.exports = withCSS(
 
       const slugs = entries.map(entry => entry.slug);
       slugs.forEach(slug => {
-        paths[`/entry/${encodeURI(slug)}`] = {
+        paths[`/entry/${encodeURIComponent(slug)}`] = {
           page: '/entry/[slug]',
           query: { slug: slug }
         };
