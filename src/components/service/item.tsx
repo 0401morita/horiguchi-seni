@@ -41,6 +41,7 @@ const ServiceItem: React.FC<ServiceItemProps & AppState> = ({
     }
   }, []);
 
+  console.log(showPoint, scrollTop + height);
   if (!animIn && showPoint !== 0 && showPoint < scrollTop + height) {
     setAnimIn(true);
   }

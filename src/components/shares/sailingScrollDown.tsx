@@ -148,7 +148,6 @@ const SailingScrollDown: React.FC<SailingScrollDownProps & AppState> = ({
     } else {
       setIsFeature(false);
     }
-    return () => console.log('unmounting...');
   }, []);
 
   return (
