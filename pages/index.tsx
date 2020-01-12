@@ -56,14 +56,17 @@ const Home: React.FC<HomeProps & State> = ({ app, service }) => {
    */
   const handleScroll = () => {
     if (primaryMessageEl.current) {
-      const { scrollTop, width: windowWidth, vh } = app.windows;
+      const { scrollTop, width: windowWidth, vw } = app.windows;
       const { height: primaryHeight } = primaryState;
       const { height: messageSectionHeight } = messageSectionState;
       const isSmartPhone = windowWidth < 768;
-      let isfix =
-        scrollTop > vh * 16 + primaryHeight / 2 + messageSectionHeight / 2;
+      let isfix = false;
       if (isSmartPhone) {
-        isfix = scrollTop > vh * 8 + primaryHeight;
+        isfix = scrollTop > 16 * vw + primaryHeight;
+        console.log(scrollTop, vw * 16 + primaryHeight, vw * 16, primaryHeight);
+      } else {
+        isfix =
+          scrollTop > vw * 16 + primaryHeight / 2 + messageSectionHeight / 2;
       }
 
       if (isfix) {

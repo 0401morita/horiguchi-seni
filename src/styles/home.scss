@@ -131,7 +131,7 @@
 
   .primary-fix {
     .primaryMessage {
-      position: relative;
+      position: static;
       left: 0;
       bottom: 0;
     }
@@ -589,7 +589,6 @@
 
   .primaryMessage {
     margin: 0;
-    bottom: 12vw;
 
     &__title {
       line-height: 1.1em;
