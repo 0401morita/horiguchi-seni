@@ -209,7 +209,7 @@
 
     .service-image {
       position: relative;
-      margin: 0 0 0 0;
+      margin: 0 -8vw 0 -8vw;
       background: #dfe4ea;
       background-size: cover;
       background-position: center;
@@ -225,7 +225,6 @@
       display: block;
       position: relative;
       top: -8vw;
-      left: -4vw;
       background-color: #fff;
       padding: 32px 24px 24px 24px;
       opacity: 0;
@@ -329,12 +328,11 @@
     // Service Item / EVEN
     &:nth-child(odd) {
       .service-image {
-        margin: 0 0 0 0vw;
+        margin: 0 -8vw 0 -8vw;
       }
 
       .service-summary {
         left: auto;
-        right: -4vw;
         box-shadow: 6px 6px 6px #dfe4ea;
       }
     }
