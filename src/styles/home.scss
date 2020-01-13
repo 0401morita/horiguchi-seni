@@ -96,7 +96,7 @@
 
       span {
         font-size: 2rem;
-        display: block;
+        display: table;
         opacity: 0;
         transform: translateY(12px);
         line-height: 1;
@@ -118,7 +118,7 @@
 
       span {
         font-size: 12px;
-        display: block;
+        display: table;
         opacity: 0;
         transform: translateY(12px);
         line-height: 1;
@@ -202,7 +202,6 @@
   //
   .service-item {
     position: relative;
-    margin: 40px 0 0 0;
 
     &:first-child {
       margin: 0;
@@ -230,6 +229,7 @@
       background-color: #fff;
       padding: 32px 24px 24px 24px;
       opacity: 0;
+      box-shadow: -6px 6px 6px #dfe4ea;
 
       .index {
         display: flex;
@@ -264,7 +264,7 @@
       .summary-description {
         font-size: 1.3rem;
         font-weight: 300;
-        margin: 12px 0 0 0;
+        margin: 0;
         color: #3d3d3d;
 
         br {
@@ -335,6 +335,7 @@
       .service-summary {
         left: auto;
         right: -4vw;
+        box-shadow: 6px 6px 6px #dfe4ea;
       }
     }
 
@@ -371,7 +372,7 @@
   .recent-entry-list {
     .recent-entry-item {
       position: relative;
-      border-bottom: 1px solid #dfe4ea;
+      border-bottom: 1px solid #ced6e0;
       padding: 24px 0;
 
       &:after {
@@ -468,10 +469,6 @@
           font-size: 0.8rem;
           margin: 4px 0 0 0;
         }
-      }
-
-      &:last-child {
-        border: 0;
       }
 
       &:hover {
@@ -616,10 +613,10 @@
   // Service Item - MD
   //
   .service-item {
-    padding: 6vw 0 6vw 8vw;
+    padding: 6vw 0 2vw 8vw;
 
     &:nth-child(odd) {
-      padding: 6vw 8vw 6vw 0;
+      padding: 6vw 8vw 2vw 0;
       .service-summary {
         left: auto;
         right: 0;
@@ -663,7 +660,7 @@
       .summary-description {
         font-size: 2rem;
         font-weight: 300;
-        margin: 12px 0 0 0;
+        margin: 0;
         color: #3d3d3d;
 
         br {
