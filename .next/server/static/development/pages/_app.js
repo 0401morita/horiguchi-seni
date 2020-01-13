@@ -1646,7 +1646,7 @@ const fetchWpPosts = url => {
 };
 const getWpPosts = () => {
   return (dispatch, getState) => {
-    let url = '/wp-json/wp/v2/posts/?_embed&per_page=1';
+    let url = '/wp-json/wp/v2/posts/?_embed&per_page=12';
     const search = location.search;
     const parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_2__["parse"])(search);
 
