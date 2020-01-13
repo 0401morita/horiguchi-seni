@@ -56534,7 +56534,7 @@ var fetchWpPosts = function fetchWpPosts(url) {
 };
 var getWpPosts = function getWpPosts() {
   return function (dispatch, getState) {
-    var url = '/wp-json/wp/v2/posts/?_embed&per_page=12';
+    var url = '/wp-json/wp/v2/posts/?_embed&per_page=1';
     var search = location.search;
     var parseSearch = Object(query_string__WEBPACK_IMPORTED_MODULE_2__["parse"])(search);
 
