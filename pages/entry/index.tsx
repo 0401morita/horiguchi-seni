@@ -18,7 +18,7 @@ const Entries: React.FC<EntryListProps & State> = ({ service }) => {
         <div
           className="hero-image"
           style={{
-            backgroundImage: `url(http://horiguchi-seni.com/static/images/service/winding.jpg)`
+            backgroundImage: `url(https://horiguchi-seni.com/static/images/service/winding.jpg)`
           }}
         ></div>
       </section>

@@ -9,16 +9,18 @@ interface EntriesProps {
 
 interface MountState {}
 const Entries: React.FC<State & EntriesProps> = ({ wpPosts, getWpPosts }) => {
+  const [url, setUrl] = useState<string>('');
   useEffect(() => {
+    getWpPosts();
     const handleRouteChange = (url: string) => {
-      getWpPosts();
+      setUrl(url);
     };
 
     Router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
       Router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, []);
+  }, [url]);
 
   return (
     <div className="entriesContainer">

@@ -36,12 +36,18 @@ const ServiceItem: React.FC<ServiceItemProps & AppState> = ({
         top: clientTop,
         height: clientHeight
       } = serviceRef.current.getBoundingClientRect();
+      const initScrollTop: number =
+        Math.max(
+          window.pageYOffset,
+          document.documentElement.scrollTop,
+          document.body.scrollTop
+        ) || 0;
 
-      setShowPoint(clientTop + clientHeight / 2);
+      setShowPoint(clientTop + initScrollTop + clientHeight / 2);
     }
   }, []);
 
-  console.log(showPoint, scrollTop + height);
+  console.log(animIn, showPoint, scrollTop + height);
   if (!animIn && showPoint !== 0 && showPoint < scrollTop + height) {
     setAnimIn(true);
   }
