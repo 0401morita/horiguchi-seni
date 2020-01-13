@@ -65,7 +65,7 @@ const Home: React.FC<HomeProps & State> = ({ app, service }) => {
         isfix = scrollTop > 16 * vw + primaryHeight;
       } else {
         isfix =
-          scrollTop > vw * 16 + primaryHeight / 2 + messageSectionHeight / 2;
+          scrollTop > vw * 12 + primaryHeight / 2 + messageSectionHeight / 2;
       }
 
       if (isfix) {

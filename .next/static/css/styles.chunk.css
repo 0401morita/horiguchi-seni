@@ -6503,7 +6503,7 @@ a:hover {
 .primaryMessage {
   position: fixed;
   left: 16vw;
-  bottom: 16vw;
+  bottom: 12vw;
   width: 100%;
   color: #e84118; }
   .primaryMessage__title {
@@ -6978,29 +6978,6 @@ a:hover {
 
 .slick-arrow.slick-hidden {
   display: none; }
-
-.contactPhone {
-  margin: 24px 0 0 0; }
-  .contactPhone__attention {
-    margin: 12px 0 0 0; }
-
-.phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-  .phone__icon {
-    height: 2rem; }
-  .phone__number {
-    font-size: 2rem;
-    font-weight: 100;
-    color: #000;
-    line-height: 1;
-    margin: 0 0 0 12px; }
-    .phone__number:hover {
-      color: #000; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
