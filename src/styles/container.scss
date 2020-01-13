@@ -1,3 +1,7 @@
+body {
+  background-color: #dfe4ea;
+}
+
 .mainContainer {
   position: relative;
   margin: -8vw 0 12vw 8vw;
@@ -249,7 +253,7 @@
   .mainContainer {
     .sailingScrollDown {
       &.fixed {
-        top: 80px;
+        top: 100px;
       }
     }
   }

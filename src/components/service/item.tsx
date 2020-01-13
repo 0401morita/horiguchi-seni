@@ -62,7 +62,6 @@ const ServiceItem: React.FC<ServiceItemProps & AppState> = ({
           <span className="index">
             <span className="number">{str_index}</span>
           </span>
-          <h4 className="summary-title">{title}</h4>
           <p className="summary-description">{summary}</p>
 
           <div className="read-more">

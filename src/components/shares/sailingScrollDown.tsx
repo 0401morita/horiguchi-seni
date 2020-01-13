@@ -44,7 +44,7 @@ const SailingScrollDown: React.FC<SailingScrollDownProps & AppState> = ({
 
     const { scrollTop, width, vw, vh } = windows;
     const isSmartPhone = width < 768;
-    let headerHeight = 76;
+    let headerHeight = 96;
     if (isSmartPhone) {
       headerHeight = 56;
     }
